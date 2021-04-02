@@ -110,3 +110,14 @@ Sendinput, +{backspace}
 return
 ;end of effects panel
 
+
+
+;script reloader, but it only worKs on this one :(
+#ifwinactive ahk_class Notepad++
+^r::
+send ^s
+sleep 10
+Soundbeep, 1000, 500
+Reload
+Return
+#ifwinactive

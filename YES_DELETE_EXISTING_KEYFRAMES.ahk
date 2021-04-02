@@ -15,8 +15,3 @@ sendinput, {enter}
 sleep 100
 goto lol
 
-
-;ignore this code, I'm just keeping it here 'cause I might want it:
-
-;ControlClick [, Control-or-Pos, WinTitle, WinText, WhichButton, ;ClickCount, Options, ExcludeTitle, ExcludeText]
-;ControlClick, Button1, Symtrax Telnet, Do you want to end this session
