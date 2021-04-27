@@ -1,6 +1,7 @@
-Menu, Tray, Icon, shell32.dll, 3
+#SingleInstance Force
 
-;	Internationally known as "KDE Mover-Sizer"                               Version 2.9
+Menu, Tray, Icon, imageres.dll, 262
+
 ;
 ;	http://corz.org/windows/software/accessories/KDE-resizing-moving-for-Windows.php
 
@@ -15,125 +16,14 @@ Menu, Tray, Icon, shell32.dll, 3
 ;	to easily resize it; 3) Press ALT twice, but before releasing it the second
 ;	time, left-click to minimize the window under the mouse cursor, right-click
 ;	to maximize it, or middle-click to close it.
-;
-;	This script was inspired by and built on many like it in the forum. Thanks 
-;	go out to ck, thinkstorm, Chris, and aurelian for a job well done.
 
 
-;	Itstory:
-;   Sep  10, 2014:		Added option to hide tray icon - a message will appear first, warning you that you have no easy way to shutdown KMS
-;   Aug  10, 2013:      Added: Option to use 3x3 grid for resizing as to lock resizing horizontally or vertically depending on mouse position
-;                       Fixed: Resizing wrong window after resizing a restored maximized window
-;   July 28, 2013:      Moved options into "Options" submenu and merged with "Resize Options"
-;                       Changed WheelUp/Down: SendMessage replaced with PostMessage for extended application support for Focusless scrolling
-;   July 25, 2013:      removed "SendMode Input" and added a static m-hook button (~^!+MButton) for testing compatibility with MacroExpress
-;   July 22, 2013:      Added focusless scrolling: sends WheelUP/Down to Window under mousecursor, even if not active (mih, shimanov, scoox)
-;   June  7, 2013:      Changed Hotkey handling back to use RegisterHotkey() instead of keyboard hook (no $)
-;                       Updated Tooltips and About box to show actual hotkeys instead of the default ones
-;                       Added more grid lines for QuickPositioning: Now at 1/4, 1/3, 0.382 and 1/2 plus 3 center grids (mih)
-;   June  5, 2013:      Improved handling of horizontal/vertical locking during resizing
-;   May  14, 2013:      Added LockHorizontalVertical: Press LockHorizVert_Hotkey2 (default: Shift) during Moving or Resizing
-;                       to constrain mouse to either horizontal or vertical movements (mih)
-;                       Added Hide Windows content while moving and resizing
-;   Aug   8, 2012:      Added QuickPositionWindow: Press QuickPosition_Hotkey2 during Moving or Resizing to quickly position window on screen edge (mih)
-;   Aug   6, 2012:      Added special feature: Insert Special Character with hotkey (mih)
-;                         Can be used to define shortcuts (e.g. AltGr+c) to insert special characters (e.g. cedille) from foreign languages
-;                         Example: Press AltGr + c to enter French cedille .  Add new
-;                         Configuration: Edit .INI File, Section [SpecialCharacters]
-;                           Add new SpecialCharactersTrig_# and SpecialCharactersChar_# and Increment SpecialCharacters_Num
-;                           See here for trigger key symbols: http://www.autohotkey.com/docs/Hotkeys.htm
-;                           Max. Number of custom keys: 15
-;                         Known Limitations:
-;                           If Mover-Sizer hotkey is Ctrg+Alt, it collides with SpecialCharacter Hotkey AltGr
-;                           only works for ASCII/ANSII character set. No Unicode (UTF-8/UTF-16/...)!
-;   Aug   1, 2012:      Changed default for LWin hotkey, ShowMeasuresAsTooltip=1, DrawGridShowDistance=1
-;                       Changed default for AltGr: DrawGridOverlay_Hotkey=<^>!+
-;   July 27, 2012:      Fixed: send DoubleKey_hotkey2 after execution of hotkey action
-;   July 22, 2012:      Added option to disable Double-Alt shortcuts
-;                       Fixed loop performance issues and window redraw for DrawGrid
-;   July 19, 2012:      Added option to show grid measurements as a ToolTip (for folk with balloon tips disabled)
-;                       This also prevents the Taskbar from popping into view when measuring (if you have it hidden) ~ Cor
-;   July 17, 2012:      Added special feature "Draw Grid" to overlay golden ratio/3x3 & 4x4 grid to analyze images (mih)
-;                       Added colour sampler
-;                       Added Escape button to abort moving & resizing
-;                       Added script reload after closing INI editor
-;                       Added configurable hotkeys (based on jlr's version)
-;   May 17, 2011:       Added "Ignore Window" list to pass-through hotkeys (e.g. for Remote Desktop or Adobe Photoshop) (mih)
-;   October 31, 2009:   Added special feature "Always On Top". Click with the cross cursor on a window you want to toggle AlwaysOnTop (mih)
-;   October 12, 2009:	V3 icon! (the last one produced even more mails!). This one rocks. No complaints please!
-;						You can now get straight to the KDE Mover-Sizer page from the About dialog.
-;						Removed superfluous default AutoHotKey tray menu items.
-;						Added an "Enable HotKeys" tray menu item, which toggles the HotKeys (it un/checks) 
-;						Added an Exit menu item and simple exit function.
-;						Added a menu option to get to the ini file, to hack at the things there's no menu item for.
-;						All current prefs get written to the ini file so the user can see/set what's available.
-;						Cleaned up documentation and web page, some. More to come. Maybe even comments!
-;						Added about box text, some default prefs, tray, gui + menu fixes, other minor stuff.	~ Cor
-;   October 10, 2009:	Added new algorithm for Snapping on Resize (mih)
-;						Added option for Restoring Window on Resize
-;   October 4, 2009:	Added full support for multi screens (incl. snapping) (mih)
-;						Fixed Snapping on WorkArea (excluding task bar)
-;						Added INI option for Snapping Distance and WinDelay
-;						Added About box
-;   October 3, 2009:	Added configuration file and option to enable&disable snapping (mih)
-;						Added snapping for (Alt-Left-Click) Moving Windows
-;   June 16, 2009:		Added Vista Alt-Tab fix (by jordoex)
-;						Added an information tip for the tray hover. Updated Icon (I noticed it 
-;						clashed with a portable Linux I recently tried, so I created an original 
-;						icon for KDE Mover-Sizer. ~ Cor
-;   March    10, 2009:	Moving a maximized windows is now possible (First WinRestore to orig. size, then move)
-;						Added: Alt+Middle Button maximizes/restores a window (mih)
-;   December 04, 2007:	Window snap-to-edge - just like KDE, but with extra fun!
-;						Added Tray ToolTip help. ~ Cor
-;   November 07, 2006:	Optimized resizing code in !RButton, courtesy of bluedawn.
-;   February 05, 2006:	Fixed double-alt (the ~Alt hotkey) to work with latest versions of AHK.
-
-
-;	Snap-To Edges ..
-;
-;	If their edge comes within ten pixels of your desktop edge, the window snaps to it. 
-;	Very neat;	it's what KDE does. But there's more..
-;
-;	If you keep mousing after the window snaps, you get a beautiful resizing control which
-;	keeps on going. Also you can Alt-right-click any oversized windows and pop them straight back 
-;	into the desktop. Note: If you are quick enough, you can break the snap when needed. 
-;	Have fun! NOTE: You can now disable the right-click-to-snap behaviour, if preferred.
-;
-;	;o) Cor
-;
-;	June 16, 2009:
-;
-;		Since giving this a page of its own, it's become insanely popular, 
-;		and keeps finding its way onto those "five wee apps you can't live
-;		without" type lists, which says a lot for the kind of software you
-;		can have for yourself if you only rake about in the AutoIt and 
-;		AutoHotKey forums once in a while.
-
-;
-;	NOTE: If your application wants the Alt key for hotkey modifiers, use Alt+Win+Key for that.
-;	It's quite easy once you do it a few times, simply roll your thumb and finger on and off.
-
-
-If (A_AhkVersion < "1.0.39.00")
-{
-    MsgBox, 0x30,,This script may not work properly with your version of AutoHotkey. Continue?
-    IfMsgBox, No
-      ExitApp
-}
-
-;if not A_IsAdmin
-;{
-;    ; TODO: Check if windows version is Win8
-;    MsgBox, 0x30,,% "Note: KDE_Mover-Size is not run as administrator. It may not work on all Windows. Try: `r`n"
-;                  . "runas.exe /savecred /user:administrator """ . %A_ScriptFullPath%
-;}
-; TODO: Add Menu command to create/delete a KDEMoverSize_as_admin.lnk in Startmenu/Autostart
 
 ;***********************
 ; Read INI file
 
-    IniRead,   SnapOnSizeEnabled,       KDE_Mover-Sizer.ini, Settings, SnapOnSizeEnabled, 1          ; default: true
-    IniWrite, %SnapOnSizeEnabled%,      KDE_Mover-Sizer.ini, Settings, SnapOnSizeEnabled
+    IniRead,   SnapOnSizeEnabled,       KDE_Mover-Sizer.ini, Settings, SnapOnSizeEnabled, 1          ; default: trueettings,
+    IniWrite, %SnapOnSizeEnabled%,      KDE_Mover-Sizer.ini, S SnapOnSizeEnabled
     IniRead,   SnapOnMoveEnabled,       KDE_Mover-Sizer.ini, Settings, SnapOnMoveEnabled, 1          ; default: true
     IniWrite, %SnapOnMoveEnabled%,      KDE_Mover-Sizer.ini, Settings, SnapOnMoveEnabled
     IniRead,   SnapOnResizeMagnetic,    KDE_Mover-Sizer.ini, Settings, SnapOnResizeMagnetic, 1       ; default: true
@@ -2091,3 +1981,16 @@ SpecialCharactersLbl_15:
 ;ProductVersion := 2.9
 ;ProductPublisher := "corz.org"
 ;ProductWebsite := "http://corz.org/windows/software/accessories/KDE-resizing-moving-for-Windows.php"
+
+
+
+
+;script reloader, but it only worKs on this one :(
+#IfWinActive ahk_class Notepad++
+^r::
+send ^s
+sleep 10
+Soundbeep, 1000, 500
+Reload
+Return
+#IfWinActive

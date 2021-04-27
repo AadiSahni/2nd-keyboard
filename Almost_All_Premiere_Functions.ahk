@@ -2,6 +2,7 @@
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+ 
 
 
 #IfWinActive ahk_exe Adobe Premiere Pro.exe
@@ -90,7 +91,7 @@ effectControlsY = 200 ;the coordinates of roughly where my Effect Controls usual
 ; coordmode, mouse, Window
 ; coordmode, Caret, Window
 
-;you might need to take your own screenshot (look at mine to see what is needed) and save as .png. Mine are(were) done with default UI brightness, plus 150% UI scaling in Windows.
+;you might need to take your own screenshot (look at mine to see what is needed) and save as .png. Mine are(were) done with default UI brightness, plus 100% UI scaling in Windows.
 
 ;ImageSearch, FoundX, FoundY, effectControlsX, effectControlsY, effectControlsX+200, effectControlsY+800, %A_WorkingDir%\CROP_transform_button_D2019.png ;
 
@@ -103,9 +104,7 @@ if ErrorLevel = 2
 	}
 if ErrorLevel = 1
 	{
-	; msgbox, we made it to try 2    
-	;YOU DO NOT NEED TIPPY() ... JUST DELETE IT FROM YOUR SCRIPT.
-	;IT'S A DEBUGGING THING, DON'T WORRY ABOUT IT, LOL.
+	; msgbox, we made it to try
 	goto resetcropper
 	}
 if ErrorLevel = 2
@@ -136,9 +135,6 @@ clickTransformIcon2()
 
 ;This function actually does everything that "Activate Direct Manipulation in Program Monitor" SHOULD do.
 
-
-
-;Tippy("transform icon - F5") ;optional. Used to aid debugging. Delete this if it causes problems.
 
 ;result := untwirl()
 ;it will return either "reset" or "untwirled"
@@ -212,3 +208,5 @@ sleep 103
 sendinput {F22} ;highlights the effect controls
 
 }
+
+

@@ -8,56 +8,15 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 
 #include C:\AHK\2nd-keyboard\Almost_All_Premiere_Functions.ahk
 #include C:\AHK\2nd-keyboard\Almost_All_Windows_Functions.ahk
+; This line is here to remove syntax highlighting glitch
 
-^+4::SendInput {₹}
-::resumee::résumé
+#IfWinNotActive ahk_class Premiere Pro
+^+NumpadMult::×
+^+NumpadDiv::÷
+#IfWinNotActive
 
-;chrome tabs and any chromium apps(maybe)
-#IfWinActive ahk_class Chrome_WidgetWin_1
-	CapsLock & q::
-	F1::
-	send ^+{tab} ;control shift tab, which goes to the previous tab
-	return
-	
-	CapsLock & e::
-	F2::
-	send ^{tab} ;control tab, which goes to the next tab
-	return
-	
-	CapsLock & w::
-	F3::
-	send ^w ;control w, which closes a tab
-	return
-	
-	CapsLock & r::
-	F4::
-	send ^t ;control t, which opens a new tab
-	return
-#IfWinActive
 
-#IfWinActive ahk_exe notepad++.exe
-	CapsLock & q::
-	F1::
-	send ^+{tab} ;control shift tab, which goes to the next tab
-	return
-	
-	CapsLock & e::
-	F2::
-	send ^{tab} ;control tab, which goes to the previous tab
-	return
-	
-	CapsLock & w::
-	F3::
-	send ^w 
-	return
-	
-	CapsLock & r::
-	F4::
-	send {F2} ;this is to regain what I lost when I used F2 and F3 for tab navigation.
-	return
-#IfWinActive
-	
-#IfWinActive ahk_class CabinetWClass ; File Explorer
+#IfWinActive ahk_group ExplorerGroup ; File Explorer
 	;Ctrl backspace
 	^Backspace::
 	Send ^+{Left}{Backspace}
@@ -81,37 +40,148 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	;navigation
 #IfWinActive
 
-CapsLock & d::WinMinimize, A
-CapsLock & c::winClose, A
+
 #WheelUp::Volume_Up
 #WheelDown::Volume_Down
 #MButton::Media_Play_Pause
 #Space::Media_Play_Pause
+#c::#+v
+#x::
+send #+v
+send +{Delete}
+return
 
-CapsLock & 1::switchToExplorer()
-CapsLock & 2::switchToChrome()
-CapsLock & 3::switchToPremiere()
-CapsLock & 4::switchToVivaldi()
-CapsLock & 5::#5
-CapsLock & 6::#6
-CapsLock & 7::#7
-CapsLock & 8::#8
-CapsLock & 9::#9
-CapsLock & 0::#0
 
-CapsLock & s::f20
+; ; CapsLock Assigments++++++++++++++++++++++++++++++++++++++++++++++
 
-ScrollLock::f19
+!CapsLock::
+Send {Alt down}
+Send {Enter}
+return
+
+ScrollLock::f19 ; f19 is mute in discord because using alt makes the modifiers stuck 
 #z::
 Send #b{left}{left}{enter}
 return
+
+;+++++++++ SHORTCUTS THAT WORK IN ALL PROGRAMS +++++++++
+
+;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
+
+;chrome tabs and any chromium apps
+#IfWinActive ahk_class Chrome_WidgetWin_1
+	!h::!home ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
+	CapsLock & q::
+	F1::
+	send ^+{tab} ;control shift tab, which goes to the previous tab
+	return
+	
+	CapsLock & e::
+	F2::
+	send ^{tab} ;control tab, which goes to the next tab
+	return
+	
+	CapsLock & w::
+	F3::
+	send ^w ;control w, which closes a tab
+	return
+	
+	CapsLock & t::
+	F4::
+	send ^t ;control t, which opens a new tab
+	return
+#IfWinActive
+
+#IfWinActive ahk_exe notepad++.exe
+	CapsLock & q::
+	F1::
+	send ^+{tab} ;control shift tab, which goes to the next tab
+	return
+	
+	CapsLock & e::
+	F2::
+	send ^{tab} ;control tab, which goes to the previous tab
+	return
+	
+	CapsLock & w::
+	F3::
+	send ^w 
+	return
+	
+	CapsLock & t::
+	F4::
+	send ^t ;this is to regain what I lost when I used F2 and F3 for tab navigation.
+	return
+#IfWinActive
+
+;;----INSTANT APP SWITCHER----
+; Number Keys
+CapsLock & 1::switchToExplorer()
+; CapsLock & 2::switchToChrome() ;
+CapsLock & 2::switchToBrave() ; I switched to brave, it's faster, does not track me in incoginto mode, so I don't get ads on LG tvs because I visited that one site for a video
+; I'll still have chrome installed though, due to  it's higher usage meaning things are guranteed to work on it
+CapsLock & 3::switchToPremiere()
+CapsLock & 4::switchToWhatsApp()
+CapsLock & 5::switchToDiscord()
+CapsLock & 6::#9
+CapsLock & 7::#0
+CapsLock & 8::return
+CapsLock & 9::return
+CapsLock & 0::return
+
+; Top Row
+CapsLock & q::return
+CapsLock & w::return
+CapsLock & e::return
+CapsLock & r::
+{
+	WinGetActiveTitle, title
+	WinGet, maximized, MinMax, %title%
+	if (maximized)
+		WinRestore, %title%
+	else
+		WinMaximize, %title%
+	return
+}
+CapsLock & t::return
+CapsLock & y::return
+CapsLock & u::return
+CapsLock & i::return
+CapsLock & o::return
+CapsLock & p::return
+
+; Home Row
+CapsLock & a::return
+CapsLock & s::f20
+CapsLock & d::WinMinimize, A
+CapsLock & f::return
+CapsLock & g::return
+CapsLock & h::return
+CapsLock & j::return
+CapsLock & k::return
+CapsLock & l::return
+
+; Bottom Row
+CapsLock & c::winClose, A
+;;----END OF INSTANT APP SWITCHER
+
+;;------END OF CAPS LOCK KEYS----------
+
+
+;;-----BEGIN KEYS PAIRED WITH ALT --------
+
+
+!b::back()
+
+
+;;------END OF ALT KEYS----------
 
 
 ;;---------------- ALL STANDARD FUNCTION KEYS IN PREMIERE --------------------
 ;;;PREMIEREKEYS;;; <--for easy searching
 
 #IfWinActive ahk_exe Adobe Premiere Pro.exe
-;Ripple delete clip at playhead!! This was the first AHK script I ever wrote, I think!
+;Ripple delete clip at playhead!! 
 F1::
 Send ^!s ;ctrl alt s  is assigned to [select clip at playhead]
 sleep 1
@@ -155,7 +225,38 @@ send, {alt up}
 send, c ;I have C assigned to "CLEAR" in Premiere's shortcuts panel.
 return
 
+; F10:: IS FREE, but it was "effect controls" for awhile to debug a stuck modifiers issue.
+;;NOTE that F10 will induce menu acceleration if you DON'T have it assigned to anything, so you gotta make sure to avoid that.
+
+;F11:: is Toggle Full Screen
+
+;F12:: is Enable Transmit. This displays a copy of the program monitor onto another, even more accurate monitor. Sadly, it does suffer from screen tearing...
+
+
+;;;;;;----------------------------------------;;;;;;;;;;;;;
+
+
+;============== CURRENT TOOL REMEMBERER ================
+
+;IMPORTANT - these are MY keyboard assignments for tools
+;Your own assignments will probably be different!
+~v::
+~t::
+~r::
+~y::
+~b::
+~x::
+~h::
+~p::
+currentTool = %A_thishotkey% ;so, %currentTool% might become r or y or v. Whatever the last tool is that I selected.
+return
+
+
 #IfWinActive
+
+
+
+
 
 ;script reloader, but it only worKs on this one :(
 #IfWinActive ahk_class Notepad++
