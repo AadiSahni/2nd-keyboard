@@ -114,17 +114,16 @@ return
 	return
 #IfWinActive
 
-;;----INSTANT APP SWITCHER----
+
 ; Number Keys
 CapsLock & 1::switchToExplorer()
 ; CapsLock & 2::switchToChrome() ;
 CapsLock & 2::switchToBrave() ; I switched to brave, it's faster, does not track me in incoginto mode, so I don't get ads on LG tvs because I visited that one site for a video
-; I'll still have chrome installed though, due to  it's higher usage meaning things are guranteed to work on it
 CapsLock & 3::switchToPremiere()
 CapsLock & 4::switchToWhatsApp()
 CapsLock & 5::switchToDiscord()
-CapsLock & 6::#9
-CapsLock & 7::#0
+CapsLock & 6::return
+CapsLock & 7::return
 CapsLock & 8::return
 CapsLock & 9::return
 CapsLock & 0::return
@@ -133,16 +132,7 @@ CapsLock & 0::return
 CapsLock & q::return
 CapsLock & w::return
 CapsLock & e::return
-CapsLock & r::
-{
-	WinGetActiveTitle, title
-	WinGet, maximized, MinMax, %title%
-	if (maximized)
-		WinRestore, %title%
-	else
-		WinMaximize, %title%
-	return
-}
+CapsLock & r::winRestoreMaximize()
 CapsLock & t::return
 CapsLock & y::return
 CapsLock & u::return
@@ -162,7 +152,7 @@ CapsLock & k::return
 CapsLock & l::return
 
 ; Bottom Row
-CapsLock & c::winClose, A
+CapsLock & c::WinClose, A
 ;;----END OF INSTANT APP SWITCHER
 
 ;;------END OF CAPS LOCK KEYS----------

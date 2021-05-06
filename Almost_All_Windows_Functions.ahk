@@ -64,17 +64,19 @@ IfWinNotExist, ahk_class Premiere Pro
 	;Run, Adobe Premiere Pro.exe
 	;Adobe Premiere Pro CC 2020
 	; Run, E:\Apps and Programs\Adobe\2. Premiere Pro ;if you have more than one version instlaled, you'll have to specify exactly which one you want to open.
-	Run, Adobe Premiere Pro.exe
+	; Run, Adobe Premiere Pro.exe
+	tooltip, Premiere is not running333333 run it! 
+	return
 	}
 
 if WinActive("ahk_class Premiere Pro")
 	{
 	IfWinNotExist, ahk_exe notepad++.exe
 		{
-		Run, chrome.exe
+		Run, brave.exe
 		sleep 200
 		}
-	WinActivate ahk_exe chrome.exe ;so I have this here as a workaround to a bug. Sometimes Premeire becomes unresponsive to keyboard input. (especially after timeline scrolling, especially with a playing video.) Switching to any other application and back will solve this problem. So I just hit the premiere button again, in those cases.g
+	WinActivate ahk_exe brave.exe ;so I have this here as a workaround to a bug. Sometimes Premeire becomes unresponsive to keyboard input. (especially after timeline scrolling, especially with a playing video.) Switching to any other application and back will solve this problem. So I just hit the premiere button again, in those cases.g
 	sleep 10
 	WinActivate ahk_class Premiere Pro
 	}
@@ -109,10 +111,10 @@ else
 	WinActivate ahk_exe Discord.exe
 }
 
+
 back()
 {
-;no need for 11 ms of delay, because this is sent from just F13.
-;; if WinActive("ahk_class MozillaWindowClass")
+
 ;tooltip, back
 ;sendinput, {ctrl up}
 If GetKeystate(Lctrl, "P")
@@ -134,5 +136,15 @@ if WinActive("ahk_class OpusApp")
 	sendinput, {F2} ;"go to previous comment" in Word.
 }
 
+
+winRestoreMaximize() {
+	WinGetActiveTitle, title
+	WinGet, maximized, MinMax, %title%
+	if (maximized)
+		WinRestore, %title%
+	else
+		WinMaximize, %title%
+	return
+}
 
 #IfWinActive
