@@ -61,23 +61,13 @@ sendinput, {SC0EA} ;scan code of an unassigned key. used for debugging.
 switchToPremiere(){
 IfWinNotExist, ahk_class Premiere Pro
 	{
-	;Run, Adobe Premiere Pro.exe
-	;Adobe Premiere Pro CC 2020
-	; Run, E:\Apps and Programs\Adobe\2. Premiere Pro ;if you have more than one version instlaled, you'll have to specify exactly which one you want to open.
 	; Run, Adobe Premiere Pro.exe
-	tooltip, Premiere is not running333333 run it! 
+	tooltip, Premiere isn't running!!!!
+	tooltip
 	return
 	}
-
 if WinActive("ahk_class Premiere Pro")
 	{
-	IfWinNotExist, ahk_exe notepad++.exe
-		{
-		Run, brave.exe
-		sleep 200
-		}
-	WinActivate ahk_exe brave.exe ;so I have this here as a workaround to a bug. Sometimes Premeire becomes unresponsive to keyboard input. (especially after timeline scrolling, especially with a playing video.) Switching to any other application and back will solve this problem. So I just hit the premiere button again, in those cases.g
-	sleep 10
 	WinActivate ahk_class Premiere Pro
 	}
 else

@@ -40,6 +40,10 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	;navigation
 #IfWinActive
 
+#IfWinActive ahk_class #32770
+	/::!n
+#IfWinActive
+
 
 #WheelUp::Volume_Up
 #WheelDown::Volume_Down
@@ -69,46 +73,38 @@ return
 ;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
 
 ;chrome tabs and any chromium apps
-#IfWinActive ahk_class Chrome_WidgetWin_1
-	!h::!home ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
-	CapsLock & q::
+#IfWinActive ahk_class Chrome_WidgetWin_1  ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
+	!h::!home
 	F1::
 	send ^+{tab} ;control shift tab, which goes to the previous tab
 	return
 	
-	CapsLock & e::
 	F2::
 	send ^{tab} ;control tab, which goes to the next tab
 	return
 	
-	CapsLock & w::
 	F3::
 	send ^w ;control w, which closes a tab
 	return
 	
-	CapsLock & t::
 	F4::
 	send ^t ;control t, which opens a new tab
 	return
 #IfWinActive
 
 #IfWinActive ahk_exe notepad++.exe
-	CapsLock & q::
 	F1::
 	send ^+{tab} ;control shift tab, which goes to the next tab
 	return
 	
-	CapsLock & e::
 	F2::
 	send ^{tab} ;control tab, which goes to the previous tab
 	return
 	
-	CapsLock & w::
 	F3::
 	send ^w 
 	return
 	
-	CapsLock & t::
 	F4::
 	send ^t ;this is to regain what I lost when I used F2 and F3 for tab navigation.
 	return
@@ -117,41 +113,45 @@ return
 
 ; Number Keys
 CapsLock & 1::switchToExplorer()
-; CapsLock & 2::switchToChrome() ;
-CapsLock & 2::switchToBrave() ; I switched to brave, it's faster, does not track me in incoginto mode, so I don't get ads on LG tvs because I visited that one site for a video
+; CapsLock & 2::switchToChrome()
+CapsLock & 2::switchToBrave() ; I switched to brave, it's faster
 CapsLock & 3::switchToPremiere()
 CapsLock & 4::switchToWhatsApp()
 CapsLock & 5::switchToDiscord()
-CapsLock & 6::return
-CapsLock & 7::return
+CapsLock & 6::#9
+CapsLock & 7::#0
 CapsLock & 8::return
 CapsLock & 9::return
 CapsLock & 0::return
 
+
+CapsLock & Backspace::Delete
+
 ; Top Row
 CapsLock & q::return
-CapsLock & w::return
+CapsLock & w::Up
 CapsLock & e::return
 CapsLock & r::winRestoreMaximize()
 CapsLock & t::return
-CapsLock & y::return
-CapsLock & u::return
-CapsLock & i::return
-CapsLock & o::return
+CapsLock & y::PgUp
+CapsLock & u::Home
+CapsLock & i::Up
+CapsLock & o::End
 CapsLock & p::return
 
 ; Home Row
-CapsLock & a::return
-CapsLock & s::f20
-CapsLock & d::WinMinimize, A
-CapsLock & f::return
+CapsLock & a::Left
+CapsLock & s::Down
+CapsLock & d::Right
+CapsLock & f::f20
 CapsLock & g::return
-CapsLock & h::return
-CapsLock & j::return
-CapsLock & k::return
-CapsLock & l::return
+CapsLock & h::PgDn
+CapsLock & j::Left
+CapsLock & k::Down
+CapsLock & l::Right
 
 ; Bottom Row
+CapsLock & x::WinMinimize, A
 CapsLock & c::WinClose, A
 ;;----END OF INSTANT APP SWITCHER
 
