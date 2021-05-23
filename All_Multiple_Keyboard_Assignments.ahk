@@ -41,7 +41,7 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 #IfWinActive
 
 #IfWinActive ahk_class #32770
-	/::!n
+	/::!n ; alt n is the shortcut to bring focus to the  file name input box
 #IfWinActive
 
 
@@ -151,8 +151,13 @@ CapsLock & k::Down
 CapsLock & l::Right
 
 ; Bottom Row
+CapsLock & z::return
 CapsLock & x::WinMinimize, A
 CapsLock & c::WinClose, A
+CapsLock & v::return
+CapsLock & b::Delete
+CapsLock & n::return
+CapsLock & m::return
 ;;----END OF INSTANT APP SWITCHER
 
 ;;------END OF CAPS LOCK KEYS----------

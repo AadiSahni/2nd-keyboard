@@ -8,7 +8,6 @@ GroupAdd, ExplorerGroup, ahk_class CabinetWClass ;Regular Explorer window
 
 ; MouseIsOver
 ; MouseIsOver is a simple function that allows me to do an action using #If when the mouse is over a certain window
-;I reccomend importing MouseIsOver as it can be very useful
 MouseIsOver(WinTitle) {
     MouseGetPos,,, Win
     return WinExist(WinTitle . " ahk_id " . Win)
