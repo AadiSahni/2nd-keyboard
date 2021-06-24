@@ -10,6 +10,10 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 #include C:\AHK\2nd-keyboard\Almost_All_Windows_Functions.ahk
 ; This line is here to remove syntax highlighting glitch
 
+;;; Searching Terms
+; UNIVERSALKEYS
+; Premiere Keys
+
 #IfWinNotActive ahk_class Premiere Pro
 ^+NumpadMult::×
 ^+NumpadDiv::÷
@@ -44,33 +48,13 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	/::!n ; alt n is the shortcut to bring focus to the  file name input box
 #IfWinActive
 
-
-#WheelUp::Volume_Up
-#WheelDown::Volume_Down
-#MButton::Media_Play_Pause
-#Space::Media_Play_Pause
-#c::#+v
-#x::
-send #+v
-send +{Delete}
-return
-
-
 ; ; CapsLock Assigments++++++++++++++++++++++++++++++++++++++++++++++
-
-!CapsLock::
-Send {Alt down}
-Send {Enter}
-return
-
 ScrollLock::f19 ; f19 is mute in discord because using alt makes the modifiers stuck 
 #z::
 Send #b{left}{left}{enter}
 return
 
 ;+++++++++ SHORTCUTS THAT WORK IN ALL PROGRAMS +++++++++
-
-;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
 
 ;chrome tabs and any chromium apps
 #IfWinActive ahk_class Chrome_WidgetWin_1  ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
@@ -110,6 +94,8 @@ return
 	return
 #IfWinActive
 
+;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
+; UNIVERSALKEYS
 
 ; Number Keys
 CapsLock & 1::switchToExplorer()
@@ -158,12 +144,15 @@ CapsLock & v::return
 CapsLock & b::Delete
 CapsLock & n::return
 CapsLock & m::return
+
+; Extra keys
+CapsLock & Space::Enter
 ;;----END OF INSTANT APP SWITCHER
 
 ;;------END OF CAPS LOCK KEYS----------
 
 
-;;-----BEGIN KEYS PAIRED WITH ALT --------
+;;-----BEGIN KEYS PAIRED WITH ALT--------
 
 
 !b::back()
@@ -171,6 +160,23 @@ CapsLock & m::return
 
 ;;------END OF ALT KEYS----------
 
+;;-----BEGIN KEYS PAIRED WITH WINDOWS--------
+#WheelUp::Volume_Up
+#WheelDown::Volume_Down
+#MButton::Media_Play_Pause
+#Space::Media_Play_Pause
+#c::#+v
+#x::
+send #+v
+send +{Delete}
+return
+
+#f6::Volume_Mute
+#f7::Volume_Down
+#f8::Volume_Up
+#f5::Media_Play_Pause
+
+;;------END OF ALT KEYS----------
 
 ;;---------------- ALL STANDARD FUNCTION KEYS IN PREMIERE --------------------
 ;;;PREMIEREKEYS;;; <--for easy searching

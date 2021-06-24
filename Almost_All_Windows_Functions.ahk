@@ -125,7 +125,6 @@ if WinActive("ahk_class OpusApp")
 	sendinput, {F2} ;"go to previous comment" in Word.
 }
 
-
 winRestoreMaximize() {
 	WinGetActiveTitle, title
 	WinGet, maximized, MinMax, %title%
@@ -135,5 +134,9 @@ winRestoreMaximize() {
 		WinMaximize, %title%
 	return
 }
+
+
+
+
 
 #IfWinActive
