@@ -76,7 +76,7 @@ else
 switchToWhatsApp()
 {
 IfWinNotExist, ahk_exe WhatsApp.exe
-	Run, C:\Users\Aadi Sahni(User)\AppData\Local\WhatsApp\WhatsApp.exe
+	Run, C:\Users\Sahni\AppData\Local\WhatsApp\WhatsApp.exe
 
 if WinActive("ahk_exe WhatsApp.exe")
 	WinMinimize
@@ -92,7 +92,7 @@ sendinput, {SC0EA} ;scan code of an unassigned key. used for debugging.
 switchToDiscord()
 {
 IfWinNotExist, ahk_exe Discord.exe
-	Run, "C:\Users\Aadi Sahni(User)\AppData\Local\Discord\Update.exe" --processStart Discord.exe 
+	Run, "C:\Users\Sahni\AppData\Local\Discord\Update.exe" --processStart Discord.exe 
 
 if WinActive("ahk_exe Discord.exe")
 	WinMinimize
