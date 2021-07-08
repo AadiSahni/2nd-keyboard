@@ -140,7 +140,6 @@ newItemY = 60 ; used for newItemExplorer(), these are the coordinated of where t
 
 newItemEndX = 582
 newItemEndY = 80
-
 newItemExplorer() {
 	; newItemExplorer clicks the new item menu so you can select a format
 	; for me weird usages, I just have it set to select a text file and the ctrl a so I can type the file exntension my self
