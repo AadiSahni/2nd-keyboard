@@ -24,10 +24,13 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	
 	; new item hotkey
 	^t::^n
-	^n::newItemExplorer()
+	; ^n::newItemExplorer()
 	; ^n::
 	; MouseMove, newItemEndX, newItemEndY
 	; return
+	^n::
+	OpenFile, %A_WorkingDir%\NEW_ITEM_Home.png
+	return
 #IfWinActive
 
 
