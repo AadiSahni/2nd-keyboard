@@ -100,7 +100,7 @@ if ErrorLevel = 2
 	{
 	; msgbox,,, TaranDir is `n%TaranDir%,0.7
 	; ImageSearch, FoundX, FoundY, effectControlsX, effectControlsY, effectControlsX+400, effectControlsY+1200, %A_workingDir%\CROP_transform_button_D2019.png
-	ImageSearch, FoundX, FoundY, effectControlsX, effectControlsY, effectControlsX+400, effectControlsY+1200, %A_workingDir%\CROP_transform_2020.png
+	ImageSearch, FoundX, FoundY, effectControlsX, effectControlsY, effectControlsX+400, effectControlsY+1200, %A_workingDir%\support_files\CROP_transform_2020
 	}
 if ErrorLevel = 1
 	{
