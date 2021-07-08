@@ -41,6 +41,9 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	Sleep 100
 	Send {LControl up}
 	return
+
+
+
 	;navigation
 #IfWinActive
 
