@@ -14,6 +14,11 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 ; UNIVERSALKEYS
 ; Premiere Keys
 
+#IfWinNotActive ahk_class Premiere Pro
+^+NumpadMult::×
+^+NumpadDiv::÷
+#IfWinNotActive
+
 #IfWinActive ahk_class CabinetWClass
 	; copy to path hotkey
 	
