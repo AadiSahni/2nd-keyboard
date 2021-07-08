@@ -161,6 +161,5 @@ newItemExplorer() {
 	{
 	msgbox, mission paused bro, i dunno what happened
 	}
-
-
+}
 #IfWinActive
