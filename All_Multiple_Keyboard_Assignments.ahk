@@ -19,6 +19,8 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 ^+NumpadDiv::÷
 #IfWinNotActive
 
+#IfWinActive ahk_class CabinetWClass
+
 
 #IfWinActive ahk_group ExplorerGroup ; File Explorer
 	;Ctrl backspace
@@ -41,13 +43,6 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	Sleep 100
 	Send {LControl up}
 	return
-	
-	; copy to path hotkey
-	
-	; new item hotkey
-	^t::^n
-	^n::newItemExplorer()
-
 	;navigation
 #IfWinActive
 
