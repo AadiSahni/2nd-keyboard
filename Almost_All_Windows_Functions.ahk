@@ -151,6 +151,8 @@ newItemExplorer() {
 	MouseMove, FoundX, FoundY
 	click left
 	}
+	if ErrorLevel = 1 {
+	msgbox, mission failed, we'll get em the next time
 
 
 #IfWinActive
