@@ -153,6 +153,10 @@ newItemExplorer() {
 	}
 	if ErrorLevel = 1 {
 	msgbox, mission failed, we'll get em next time
+	}
+	if ErrorLevel = 2 {
+	msgbox, mission paused bro, i dunno what happened
+	}
 
 
 #IfWinActive
