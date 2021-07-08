@@ -144,7 +144,7 @@ newItemExplorer() {
 	; for this to work you must always have the ribbon menu pinned, although use the next line to use this without pinnin the ribbon
 	; send, !h 
 	MouseGetPos, xpos, ypos
-	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+1, newItemY+1, %A_ScriptDir%\support_files\NEW_ITEM_Home.png
+	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+1, newItemY+1, %A_ScriptDir%\NEW_ITEM_Home.png
 	
 	if ErrorLevel = 0 {
 	msgbox, mission succesfull, we found the image
