@@ -135,8 +135,8 @@ winRestoreMaximize() {
 	return
 }
 
-newItemX = 501
-newItemY = 62  ; used for newItemExplorer(), these are the coordinated of where the new item button is roughly on my screen
+newItemX = 509
+newItemY = 60  ; used for newItemExplorer(), these are the coordinated of where the new item button is roughly on my screen
 
 newItemExplorer() {
 	; newItemExplorer clicks the new item menu so you can select a format
