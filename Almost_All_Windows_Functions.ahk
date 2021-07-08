@@ -147,7 +147,7 @@ newItemExplorer() {
 	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+801, newItemY+20, %A_WorkingDir%\NEW_ITEM_Home.png
 	
 	if ErrorLevel = 0 {
-	msgbox, mission succesfull, we found the image
+	msgbox, mission succesful, we found the image
 	MouseMove, FoundX, FoundY
 	click left
 	}
