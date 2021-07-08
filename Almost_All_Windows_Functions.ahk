@@ -135,8 +135,8 @@ winRestoreMaximize() {
 	return
 }
 
-newItemX = 509
-newItemY = 59  ; used for newItemExplorer(), these are the coordinated of where the new item button is roughly on my screen
+newItemX = 501
+newItemY = 62  ; used for newItemExplorer(), these are the coordinated of where the new item button is roughly on my screen
 
 newItemExplorer() {
 	; newItemExplorer clicks the new item menu so you can select a format
@@ -145,7 +145,7 @@ newItemExplorer() {
 	; send, !h 
 	msgbox, ctrl n pressed
 	MouseGetPos, xpos, ypos
-	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+10, newItemY+10, %A_WorkingDir%\NEW_ITEM_Home.png
+	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+80, newItemY+20, %A_WorkingDir%\NEW_ITEM_Home.png
 	msgbox, image search done
 	
 	if ErrorLevel = 0
