@@ -146,6 +146,7 @@ newItemExplorer() {
 	msgbox, ctrl n pressed
 	MouseGetPos, xpos, ypos
 	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+80, newItemY+20, %A_WorkingDir%\NEW_ITEM_Home.png
+	msgbox, image search done
 	
 	if ErrorLevel = 0
 	{
