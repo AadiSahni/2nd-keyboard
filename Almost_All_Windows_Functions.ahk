@@ -135,8 +135,16 @@ winRestoreMaximize() {
 	return
 }
 
+newItemX = 545
+newItemY = 65 
+
 newItemExplorer() {
-	return
+	; newItemExplorer clicks the new item menu so you can select a format
+	; for me weird usages, I just have it set to select a text file and the ctrl a so I can type the file exntension my self
+	; for this to work you must always have the ribbon menu pinned, although use the next line to use this without pinnin the ribbon
+	; send, !h 
+	MouseGetPos, xpos, ypos
+	ImageSearch, FoundX, FoundY, 
 }
 
 
