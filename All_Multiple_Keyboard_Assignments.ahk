@@ -2,7 +2,7 @@
 #SingleInstance Force
 #InstallKeybdhook
 SendMode Input 
-SetWorkingDir %A_ScriptDir%
+SetWorkingDir %A_ScriptDir%\support_files
 
 Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece of paper or something
 

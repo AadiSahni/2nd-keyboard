@@ -1,7 +1,7 @@
 ﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+SetWorkingDir %A_ScriptDir%\support_files  ; Ensures a consistent starting directory.
 
 GroupAdd, ExplorerGroup, ahk_class #32770 ;This is for all the Explorer-based "save" and "load" boxes, from any program!
 GroupAdd, ExplorerGroup, ahk_class CabinetWClass ;Regular Explorer window 
@@ -144,7 +144,7 @@ newItemExplorer() {
 	; for this to work you must always have the ribbon menu pinned, although use the next line to use this without pinnin the ribbon
 	; send, !h 
 	MouseGetPos, xpos, ypos
-	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+1, newItemY+1, \support_files\NEW_ITEM_Home.png
+	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+1, newItemY+1, %A_ScriptDir%\support_files\NEW_ITEM_Home.png
 	
 	if ErrorLevel = 0 {
 	msgbox, mission succesfull, we found the image
