@@ -144,7 +144,7 @@ newItemExplorer() {
 	; for this to work you must always have the ribbon menu pinned, although use the next line to use this without pinnin the ribbon
 	; send, !h 
 	MouseGetPos, xpos, ypos
-	ImageSearch, FoundX, FoundY, 
+	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+1, newItemY+1, \support_files\NEW_ITEM_Home.png
 }
 
 
