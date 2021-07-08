@@ -147,15 +147,18 @@ newItemExplorer() {
 	MouseGetPos, xpos, ypos
 	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+801, newItemY+20, %A_WorkingDir%\NEW_ITEM_Home.png
 	
-	if ErrorLevel = 0 {
+	if ErrorLevel = 0
+	{
 	msgbox, mission succesful, we found the image
 	MouseMove, FoundX, FoundY
 	click left
 	}
-	if ErrorLevel = 1 {
+	if ErrorLevel = 1
+	{
 	msgbox, mission failed, we'll get em next time
 	}
-	if ErrorLevel = 2 {
+	if ErrorLevel = 2
+	{
 	msgbox, mission paused bro, i dunno what happened
 	}
 
