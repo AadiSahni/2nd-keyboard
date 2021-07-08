@@ -20,6 +20,12 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 #IfWinNotActive
 
 #IfWinActive ahk_class CabinetWClass
+	; copy to path hotkey
+	
+	; new item hotkey
+	^t::^n
+	^n::newItemExplorer()
+#IfWinActive
 
 
 #IfWinActive ahk_group ExplorerGroup ; File Explorer
