@@ -149,9 +149,15 @@ newItemEndX = 590
 newItemEndY = 79
 
 ; send, !h 
-CoordMode, Pixel, Screen
 msgbox, ctrl n pressed
-MouseGetPos, xpos, ypos
+
+CoordMode Pixel ;, screen
+CoordMode Mouse, screen
+
+BlockInput, on
+BlockInput, MouseMove
+MouseGetPos xPosCursor, yPosCursor
+
 ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemEndX, newItemEndY, %A_WorkingDir%\NEW_ITEM_Home.png
 msgbox, image search done
 
