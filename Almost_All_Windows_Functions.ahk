@@ -145,7 +145,11 @@ newItemExplorer() {
 	; send, !h 
 	MouseGetPos, xpos, ypos
 	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemX+1, newItemY+1, \support_files\NEW_ITEM_Home.png
-}
+	
+	if ErrorLevel = 0 {
+	MouseMove, FoundX, FoundY
+	click left
+	}
 
 
 #IfWinActive
