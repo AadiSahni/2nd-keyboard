@@ -152,7 +152,7 @@ newItemExplorer() {
 	click left
 	}
 	if ErrorLevel = 1 {
-	msgbox, mission failed, we'll get em the next time
+	msgbox, mission failed, we'll get em next time
 
 
 #IfWinActive
