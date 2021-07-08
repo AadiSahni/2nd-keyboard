@@ -26,7 +26,7 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	^t::^n
 	; ^n::newItemExplorer()
 	^n::
-	MouseMove, newItemX, newItemY
+	MouseMove, newItemEndX, newItemEndY
 	return
 #IfWinActive
 
