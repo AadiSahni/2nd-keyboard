@@ -175,5 +175,8 @@ if ErrorLevel = 0
 	{
 	msgbox, mission paused bro, i dunno what happened
 	}
+	
+	BlockInput, off
+	BlockInput, MouseMoveOff
 }
 #IfWinActive
