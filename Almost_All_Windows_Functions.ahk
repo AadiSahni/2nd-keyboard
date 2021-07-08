@@ -135,9 +135,9 @@ winRestoreMaximize() {
 	return
 }
 
-
-
-
+newItemExplorer() {
+	return
+}
 
 
 #IfWinActive
