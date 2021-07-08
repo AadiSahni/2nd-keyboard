@@ -83,8 +83,8 @@ BlockInput, MouseMove
 MouseGetPos xPosCursor, yPosCursor
 
 
-effectControlsX = 10
-effectControlsY = 200 ;the coordinates of roughly where my Effect Controls usually are located on the screen
+effectControlsX = 8
+effectControlsY = 52 ;the coordinates of roughly where my Effect Controls usually are located on the screen
 
 
 ; coordmode, pixel, Window
