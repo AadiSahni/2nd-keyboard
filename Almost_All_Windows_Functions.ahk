@@ -148,7 +148,7 @@ newItemExplorer() {
 	CoordMode, Pixel, Client
 	msgbox, ctrl n pressed
 	MouseGetPos, xpos, ypos
-	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemEndX, newItemEndY, *4 %A_WorkingDir%\NEW_ITEM_Home.png
+	ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemEndX, newItemEndY, *12 %A_WorkingDir%\NEW_ITEM_Home.png
 	msgbox, image search done
 	
 	if ErrorLevel = 0
