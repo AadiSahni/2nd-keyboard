@@ -149,7 +149,7 @@ newItemEndY = 79
 ; for me weird usages, I just have it set to select a text file and the ctrl a so I can type the file exntension my self
 ; for this to work you must always have the ribbon menu pinned, although use the next line to use this without pinnin the ribbon
 ; send, !h 
-CoordMode, Pixel, Client
+CoordMode, Pixel, Screen
 msgbox, ctrl n pressed
 MouseGetPos, xpos, ypos
 ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemEndX, newItemEndY, *120 %A_WorkingDir%\NEW_ITEM_Home.png
