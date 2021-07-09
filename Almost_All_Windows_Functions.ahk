@@ -164,10 +164,12 @@ if ErrorLevel = 0
 	; msgbox, mission succesful, we found the image
 	MouseMove, FoundX, FoundY, 0
 	click left
-	SendInput, {up}
-	SendInput, {up}
-	SendInput, {up}
 	MouseMove, xPosCursor, yPosCursor
+	SendInput, {up}
+	SendInput, {up}
+	SendInput, {up}
+	SendInput, {Enter}
+	Send, ^a
 	}
 if ErrorLevel = 1
 	{
