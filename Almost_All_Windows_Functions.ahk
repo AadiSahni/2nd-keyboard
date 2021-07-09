@@ -157,13 +157,15 @@ BlockInput, MouseMove
 MouseGetPos xPosCursor, yPosCursor
 
 ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemEndX, newItemEndY, %A_WorkingDir%\NEW_ITEM_Home.png
-msgbox, image search done
+; msgbox, image search done
 
 if ErrorLevel = 0
 	{
 	; msgbox, mission succesful, we found the image
 	MouseMove, FoundX, FoundY, 0
 	click left
+	SendInput, {up}
+	SendInput, {up}
 	SendInput, {up}
 	MouseMove, xPosCursor, yPosCursor
 	}
