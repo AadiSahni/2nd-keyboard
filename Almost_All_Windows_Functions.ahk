@@ -6,8 +6,6 @@ SetWorkingDir %A_ScriptDir%\support_files  ; Ensures a consistent starting direc
 GroupAdd, ExplorerGroup, ahk_class #32770 ;This is for all the Explorer-based "save" and "load" boxes, from any program!
 GroupAdd, ExplorerGroup, ahk_class CabinetWClass ;Regular Explorer window 
 
-SetDefaultMouseSpeed = 1
-
 ; MouseIsOver
 ; MouseIsOver is a simple function that allows me to do an action using #If when the mouse is over a certain window
 MouseIsOver(WinTitle) {
@@ -163,7 +161,7 @@ msgbox, image search done
 if ErrorLevel = 0
 	{
 	msgbox, mission succesful, we found the image
-	MouseMove, FoundX, FoundY
+	MouseMove, FoundX, FoundY, 1
 	click left
 	SendInput, up
 	SendInput, up
