@@ -165,11 +165,18 @@ if ErrorLevel = 0
 	MouseMove, FoundX, FoundY, 0
 	click left
 	MouseMove, xPosCursor, yPosCursor
+	Sleep 5
 	SendInput, {up}
+	Sleep 5
 	SendInput, {up}
+	Sleep 5
 	SendInput, {up}
+	Sleep 5
 	SendInput, {Enter}
+	Sleep 5
 	Send, ^a
+	Sleep 5
+	Send, {Backspace}
 	}
 if ErrorLevel = 1
 	{
