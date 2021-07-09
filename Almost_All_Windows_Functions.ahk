@@ -6,6 +6,8 @@ SetWorkingDir %A_ScriptDir%\support_files  ; Ensures a consistent starting direc
 GroupAdd, ExplorerGroup, ahk_class #32770 ;This is for all the Explorer-based "save" and "load" boxes, from any program!
 GroupAdd, ExplorerGroup, ahk_class CabinetWClass ;Regular Explorer window 
 
+SetDefaultMouseSpeed = 1
+
 ; MouseIsOver
 ; MouseIsOver is a simple function that allows me to do an action using #If when the mouse is over a certain window
 MouseIsOver(WinTitle) {
@@ -141,7 +143,6 @@ winRestoreMaximize() {
 ; for this to work you must always have the ribbon menu pinned, although use the next line to use this without pinnin the ribbon
 newItemExplorer()
 {
-SetDefaultMouseSpeed = 1
 CoordMode Pixel ;, screen
 CoordMode Mouse, screen
 newItemX = 501
