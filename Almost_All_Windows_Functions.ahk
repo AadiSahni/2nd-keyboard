@@ -175,8 +175,6 @@ if ErrorLevel = 0
 	SendInput, {Enter}
 	Sleep 5
 	Send, ^a
-	Sleep 5
-	Send, {Backspace}
 	}
 if ErrorLevel = 1
 	{
