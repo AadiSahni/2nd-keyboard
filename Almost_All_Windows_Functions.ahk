@@ -174,7 +174,6 @@ if ErrorLevel = 2
 	msgbox, 2
 	}
 	
-	
 	BlockInput, off
 	BlockInput, MouseMoveOff
 }
