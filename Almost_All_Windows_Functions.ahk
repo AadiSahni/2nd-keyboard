@@ -217,7 +217,7 @@ if ErrorLevel = 0
 	SendInput, {up}
 	Sleep 5
 	SendInput, {Enter}
-	Sleep 100
+	Sleep 1000
 	Send, ^a
 	}
 if ErrorLevel = 1
