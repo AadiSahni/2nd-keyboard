@@ -150,7 +150,7 @@ msgbox, ctrl shift c pressed
 
 BlockInput, on
 BlockInput, MouseMove
-MouseGetPos xPosCursor, yPosCursor
+MouseGetPos, xPosCursor, yPosCursor
 
 
 ImageSearch, FoundX, FoundY, copyPathX, copyPathY, copyPathEndX, copyPathEndY, %A_WorkingDir%\COPY_PATH_Home.png
@@ -198,7 +198,7 @@ newItemEndY = 109
 
 BlockInput, on
 BlockInput, MouseMove
-MouseGetPos xPosCursor, yPosCursor
+MouseGetPos, xPosCursor, yPosCursor
 
 ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemEndX, newItemEndY, %A_WorkingDir%\NEW_ITEM_Home.png
 ; msgbox, image search done
