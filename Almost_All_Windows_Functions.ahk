@@ -142,8 +142,8 @@ CoordMode Pixel ;, screen
 CoordMode Mouse, screen
 copyPathX = 157
 copyPathY = 110 ; these are the coordinates of where the copy path button is roughly on my screen
-copyPathEndX = 233
-copyPathEndY = 130
+copyPathEndX = 235
+copyPathEndY = 131
 
 ; send, !h ; enable this if you don't have the ribbon pinned
 
