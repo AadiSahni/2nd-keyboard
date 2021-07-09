@@ -154,7 +154,7 @@ BlockInput, MouseMove
 MouseGetPos, xPosCursor, yPosCursor
 
 
-ImageSearch, FoundX, FoundY, copyPathX, copyPathY, copyPathEndX, copyPathEndY, %A_WorkingDir%\COPY_PATH_Home.png
+ImageSearch, FoundX, FoundY, copyPathX, copyPathY, copyPathEndX, copyPathEndY, *40 %A_WorkingDir%\COPY_PATH_Home.png
 msgbox, image search done 
 
 if ErrorLevel = 0 
@@ -178,7 +178,6 @@ if ErrorLevel = 2
 	BlockInput, off
 	BlockInput, MouseMoveOff
 }
-
 
 
 ; newItemExplorer clicks the new item menu so you can select a format
