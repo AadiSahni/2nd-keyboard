@@ -135,6 +135,25 @@ winRestoreMaximize() {
 	return
 }
 
+copyPathExplorer() 
+{
+CoordMode Pixel ;, screen
+CoordMode Mouse, screen
+newItemX = 501
+newItemY = 89 ; these are the coordinates of where the copy path button is roughly on my screen
+newItemEndX = 582
+newItemEndY = 109
+
+; send, !h 
+
+; msgbox, ctrl shift c pressed
+
+BlockInput, on
+BlockInput, MouseMove
+MouseGetPos xPosCursor, yPosCursor
+}
+
+
 
 ; newItemExplorer clicks the new item menu so you can select a format
 ; for me weird usages, I just have it set to select a text file and the ctrl a so I can type the file exntension my self
@@ -144,7 +163,7 @@ newItemExplorer()
 CoordMode Pixel ;, screen
 CoordMode Mouse, screen
 newItemX = 501
-newItemY = 89 ; used for newItemExplorer(), these are the coordinated of where the new item button is roughly on my screen
+newItemY = 89 ; these are the coordinates of where the new item button is roughly on my screen
 newItemEndX = 582
 newItemEndY = 109
 
