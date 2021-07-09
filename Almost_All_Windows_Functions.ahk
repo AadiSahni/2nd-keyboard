@@ -139,10 +139,10 @@ copyPathExplorer()
 {
 CoordMode Pixel ;, screen
 CoordMode Mouse, screen
-copyPathX = 501
-copyPathY = 89 ; these are the coordinates of where the copy path button is roughly on my screen
-copyPathEndX = 582
-copyPathEndY = 109
+copyPathX = 159
+copyPathY = 111 ; these are the coordinates of where the copy path button is roughly on my screen
+copyPathEndX = 235
+copyPathEndY = 131
 
 ; send, !h ; enable this if you don't have the ribbon pinned
 
@@ -151,7 +151,18 @@ msgbox, ctrl shift c pressed
 BlockInput, on
 BlockInput, MouseMove
 MouseGetPos xPosCursor, yPosCursor
+
+
 ImageSearch, FoundX, FoundY, copyPathX, copyPathY, copyPathEndX, copyPathEndY, %A_WorkingDir%\COPY_PATH_Home.png
+msgbox, image search done 
+
+if ErrorLevel = 0 
+	{
+	MouseMove, FoundX, FoundY, 0
+	click left
+	
+	}
+	
 }
 
 
