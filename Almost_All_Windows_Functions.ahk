@@ -158,11 +158,24 @@ msgbox, image search done
 
 if ErrorLevel = 0 
 	{
+	msgbox, 0
 	MouseMove, FoundX, FoundY, 0
 	click left
 	
 	}
+if ErrorLevel = 1
+	{
+	msgbox, 1
+	}
 	
+if ErrorLevel = 2
+	{
+	msgbox, 2
+	}
+	
+	
+	BlockInput, off
+	BlockInput, MouseMoveOff
 }
 
 
