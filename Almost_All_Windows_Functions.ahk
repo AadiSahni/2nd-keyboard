@@ -139,10 +139,10 @@ copyPathExplorer()
 {
 CoordMode Pixel ;, screen
 CoordMode Mouse, screen
-copyPathX = 159
-copyPathY = 111 ; these are the coordinates of where the copy path button is roughly on my screen
-copyPathEndX = 235
-copyPathEndY = 131
+copyPathX = 158
+copyPathY = 112 ; these are the coordinates of where the copy path button is roughly on my screen
+copyPathEndX = 233
+copyPathEndY = 130
 
 ; send, !h ; enable this if you don't have the ribbon pinned
 
