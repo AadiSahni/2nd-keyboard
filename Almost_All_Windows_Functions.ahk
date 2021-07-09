@@ -141,12 +141,11 @@ winRestoreMaximize() {
 ; for this to work you must always have the ribbon menu pinned, although use the next line to use this without pinnin the ribbon
 newItemExplorer()
 {
+SetDefaultMouseSpeed = 1
 CoordMode Pixel ;, screen
 CoordMode Mouse, screen
-
 newItemX = 501
 newItemY = 89 ; used for newItemExplorer(), these are the coordinated of where the new item button is roughly on my screen
-
 newItemEndX = 582
 newItemEndY = 109
 
