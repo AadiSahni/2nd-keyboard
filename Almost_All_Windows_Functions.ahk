@@ -167,12 +167,12 @@ if ErrorLevel = 0
 	}
 if ErrorLevel = 1
 	{
-	msgbox, 1
+	; msgbox, 1
 	}
 	
 if ErrorLevel = 2
 	{
-	msgbox, 2
+	; msgbox, 2
 	}
 	
 	BlockInput, off
