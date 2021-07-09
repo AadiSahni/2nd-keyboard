@@ -149,7 +149,8 @@ newItemEndX = 582
 newItemEndY = 109
 
 ; send, !h 
-msgbox, ctrl n pressed
+
+; msgbox, ctrl n pressed
 
 BlockInput, on
 BlockInput, MouseMove
@@ -160,21 +161,19 @@ msgbox, image search done
 
 if ErrorLevel = 0
 	{
-	msgbox, mission succesful, we found the image
-	MouseMove, FoundX, FoundY, 1
+	; msgbox, mission succesful, we found the image
+	MouseMove, FoundX, FoundY, 0
 	click left
-	SendInput, up
-	SendInput, up
-	SendInput, up
+	SendInput, {up}
 	MouseMove, xPosCursor, yPosCursor
 	}
-	if ErrorLevel = 1
+if ErrorLevel = 1
 	{
-	msgbox, mission failed, we'll get em next time
+	; msgbox, mission failed, we'll get em next time
 	}
-	if ErrorLevel = 2
+if ErrorLevel = 2
 	{
-	msgbox, mission paused bro, i dunno what happened
+	; msgbox, mission paused bro, i dunno what happened
 	}
 	
 	BlockInput, off
