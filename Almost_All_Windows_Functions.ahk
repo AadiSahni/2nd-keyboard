@@ -140,8 +140,8 @@ copyPathExplorer()
 {
 CoordMode Pixel ;, screen
 CoordMode Mouse, screen
-copyPathX = 158
-copyPathY = 112 ; these are the coordinates of where the copy path button is roughly on my screen
+copyPathX = 157
+copyPathY = 110 ; these are the coordinates of where the copy path button is roughly on my screen
 copyPathEndX = 233
 copyPathEndY = 130
 
