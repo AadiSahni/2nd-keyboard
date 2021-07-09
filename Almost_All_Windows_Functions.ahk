@@ -62,6 +62,7 @@ IfWinNotExist, ahk_class Premiere Pro
 	{
 	; Run, Adobe Premiere Pro.exe
 	tooltip, Premiere isn't running!!!!
+	sleep 3000
 	tooltip
 	return
 	}
