@@ -147,8 +147,8 @@ CoordMode Mouse, screen
 newItemX = 501
 newItemY = 89 ; used for newItemExplorer(), these are the coordinated of where the new item button is roughly on my screen
 
-newItemEndX = 590
-newItemEndY = 79
+newItemEndX = 582
+newItemEndY = 109
 
 ; send, !h 
 msgbox, ctrl n pressed
