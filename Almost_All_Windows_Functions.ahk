@@ -162,6 +162,7 @@ if ErrorLevel = 0
 	msgbox, 0
 	MouseMove, FoundX, FoundY, 0
 	click left
+	MouseMove, xPosCursor, yPosCursor
 	
 	}
 if ErrorLevel = 1
