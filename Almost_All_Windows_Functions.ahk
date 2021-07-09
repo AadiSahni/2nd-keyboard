@@ -147,7 +147,7 @@ copyPathEndY = 131
 
 ; send, !h ; enable this if you don't have the ribbon pinned
 
-msgbox, ctrl shift c pressed
+; msgbox, ctrl shift c pressed
 
 BlockInput, on
 BlockInput, MouseMove
@@ -155,14 +155,14 @@ MouseGetPos, xPosCursor, yPosCursor
 
 
 ImageSearch, FoundX, FoundY, copyPathX, copyPathY, copyPathEndX, copyPathEndY, %A_WorkingDir%\COPY_PATH_Home.png
-msgbox, image search done 
+; msgbox, image search done 
 
 if ErrorLevel = 0 
 	{
-	msgbox, 0
+	; msgbox, 0
 	MouseMove, FoundX, FoundY, 0
 	click left
-	MouseMove, xPosCursor, yPosCursor
+	MouseMove, xPosCursor, yPosCursor, 0
 	
 	}
 if ErrorLevel = 1
