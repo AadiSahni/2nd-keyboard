@@ -52,7 +52,7 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	return
 	
 	; copy to path hotkey
-	^+c::copyPathExplorer()
+	^+c::copyPathExplorer() 
 	
 	; new item hotkey
 	^t::^n
