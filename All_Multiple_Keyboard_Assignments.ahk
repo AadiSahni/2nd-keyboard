@@ -34,8 +34,8 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	sleep 5
 	Sendinput, {alt Up} ;this is just the virtual ALT keystroke going up.
 	return
-	;open in new window
-	Mbutton::
+	
+	Mbutton:: ;open in new window
 	; Send {LButton}
 	; Sleep 10
 	; Send {LControl down}
@@ -47,6 +47,7 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	; return
 	; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
 	Send AppsKey
+	sleep 20 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects something that starts with e, increase the sleep
 	Send {e}
 	return
 	
