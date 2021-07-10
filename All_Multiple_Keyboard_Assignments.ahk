@@ -46,7 +46,7 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	; Sleep 10
 	; return
 	; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
-	Send AppsKey
+	Send {AppsKey}
 	sleep 50 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects something that starts with e, increase the sleep
 	Send {e}
 	return
