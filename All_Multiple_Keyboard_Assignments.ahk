@@ -36,9 +36,14 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	return
 	;open in new window
 	Mbutton::
-	Send {LButton}Sleep 10{LControl down}Sleep 10{Enter}
+	Send {LButton}
+	Sleep 10
+	Send {LControl down}
+	Sleep 10
+	Send {Enter}
 	Sleep 10
 	Send {LControl up}
+	Sleep 10
 	return
 	;navigation
 	
