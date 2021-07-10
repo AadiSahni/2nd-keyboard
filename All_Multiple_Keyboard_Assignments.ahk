@@ -19,20 +19,6 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 ^+NumpadDiv::÷
 #IfWinNotActive
 
-#IfWinActive ahk_class CabinetWClass
-	; copy to path hotkey
-	^+c::copyPathExplorer()
-	
-	; new item hotkey
-	^t::^n
-	^n::newItemExplorer()
-	; ^n::
-	; MouseMove, newItemEndX, newItemEndY
-	; return
-	return
-#IfWinActive
-
-
 #IfWinActive ahk_group ExplorerGroup ; File Explorer
 	;Ctrl backspace
 	^Backspace::
@@ -50,11 +36,22 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	return
 	;open in new window
 	Mbutton::
-	Send {LButton}{LControl down}{Enter}
-	Sleep 100
+	Send {LButton}Sleep 10{LControl down}Sleep 10{Enter}
+	Sleep 10
 	Send {LControl up}
 	return
 	;navigation
+	
+	; copy to path hotkey
+	^+c::copyPathExplorer()
+	
+	; new item hotkey
+	^t::^n
+	^n::newItemExplorer()
+	; ^n::
+	; MouseMove, newItemEndX, newItemEndY
+	; return
+	return
 #IfWinActive
 
 #IfWinActive ahk_class #32770
