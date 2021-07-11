@@ -198,6 +198,10 @@ return
 ;;------END OF ALT KEYS----------
 
 ;;;;--------------------- ALL KEYS IN PREMIERE ------------------------------------------
+^+n::
+send, ^f
+send, {enter}
+return
 
 ;;---------------- ALL STANDARD FUNCTION KEYS IN PREMIERE --------------------
 ;;;PREMIEREKEYS;;; <--for easy searching
