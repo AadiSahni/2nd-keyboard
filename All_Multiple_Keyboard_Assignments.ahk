@@ -12,7 +12,7 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 
 ;;; Searching Terms
 ; UNIVERSALKEYS
-; Premiere Keys
+; PremiereKeys
 
 #IfWinNotActive ahk_class Premiere Pro
 ^+NumpadMult::×
@@ -298,7 +298,14 @@ return
 
 
 
+;;;;;------------------------------PHOTOSHOP Functions---------------------------------------
+;;PHOTOSHOPKEYS
+ ; i can't put the functions in another script and then include it here because it interferes with this scirpt so I just put everything here
+#if WinActive("ahk_exe Photoshop.exe")
+WheelUp::!WheelUp
+WheelDown::!WheelDown
 
+#if WinActive()
 
 ;script reloader, but it only worKs on this one :(
 #IfWinActive ahk_class Notepad++
