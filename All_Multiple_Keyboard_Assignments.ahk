@@ -159,7 +159,7 @@ CapsLock & p::return
 CapsLock & a::Left
 CapsLock & s::Down
 CapsLock & d::Right
-CapsLock & f::f20
+CapsLock & f::^f19
 CapsLock & g::return
 CapsLock & h::PgDn
 CapsLock & j::Left
