@@ -58,10 +58,18 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	; new item hotkey
 	^t::^n
 	^n::newItemExplorer()
-	; ^n::
-	; MouseMove, newItemEndX, newItemEndY
-	; return
 	return
+	
+	; Open With
+	CapsLock & LButton::
+	CapsLock & Enter::
+	^+o::
+	Click left
+	Send, {AppsKey}
+	sleep 50
+	Send, {h}{c}
+	return
+	
 #IfWinActive
 
 #IfWinActive ahk_class #32770
