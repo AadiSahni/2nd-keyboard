@@ -197,11 +197,18 @@ return
 
 ;;------END OF ALT KEYS----------
 
+#IfWinActive
+
 ;;;;--------------------- ALL KEYS IN PREMIERE ------------------------------------------
+#IfWinActive ahk_exe Adobe Premiere Pro.exe
+
 ^+n::
 send, ^f
 send, {enter}
 return
+
+
+#IfWinActive
 
 ;;---------------- ALL STANDARD FUNCTION KEYS IN PREMIERE --------------------
 ;;;PREMIEREKEYS;;; <--for easy searching
