@@ -293,26 +293,7 @@ return
 currentTool = %A_thishotkey% ;so, %currentTool% might become r or y or v. Whatever the last tool is that I selected.
 return
 
-
 #IfWinActive
-
-
-
-;;;;;------------------------------PHOTOSHOP Functions---------------------------------------
-;;PHOTOSHOPKEYS
- ; i can't put the functions in another script and then include it here because it interferes with this scirpt so I just put everything here
-#if WinActive("ahk_exe Photoshop.exe")
-WheelUp::
-Send, {alt down}
-Send, {WheelUp}
-Send, {alt up}
-return
-WheelDown::
-Send, {alt down}
-Send, {WheelDown}
-Send, {alt up}
-
-#if WinActive()
 
 ;script reloader, but it only worKs on this one :(
 #IfWinActive ahk_class Notepad++
