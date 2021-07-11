@@ -72,14 +72,13 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 ; ++++++++++++++++++++++++++End Explorer Assignments++++++++++++++++++++++++++++++++++++++++++
 
 
-
-ScrollLock::^f19 ; f19 is mute in discord because using alt makes the modifiers stuck 
-#z::
-Send #b{left}{left}{enter}
-return
-
 ;+++++++++ SHORTCUTS THAT WORK IN ALL PROGRAMS +++++++++
 ; UNIVERSALKEY
+
+ScrollLock::^f19 ; ctrl f19 is mute in discord because using alt makes the modifiers stuck 
+; i use f19 as a shortcut for different things in various apps
+; shift f19 is used for wox, the brilliant search app
+; ctrl f19 is used for discord as stated above
 
 ;chrome tabs and any chromium apps
 #IfWinActive ahk_class Chrome_WidgetWin_1  ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
@@ -195,10 +194,16 @@ CapsLock & Space::Enter
 #WheelDown::Volume_Down
 #MButton::Media_Play_Pause
 #Space::Media_Play_Pause
+
 #c::#+v
+
 #x::
 send #+v
 send +{Delete}
+return
+
+#z::
+Send #b{left}{left}{enter}
 return
 
 #f6::Volume_Mute
