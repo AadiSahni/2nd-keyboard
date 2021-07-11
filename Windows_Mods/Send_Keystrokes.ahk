@@ -3,6 +3,6 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-AppsKey::f20
+AppsKey::^f19
 sleep 100
 exit
