@@ -302,8 +302,15 @@ return
 ;;PHOTOSHOPKEYS
  ; i can't put the functions in another script and then include it here because it interferes with this scirpt so I just put everything here
 #if WinActive("ahk_exe Photoshop.exe")
-WheelUp::!WheelUp
-WheelDown::!WheelDown
+WheelUp::
+Send, {alt down}
+Send, {WheelUp}
+Send, {alt up}
+return
+WheelDown::
+Send, {alt down}
+Send, {WheelDown}
+Send, {alt up}
 
 #if WinActive()
 
