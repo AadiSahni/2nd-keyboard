@@ -126,6 +126,7 @@ CapsLock::f20 ; alt + capslock toggles capslock, it's weird becuase ctrl does no
 ; i guess i'm going to have to create a task schedule for this script for capslock state to be always off while having the rest of my capslock code still work 
 
 ; Number Keys
+CapsLock + `::Send, {CapsLock}
 CapsLock & 1::switchToExplorer()
 ; CapsLock & 2::switchToChrome()
 CapsLock & 2::switchToBrave() ; I switched to brave, it's faster
