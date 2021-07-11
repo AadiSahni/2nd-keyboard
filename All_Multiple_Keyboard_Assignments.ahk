@@ -197,6 +197,8 @@ return
 
 ;;------END OF ALT KEYS----------
 
+;;;;--------------------- ALL KEYS IN PREMIERE ------------------------------------------
+
 ;;---------------- ALL STANDARD FUNCTION KEYS IN PREMIERE --------------------
 ;;;PREMIEREKEYS;;; <--for easy searching
 
