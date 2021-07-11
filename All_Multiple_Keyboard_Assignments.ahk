@@ -122,8 +122,8 @@ return
 ;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
 
 SetCapsLockState, AlwaysOff
-^CapsLock::CapsLock
 CapsLock::f20
+; i guess i'm going to have to create a task schedule for this script for capslock state to be always off while having the rest of my capslock code still work 
 
 ; Number Keys
 CapsLock & 1::switchToExplorer()
