@@ -121,59 +121,60 @@ return
 
 ;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
 
+SetCapsLockState, AlwaysOff
 ^CapsLock::CapsLock
 CapsLock::f20
 
-			; ; Number Keys
-			; CapsLock & 1::switchToExplorer()
-			; ; CapsLock & 2::switchToChrome()
-			; CapsLock & 2::switchToBrave() ; I switched to brave, it's faster
-			; CapsLock & 3::switchToPremiere()
-			; CapsLock & 4::switchToWhatsApp()
-			; CapsLock & 5::switchToDiscord()
-			; CapsLock & 6::#9
-			; CapsLock & 7::#0
-			; CapsLock & 8::return
-			; CapsLock & 9::return
-			; CapsLock & 0::return
+; Number Keys
+CapsLock & 1::switchToExplorer()
+; CapsLock & 2::switchToChrome()
+CapsLock & 2::switchToBrave() ; I switched to brave, it's faster
+CapsLock & 3::switchToPremiere()
+CapsLock & 4::switchToWhatsApp()
+CapsLock & 5::switchToDiscord()
+CapsLock & 6::#9
+CapsLock & 7::#0
+CapsLock & 8::return
+CapsLock & 9::return
+CapsLock & 0::return
 
 
-			; CapsLock & Backspace::Delete
+CapsLock & Backspace::Delete
 
-			; ; Top Row
-			; CapsLock & q::return
-			; CapsLock & w::Up
-			; CapsLock & e::return
-			; CapsLock & r::winRestoreMaximize()
-			; CapsLock & t::return
-			; CapsLock & y::PgUp
-			; CapsLock & u::Home
-			; CapsLock & i::Up
-			; CapsLock & o::End
-			; CapsLock & p::return
+; Top Row
+CapsLock & q::return
+CapsLock & w::Up
+CapsLock & e::return
+CapsLock & r::winRestoreMaximize()
+CapsLock & t::return
+CapsLock & y::PgUp
+CapsLock & u::Home
+CapsLock & i::Up
+CapsLock & o::End
+CapsLock & p::return
 
-			; ; Home Row
-			; CapsLock & a::Left
-			; CapsLock & s::Down
-			; CapsLock & d::Right
-			; CapsLock & f::f20
-			; CapsLock & g::return
-			; CapsLock & h::PgDn
-			; CapsLock & j::Left
-			; CapsLock & k::Down
-			; CapsLock & l::Right
+; Home Row
+CapsLock & a::Left
+CapsLock & s::Down
+CapsLock & d::Right
+CapsLock & f::f20
+CapsLock & g::return
+CapsLock & h::PgDn
+CapsLock & j::Left
+CapsLock & k::Down
+CapsLock & l::Right
 
-			; ; Bottom Row
-			; CapsLock & z::return
-			; CapsLock & x::WinMinimize, A
-			; CapsLock & c::WinClose, A
-			; CapsLock & v::return
-			; CapsLock & b::Delete
-			; CapsLock & n::return
-			; CapsLock & m::return
+; Bottom Row
+CapsLock & z::return
+CapsLock & x::WinMinimize, A
+CapsLock & c::WinClose, A
+CapsLock & v::return
+CapsLock & b::Delete
+CapsLock & n::return
+CapsLock & m::return
 
-			; ; Extra keys
-			; CapsLock & Space::Enter
+; Extra keys
+CapsLock & Space::Enter
 ;;----END OF INSTANT APP SWITCHER
 
 ;;------END OF CAPS LOCK KEYS----------
