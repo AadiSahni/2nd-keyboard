@@ -73,7 +73,7 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 
 
 
-ScrollLock::f19 ; f19 is mute in discord because using alt makes the modifiers stuck 
+ScrollLock::^f19 ; f19 is mute in discord because using alt makes the modifiers stuck 
 #z::
 Send #b{left}{left}{enter}
 return
@@ -122,7 +122,7 @@ return
 ;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
 
 ^CapsLock::CapsLock
-; CapsLock::f20
+CapsLock::f20
 
 			; ; Number Keys
 			; CapsLock & 1::switchToExplorer()
