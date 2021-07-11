@@ -121,6 +121,7 @@ return
 
 ;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
 
+^CapsLock::CapsLock
 CapsLock::f20
 
 			; ; Number Keys
