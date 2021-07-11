@@ -14,10 +14,7 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 ; UNIVERSALKEYS
 ; PremiereKeys
 
-#IfWinNotActive ahk_class Premiere Pro
-^+NumpadMult::×
-^+NumpadDiv::÷
-#IfWinNotActive
+; +++++++++++++++++++++Begin Explorer Assignments++++++++++++++++++++++++++
 
 #IfWinActive ahk_group ExplorerGroup ; File Explorer
 	;Ctrl backspace
@@ -69,20 +66,20 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	sleep 50
 	Send, {h}{c}
 	return
-	
-#IfWinActive
-
 #IfWinActive ahk_class #32770
 	/::!n ; alt n is the shortcut to bring focus to the  file name input box
 #IfWinActive
+; ++++++++++++++++++++++++++End Explorer Assignments++++++++++++++++++++++++++++++++++++++++++
 
-; ; CapsLock Assigments++++++++++++++++++++++++++++++++++++++++++++++
+
+
 ScrollLock::f19 ; f19 is mute in discord because using alt makes the modifiers stuck 
 #z::
 Send #b{left}{left}{enter}
 return
 
 ;+++++++++ SHORTCUTS THAT WORK IN ALL PROGRAMS +++++++++
+; UNIVERSALKEY
 
 ;chrome tabs and any chromium apps
 #IfWinActive ahk_class Chrome_WidgetWin_1  ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
@@ -123,7 +120,6 @@ return
 #IfWinActive
 
 ;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
-; UNIVERSALKEYS
 
 ; Number Keys
 CapsLock & 1::switchToExplorer()
