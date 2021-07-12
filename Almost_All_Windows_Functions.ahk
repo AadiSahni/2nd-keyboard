@@ -145,9 +145,7 @@ winRestoreMaximize() {
 ;;;+++++++++++++++++++SUPER KEY+++++++++++++++++++++++++++
 superKey() 
 	{
-	Tooltip, superkey triggered
-	KeyWait, CapsLock
-	Tooltip,
+	Gui, superkeygui:new
 	
 	}
 
