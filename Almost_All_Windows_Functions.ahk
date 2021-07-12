@@ -6,6 +6,8 @@ SetWorkingDir %A_ScriptDir%\support_files  ; Ensures a consistent starting direc
 GroupAdd, ExplorerGroup, ahk_class #32770 ;This is for all the Explorer-based "save" and "load" boxes, from any program!
 GroupAdd, ExplorerGroup, ahk_class CabinetWClass ;Regular Explorer window 
 
+
+
 ; MouseIsOver
 ; MouseIsOver is a simple function that allows me to do an action using #If when the mouse is over a certain window
 MouseIsOver(WinTitle) {
@@ -15,7 +17,10 @@ MouseIsOver(WinTitle) {
 
 
 
+
+
 ; INSTANT APPLICATION SWITCHER+++++++++++++++++++++++++
+
 switchToExplorer(){
 sleep 11 ;this is to avoid the stuck modifiers bug
 IfWinNotExist, ahk_class CabinetWClass
@@ -126,6 +131,7 @@ if WinActive("ahk_class OpusApp")
 	sendinput, {F2} ;"go to previous comment" in Word.
 }
 
+
 winRestoreMaximize() {
 	WinGetActiveTitle, title
 	WinGet, maximized, MinMax, %title%
@@ -135,6 +141,12 @@ winRestoreMaximize() {
 		WinMaximize, %title%
 	return
 }
+
+;;;; +++++++++++++++++++++++++End of instant application switcher scripts
+
+
+
+;;;;;;;;;;++++++++++++++++++Begin Windows(shell) Mods Functions(this is almost all windows functions.ahk after all)
 
 copyPathExplorer() 
 {
