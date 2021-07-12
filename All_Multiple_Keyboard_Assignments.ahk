@@ -68,9 +68,10 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	return
 #IfWinActive ahk_class #32770
 	/::!n ; alt n is the shortcut to bring focus to the  file name input box
-#IfWinActive ahk_exe GroupyCtrl.exe
-MButton::MButton
 #IfWinActive
+if MouseIsOver("ahk_exe GroupyCtrl.exe")
+	MButton::MButton
+	return
 ; ++++++++++++++++++++++++++End Explorer Assignments++++++++++++++++++++++++++++++++++++++++++
 
 
