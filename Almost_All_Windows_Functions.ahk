@@ -146,7 +146,7 @@ winRestoreMaximize() {
 superKey() 
 	{
 	InputBox, SuperKeyInput, SuperKey, Keystroke for SuperKey
-	SuperKeyFile:= FileOpen(A_WorkingDir\superkey-input, w)
+	SuperKeyFile:= FileOpen(skfile, w)
 	SuperKeyStr:= "%SuperKeyInput% `r `n"
 	SuperKeyFile.Write(%SuperKeyStr%)
 	
