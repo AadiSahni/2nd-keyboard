@@ -145,7 +145,9 @@ winRestoreMaximize() {
 ;;;+++++++++++++++++++SUPER KEY+++++++++++++++++++++++++++
 superKey() 
 	{
-	ToolTip, superkey triggered
+	Tooltip, superkey triggered
+	KeyWait, CapsLock & V
+	Tooltip,
 	
 	}
 
