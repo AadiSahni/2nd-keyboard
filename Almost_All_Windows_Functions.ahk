@@ -17,8 +17,6 @@ MouseIsOver(WinTitle) {
 
 
 
-
-
 ; INSTANT APPLICATION SWITCHER+++++++++++++++++++++++++
 
 switchToExplorer(){
