@@ -145,8 +145,10 @@ winRestoreMaximize() {
 ;;;+++++++++++++++++++SUPER KEY+++++++++++++++++++++++++++
 superKey() 
 	{
-	InputBox, SuperKeyInput, SuperKey, Keystore for SuperKey
-	
+	InputBox, SuperKeyInput, SuperKey, Keystroke for SuperKey
+	SuperKeyFile:= FileOpen(A_WorkingDir\superkey-input, w)
+	SuperKeyStr:= "%SuperKeyInput% `r `n"
+	SuperKeyFile.Write(%SuperKeyStr%)
 	
 
 	}
@@ -192,8 +194,7 @@ if ErrorLevel = 2
 	{
 	; msgbox, 2
 	
-	}
-	
+	}	
 	BlockInput, off
 	BlockInput, MouseMoveOff
 }
