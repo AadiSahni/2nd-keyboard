@@ -145,7 +145,7 @@ winRestoreMaximize() {
 ;;;+++++++++++++++++++SUPER KEY+++++++++++++++++++++++++++
 superKey() 
 	{
-	msgbox, Super Key, because you pressed Caps V
+	InputBox, SuperKeyInput, SuperKey, Keystore for SuperKey
 	
 	
 
