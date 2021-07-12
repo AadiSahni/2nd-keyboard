@@ -159,6 +159,8 @@ superKey()
 
 	Gui, superkeygui: new
 	Gui, Color, %backcolor%
+	Gui, Font,CFF0000 S15 W500 Q5, Franklin Gothic
+	Gui, Font,C%fontcolor% S%fontsize% W%boldness% Q5 underline,%font%
 	Gui, Add, Text,, "CapsLock + V was pressed. Waiting for secondary input."
 	
 	Gui, Show
