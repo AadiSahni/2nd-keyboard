@@ -146,6 +146,7 @@ winRestoreMaximize() {
 superKey() 
 	{
 	Gui, superkeygui: new
+	Gui, Color, 121212
 	Gui, Add, Text,, "CapsLock + V was pressed. Waiting for secondary input."
 	
 	Gui, Show
