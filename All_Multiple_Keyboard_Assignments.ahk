@@ -143,15 +143,13 @@ CapsLock & 9::return
 CapsLock & 0::return
 
 
-CapsLock & Backspace::Delete
-
 ; Top Row
-CapsLock & q::return
+CapsLock & q::Home
 CapsLock & w::Up
-CapsLock & e::return
+CapsLock & e::End
 CapsLock & r::winRestoreMaximize()
 CapsLock & t::return
-CapsLock & y::PgUp
+CapsLock & y::return
 CapsLock & u::Home
 CapsLock & i::Up
 CapsLock & o::End
@@ -163,7 +161,7 @@ CapsLock & s::Down
 CapsLock & d::Right
 CapsLock & f::^f19
 CapsLock & g::return
-CapsLock & h::PgDn
+CapsLock & h::return
 CapsLock & j::Left
 CapsLock & k::Down
 CapsLock & l::Right
