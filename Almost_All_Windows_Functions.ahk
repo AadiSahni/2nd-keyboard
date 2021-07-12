@@ -145,37 +145,49 @@ winRestoreMaximize() {
 ;;;+++++++++++++++++++SUPER KEY+++++++++++++++++++++++++++
 superKey() 
 	{
-	backcolor=121212
-	fontcolor=ffffff
-	fontsize=18
-	boldness=400
-	font=Arial
-	statusheight=75
-	statuswidth=1000
-	statusx=10
-	statusy=10
-	statusy = 1850
-	statusx = 30
+	; backcolor=121212
+	; fontcolor=ffffff
+	; fontsize=18
+	; boldness=400
+	; font=Arial
+	; statusheight=75
+	; statuswidth=1000
+	; statusx=10
+	; statusy=10
+	; statusy = 1850
+	; statusx = 30
 
-	Gui, superkeygui: new
-	Gui, Margin,0,0
-	Gui, Color, %backcolor%
-	Gui, Font,CFF0000 S15 W500 Q5, Franklin Gothic
-	Gui, Font,C%fontcolor% S%fontsize% W%boldness% Q5 underline,%font%
-	Gui, Add, Text,, "CapsLock + V was pressed. Waiting for secondary input."
-	Gui, Add, Edit
-	Gui, Add, Button, Hidden Default, OK
+	; Gui, superkeygui: new
+	; Gui, Margin,0,0
+	; Gui, Color, %backcolor%
+	; Gui, Font,CFF0000 S15 W500 Q5, Franklin Gothic
+	; Gui, Font,C%fontcolor% S%fontsize% W%boldness% Q5 underline,%font%
+	; Gui, Add, Text,, "CapsLock + V was pressed. Waiting for secondary input."
+	; Gui, Add, Edit
+	; Gui, Add, Button, Hidden Default, OK
 	
-	Gui, -Caption +ToolWindow +AlwaysOnTop +LastFound ;Turns out you NEED THIS LINE for the transparency to work...????
+	; Gui, -Caption +ToolWindow +AlwaysOnTop +LastFound ;Turns out you NEED THIS LINE for the transparency to work...????
 
 	
-	WinSet, TransColor, %backcolor% 160, KEYSTROKE
+	; WinSet, TransColor, %backcolor% 160, KEYSTROKE
 	
-	Gui, Show
+	; Gui, Show
 	
-	GuiClose:
-	ButtonOK:
-	Gui, Submit
+	; GuiClose:
+	; ButtonOK:
+	; Gui, Submit
+	
+	; gui in ahk is way too shitty and complicated. some other day, for now, tooltip
+	
+	Tooltip, Superkey, waiting for input
+	SuperKeyInput:= GetKeyState(A)
+	if SuperKeyInput = 1
+		{	
+		tooltip, this is for eternity and you pressed A
+		
+		}	
+	
+	
 	
 	}
 
