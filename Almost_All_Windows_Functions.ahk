@@ -148,7 +148,7 @@ superKey()
 	InputBox, SuperKeyInput, SuperKey, Keystroke for SuperKey
 	SuperKeyFile:= FileOpen(skfile, w)
 	SuperKeyStr:= "%SuperKeyInput% `r `n"
-	SuperKeyFile.Write(%SuperKeyStr%)
+	SuperKeyFile.Write(SuperKeyStr)
 	
 
 	}
