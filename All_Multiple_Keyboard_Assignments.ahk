@@ -170,7 +170,7 @@ CapsLock & l::Right
 CapsLock & z::return
 CapsLock & x::WinMinimize, A
 CapsLock & c::WinClose, A
-CapsLock & v::return
+CapsLock & v::superKey()
 CapsLock & b::Delete
 CapsLock & n::return
 CapsLock & m::return

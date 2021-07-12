@@ -142,6 +142,14 @@ winRestoreMaximize() {
 
 ;;;; +++++++++++++++++++++++++End of instant application switcher scripts
 
+;;;+++++++++++++++++++SUPER KEY+++++++++++++++++++++++++++
+superKey() 
+	{
+	msgbox, Super Key, because you pressed Caps V
+	
+	
+
+	}
 
 
 ;;;;;;;;;;++++++++++++++++++Begin Windows(shell) Mods Functions(this is almost all windows functions.ahk after all)
