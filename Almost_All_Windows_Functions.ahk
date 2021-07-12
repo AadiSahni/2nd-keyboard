@@ -158,12 +158,13 @@ superKey()
 	statusx = 30
 
 	Gui, superkeygui: new
+	Gui, Margin,0,0
 	Gui, Color, %backcolor%
 	Gui, Font,CFF0000 S15 W500 Q5, Franklin Gothic
 	Gui, Font,C%fontcolor% S%fontsize% W%boldness% Q5 underline,%font%
 	Gui, Add, Text,, "CapsLock + V was pressed. Waiting for secondary input."
 	
-	Gui HIST2: -Caption +ToolWindow +AlwaysOnTop +LastFound ;Turns out you NEED THIS LINE for the transparency to work...????
+	Gui, -Caption +ToolWindow +AlwaysOnTop +LastFound ;Turns out you NEED THIS LINE for the transparency to work...????
 
 	
 	WinSet, TransColor, %backcolor% 160, KEYSTROKE
