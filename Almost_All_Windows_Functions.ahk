@@ -173,6 +173,10 @@ superKey()
 	
 	Gui, Show
 	
+	GuiClose:
+	ButtonOK:
+	Gui, Submit
+	
 	}
 
 
