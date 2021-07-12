@@ -145,8 +145,20 @@ winRestoreMaximize() {
 ;;;+++++++++++++++++++SUPER KEY+++++++++++++++++++++++++++
 superKey() 
 	{
+	backcolor=121212
+	fontcolor=ffffff
+	fontsize=24
+	boldness=400
+	font=Arial
+	statusheight=75
+	statuswidth=1000
+	statusx=10
+	statusy=10
+	statusy = 1850
+	statusx = 30
+
 	Gui, superkeygui: new
-	Gui, Color, 121212
+	Gui, Color, %backcolor%
 	Gui, Add, Text,, "CapsLock + V was pressed. Waiting for secondary input."
 	
 	Gui, Show
