@@ -63,7 +63,7 @@ sendinput, {SC0EA} ;scan code of an unassigned key. used for debugging.
 switchToPremiere(){
 IfWinNotExist, ahk_class Premiere Pro
 	{
-	; Run, Adobe Premiere Pro.exe
+	Run, Adobe Premiere Pro.exe
 	tooltip, Premiere isn't running!!!!
 	sleep 3000
 	tooltip
