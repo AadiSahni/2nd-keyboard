@@ -221,6 +221,8 @@ if ErrorLevel = 0
 	MouseMove, FoundX, FoundY, 0
 	click left
 	MouseMove, xPosCursor, yPosCursor, 0
+	BlockInput, off
+	BlockInput, MouseMoveOff
 	ToolTip, Copied file path to clipboard
 	sleep 1000
 	tooltip,
