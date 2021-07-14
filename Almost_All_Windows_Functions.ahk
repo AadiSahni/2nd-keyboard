@@ -221,7 +221,9 @@ if ErrorLevel = 0
 	MouseMove, FoundX, FoundY, 0
 	click left
 	MouseMove, xPosCursor, yPosCursor, 0
-	
+	ToolTip, Copied file path to clipboard
+	sleep 1000
+	tooltip,
 	}
 if ErrorLevel = 1
 	{
