@@ -223,7 +223,8 @@ return
 send, ^f
 send, {enter}
 return
-
+; I honestly have no idea what the above code does and why it's there but i'm keeping it in for now
+; I'll comment it out after some testing
 
 #IfWinActive
 
@@ -243,9 +244,9 @@ return
 
 ;F3 is set in premiere to the [MODIFY CLIP] panel.
 
-;; instant cut at cursor (UPON KEY RELEASE) -- super useful! even respects snapping!
+;; instant cut at cursor(ALL UNLOCKED LAYERS/TRACKS) (UPON KEY RELEASE) -- super useful! even respects snapping!
 ;this is NOT suposed to stop the video playing when you use it, but now it does for some reason....
-F4::
+CapsLock & F4::
 send, b ;This is my Premiere shortcut for the RAZOR tool. You can use another shortcut if you like, but you have to use that shortcut here.
 send, {shift down} ;makes the blade tool affect all (unlocked) tracks
 keywait, F4 ;waits for the key to go UP.
@@ -255,6 +256,19 @@ send, {shift up}
 sleep 10
 send, v ;This is my Premiere shortcut for the SELECTION tool. again, you can use whatever shortcut you like.
 return
+
+
+;; instant cut at cursor(UNLOCKEDLAYER/TRACK BELOW CURSOR ONLY) (UPON KEY RELEASE) -- super useful! even respects snapping!
+;this is NOT suposed to stop the video playing when you use it, but now it does for some reason....
+F4::
+send, b ;This is my Premiere shortcut for the RAZOR tool. You can use another shortcut if you like, but you have to use that shortcut here.
+keywait, F4 ;waits for the key to go UP.
+;tooltip, was released
+send, {lbutton} ;makes a CUT
+sleep 10
+send, v ;This is my Premiere shortcut for the SELECTION tool. again, you can use whatever shortcut you like.
+return
+
 
 F5::clickTransformIcon2()
 F6::cropClick()
@@ -275,7 +289,17 @@ send, {alt up}
 send, c ;I have C assigned to "CLEAR" in Premiere's shortcuts panel.
 return
 
-; F10:: IS FREE, but it was "effect controls" for awhile to debug a stuck modifiers issue.
+;; RIPPLE DELETE SINGLE CLIP AT CURSOR
+F10::
+prFocus("timeline") ;This will bring focus to the timeline. ; you can't just send ^+!3 because it'll change the sequence if you alkready have the timeline in focus. You have to go to the effect controls first. That is what this function does.
+send, ^!d ;ctrl alt d is my Premiere shortcut for DESELECT. This shortcut only works if the timeline is in focus, which is why we did that on the previous line!! And you need to deselect all the timeline clips becuase otherwise, those clips will also get deleted later. I think.
+send, v ;This is my Premiere shortcut for the SELECTION tool.
+send, {alt down}
+send, {lbutton}
+send, {alt up}
+send, +c ;I have C assigned to "CLEAR" in Premiere's shortcuts panel.
+return
+
 ;;NOTE that F10 will induce menu acceleration if you DON'T have it assigned to anything, so you gotta make sure to avoid that.
 
 ;F11:: is Toggle Full Screen
