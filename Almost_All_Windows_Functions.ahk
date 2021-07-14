@@ -221,8 +221,10 @@ if ErrorLevel = 0
 	MouseMove, FoundX, FoundY, 0
 	click left
 	MouseMove, xPosCursor, yPosCursor, 0
+	
 	BlockInput, off
-	BlockInput, MouseMoveOff
+	BlockInput, MouseMoveOff ; to remove the tooltip i need to execute tooltip without any parameters but that adds a delay for the function to actually finish which keeps my mouse input off untill then, so I have this 2 times, on in the execution and on at the end of the script
+	
 	ToolTip, Copied file path to clipboard
 	sleep 1000
 	tooltip,
