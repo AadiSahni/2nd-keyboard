@@ -32,23 +32,6 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	Sendinput, {alt Up} ;this is just the virtual ALT keystroke going up.
 	return
 	
-	Mbutton:: ;open in new window
-	; Send {LButton}
-	; Sleep 10
-	; Send {LControl down}
-	; Sleep 10
-	; Send {Enter}
-	; Sleep 10
-	; Send {LControl up}
-	; Sleep 10
-	; return
-	; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
-	click left
-	Send {AppsKey}
-	sleep 50 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects something that starts with e, increase the sleep
-	Send {e}
-	return
-	
 	; copy to path hotkey
 	^+c::copyPathExplorer() 
 	
@@ -69,9 +52,31 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 #IfWinActive ahk_class #32770
 	/::!n ; alt n is the shortcut to bring focus to the  file name input box
 #IfWinActive
-if MouseIsOver("ahk_exe GroupyCtrl.exe")
+
+#if MouseIsOver("ahk_exe GroupyCtrl.exe")
 	MButton::MButton
 	return
+	
+	
+#if MouseIsOver("ahk_class CabinetWClass") ; checking to see if explorer is active rather than whether my mouse is over it can cause problems for A. closing tabs by middle clicking in groupy B. middle clicking to open another instance in taskbar
+	Mbutton:: ;open in new window
+	; Send {LButton}
+	; Sleep 10
+	; Send {LControl down}
+	; Sleep 10
+	; Send {Enter}
+	; Sleep 10
+	; Send {LControl up}
+	; Sleep 10
+	; return
+	; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
+	click left
+	Send {AppsKey}
+	sleep 0 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects something that starts with e, increase the sleep
+	Send {e}
+	return
+
+
 ; ++++++++++++++++++++++++++End Explorer Assignments++++++++++++++++++++++++++++++++++++++++++
 
 
