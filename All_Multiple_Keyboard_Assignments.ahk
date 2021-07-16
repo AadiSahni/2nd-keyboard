@@ -21,9 +21,13 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 	^Backspace::
 	Send ^+{Left}{Backspace}
 	return
+	
+	
 	;F6
 	F6::!d
 	;tilde to go up in directory mod
+	
+	
 	`::
 	Sendinput, {alt Down}
 	sleep 5

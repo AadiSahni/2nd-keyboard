@@ -207,40 +207,65 @@ copyPathEndY = 131
 
 ; msgbox, ctrl shift c pressed
 
-BlockInput, on
-BlockInput, MouseMove
-MouseGetPos, xPosCursor, yPosCursor
+; BlockInput, on
+; BlockInput, MouseMove
+; MouseGetPos, xPosCursor, yPosCursor
 
 
-ImageSearch, FoundX, FoundY, copyPathX, copyPathY, copyPathEndX, copyPathEndY, %A_WorkingDir%\COPY_PATH_Home.png
+; ImageSearch, FoundX, FoundY, copyPathX, copyPathY, copyPathEndX, copyPathEndY, %A_WorkingDir%\COPY_PATH_Home.png
 ; msgbox, image search done 
 
-if ErrorLevel = 0 
-	{
+; if ErrorLevel = 0 
+	; {
 	; msgbox, 0
-	MouseMove, FoundX, FoundY, 0
-	click left
-	MouseMove, xPosCursor, yPosCursor, 0
+	; MouseMove, FoundX, FoundY, 0
+	; click left
+	; MouseMove, xPosCursor, yPosCursor, 0
 	
-	BlockInput, off
-	BlockInput, MouseMoveOff ; to remove the tooltip i need to execute tooltip without any parameters but that adds a delay for the function to actually finish which keeps my mouse input off untill then, so I have this 2 times, on in the execution and on at the end of the script
+	; BlockInput, off
+	; BlockInput, MouseMoveOff ; to remove the tooltip i need to execute tooltip without any parameters but that adds a delay for the function to actually finish which keeps my mouse input off untill then, so I have this 2 times, on in the execution and on at the end of the script
+	
+	; ; all the above code is not necessary, turns out that when you copy a file, it copies it's path as well. Of course I do not to still modifiy the behaviour so that it removes the quotes so explorer doesn't think it's a link and open it in the default browser(which I guess is better than MS Edge or, ugh, internet explorer)
+	; ; whatever the case maybe, i'm remapping ctrl c in explorer to this function and seeing if copy pasting files is affected by it. 
+	; ; Also of not, is that removing the quotes from a copied file isn't ideal, and I'd rather find a way to disable opening links in explorer altogether, whether by an ahk script, or an application, or just a settings hid somewhere(perhaps regedit)
+	
+	; ; UPDATE!!!
+	; The method I just told you, that file copy thing, doesn't work outside of explorer. to hell with you windows
+	; Send, ^C
+	
+	; clipboard:= clipboard
+	
+	; StrReplace(clipboard, ",, )
+	
+	; get selected file's path
+	clipboard =
+	SendInput, ^c
+	ClipWait
+	
+	oldstr = %clipboard%
+	; Removes quotes
+	StringReplace, newstr, oldstr,",,All;"  ; Include the escape character (`).
+	clipboard = %clipboard%
 	
 	ToolTip, Copied file path to clipboard
+	
 	sleep 1000
-	tooltip,
-	}
-if ErrorLevel = 1
-	{
-	; msgbox, 1
-	}
+	tooltip, 
+
 	
-if ErrorLevel = 2
-	{
-	; msgbox, 2
+	; }
+; if ErrorLevel = 1
+	; {
+	; ; msgbox, 1
+	; }
 	
-	}	
-	BlockInput, off
-	BlockInput, MouseMoveOff
+; if ErrorLevel = 2
+	; {
+	; ; msgbox, 2
+	
+	; }	
+	; BlockInput, off
+	; BlockInput, MouseMoveOff
 }
 
 

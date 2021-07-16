@@ -15,6 +15,7 @@ Menu, Tray, Icon, shell32.dll, 120
 ; ; ; SetCapsLockState, AlwaysOff
 ; ; This also makes CapsLock no longer a modifier
 ; ; This is super buggy
+; ; The proper solution is in multiple keyboard assignments
 
 
 
