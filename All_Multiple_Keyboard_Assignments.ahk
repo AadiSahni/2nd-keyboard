@@ -242,6 +242,18 @@ return
 
 #IfWinActive
 
+
+;;---------NUMPAD FOR PREMIERE------------
+; I like to keep numpad off but in premiere i have some stuff programmed to the numpad which doesn't work since the numpad sends the cursor control keys
+GroupAdd, NumpadGroup, ahk_exe Adobe Premiere Pro.exe
+GroupAdd, NumpadGroup, ahk_exe AfterFX.exe
+GroupAdd, NumpadGroup, ahk_exe Photoshop.exe
+
+#IfWinActive ahk_group NumpadGroup
+Numpad9::+Numpad9
+#IfWinActive
+
+
 ;;---------------- ALL STANDARD FUNCTION KEYS IN PREMIERE --------------------
 ;;;PREMIEREKEYS;;; <--for easy searching
 
