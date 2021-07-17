@@ -218,6 +218,8 @@ return
 
 #PgUp::Volume_Up
 #PgDn::Volume_Down
+#Up::Volume_Up
+#Down::Volume_Down
 
 #f6::Volume_Mute
 #f7::Volume_Down
