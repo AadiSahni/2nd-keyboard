@@ -250,7 +250,8 @@ GroupAdd, NumpadGroup, ahk_exe AfterFX.exe
 GroupAdd, NumpadGroup, ahk_exe Photoshop.exe
 
 #IfWinActive ahk_group NumpadGroup
-Numpad9::NumpadIns
+; Numpad9::NumpadIns
+; I'll figure this out later
 #IfWinActive
 
 
