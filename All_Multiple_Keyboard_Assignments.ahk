@@ -213,7 +213,7 @@ send +{Delete}
 return
 
 #z::
-Send #b{left}{left}{enter}
+Send #b{left}{left}{left}{enter}
 return
 
 #f6::Volume_Mute
