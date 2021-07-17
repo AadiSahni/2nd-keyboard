@@ -216,6 +216,9 @@ return
 Send #b{left}{left}{left}{enter}
 return
 
+#PgUp::Volume_Up
+#PgDn::Volume_Down
+
 #f6::Volume_Mute
 #f7::Volume_Down
 #f8::Volume_Up
