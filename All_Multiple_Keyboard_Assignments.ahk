@@ -224,8 +224,8 @@ return
 #Up::Volume_Up
 #Down::Volume_Down
 
-#+w::Volume_Up
-#+s::Volume_Down
+#w::Volume_Up
+#s::Volume_Down
 
 #f6::Volume_Mute
 #f7::Volume_Down
