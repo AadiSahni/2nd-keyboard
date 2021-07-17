@@ -218,8 +218,8 @@ return
 
 #PgUp::Volume_Up
 #PgDn::Volume_Down
-CapsLock & Win & #Up::Volume_Up
-CapsLock & Win & Down::Volume_Down
+CapsLock & LWin & Up::Volume_Up
+CapsLock & LWin & Down::Volume_Down
 
 #f6::Volume_Mute
 #f7::Volume_Down
