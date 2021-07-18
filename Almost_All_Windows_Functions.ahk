@@ -194,6 +194,19 @@ superKey()
 
 ;;;;;;;;;;++++++++++++++++++Begin Windows(shell) Mods Functions(this is almost all windows functions.ahk after all)
 
+deselectAllExplorer()
+{
+	CoordMode Pixel ;, screen
+	CoordMode Mouse, screen
+	BlockInput, on
+	BlockInput, MouseMove
+	MouseGetPos, xPosCursor, yPosCursor
+	
+	MouseMove, 863, 823, 0
+	click left
+	MouseMove, xPosCursor, yPosCursor
+}
+
 copyPathExplorer() 
 {
 CoordMode Pixel ;, screen
