@@ -203,8 +203,11 @@ deselectAllExplorer()
 	MouseGetPos, xPosCursor, yPosCursor
 	
 	MouseMove, 863, 823, 0
+	msgbox, moved to blank space
 	click left
+	msgbox, click
 	MouseMove, xPosCursor, yPosCursor
+	msgbox, back to orignal place
 	BlockInput, off
 	BlockInput, MouseMoveOff
 }
