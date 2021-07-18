@@ -213,7 +213,14 @@ send +{Delete}
 return
 
 #z::
-Send #b{left}{left}{left}{enter}
+Send #b
+Send {left}
+sleep 10
+Send {left}
+sleep 10
+Send {left}
+sleep 10
+Send {enter}
 return
 
 
