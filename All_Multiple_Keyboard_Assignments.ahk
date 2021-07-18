@@ -17,44 +17,45 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 ; +++++++++++++++++++++Begin Explorer Assignments++++++++++++++++++++++++++
 
 #IfWinActive ahk_group ExplorerGroup ; File Explorer
-	;Ctrl backspace
-	^Backspace::
-	Send ^+{Left}{Backspace}
-	return
-	
-	
-	;F6
-	F6::!d
-	;tilde to go up in directory mod
-	
-	
-	`::
-	Sendinput, {alt Down}
-	sleep 5
-	sendinput, {up} ; this is the up arrow key ; ALT+UP will go down(or "up?") one folder level in explorer
-	sleep 5
-	Sendinput, {alt Up} ;this is just the virtual ALT keystroke going up.
-	return
-	
-	; copy to path hotkey
-	^+c::copyPathExplorer() 
-	
-	; new item hotkey
-	^t::^n
-	^n::newItemExplorer()
-	return
-	
-	; Open With
-	CapsLock & LButton::
-	CapsLock & Enter::
-	^+o::
-	Click left
-	Send, {AppsKey}
-	sleep 50
-	Send, {h}{c}
-	return
+;Ctrl backspace
+^Backspace::
+Send ^+{Left}{Backspace}
+return
+
+
+;F6
+F6::!d
+;tilde to go up in directory mod
+
+
+`::
+Sendinput, {alt Down}
+sleep 5
+sendinput, {up} ; this is the up arrow key ; ALT+UP will go down(or "up?") one folder level in explorer
+sleep 5
+Sendinput, {alt Up} ;this is just the virtual ALT keystroke going up.
+return
+
+; copy to path hotkey
+^+c::copyPathExplorer() 
+
+; new item hotkey
+^t::^n
+^n::newItemExplorer()
+return
+
+; Open With
+CapsLock & LButton::
+CapsLock & Enter::
+^+o::
+Click left
+Send, {AppsKey}
+sleep 50
+Send, {h}{c}
+return
+
 #IfWinActive ahk_class #32770
-	/::!n ; alt n is the shortcut to bring focus to the  file name input box
+/::!n ; alt n is the shortcut to bring focus to the  file name input box
 #IfWinActive
 
 #if MouseIsOver("ahk_exe GroupyCtrl.exe")
@@ -94,40 +95,40 @@ ScrollLock::^f19 ; ctrl f19 is mute in discord because using alt makes the modif
 
 ;chrome tabs and any chromium apps
 #IfWinActive ahk_class Chrome_WidgetWin_1  ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
-	!h::!home
-	F1::
-	send ^+{tab} ;control shift tab, which goes to the previous tab
-	return
-	
-	F2::
-	send ^{tab} ;control tab, which goes to the next tab
-	return
-	
-	F3::
-	send ^w ;control w, which closes a tab
-	return
-	
-	F4::
-	send ^t ;control t, which opens a new tab
+!h::!home
+F1::
+send ^+{tab} ;control shift tab, which goes to the previous tab
+return
+
+F2::
+send ^{tab} ;control tab, which goes to the next tab
+return
+
+F3::
+send ^w ;control w, which closes a tab
+return
+
+F4::
+send ^t ;control t, which opens a new tab
 	return
 #IfWinActive
 
 #IfWinActive ahk_exe notepad++.exe
-	F1::
-	send ^+{tab} ;control shift tab, which goes to the next tab
-	return
-	
-	F2::
-	send ^{tab} ;control tab, which goes to the previous tab
-	return
-	
-	F3::
-	send ^w 
-	return
-	
-	F4::
-	send ^t ;this is to regain what I lost when I used F2 and F3 for tab navigation.
-	return
+F1::
+send ^+{tab} ;control shift tab, which goes to the next tab
+return
+
+F2::
+send ^{tab} ;control tab, which goes to the previous tab
+return
+
+F3::
+send ^w 
+return
+
+F4::
+send ^t ;this is to regain what I lost when I used F2 and F3 for tab navigation.
+return
 #IfWinActive
 
 ;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
