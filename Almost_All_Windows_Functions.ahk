@@ -198,8 +198,8 @@ deselectAllExplorer()
 {
 	CoordMode Pixel ;, screen
 	CoordMode Mouse, screen
-	BlockInput, on
-	BlockInput, MouseMove
+	; BlockInput, on
+	; BlockInput, MouseMove
 	MouseGetPos, xPosCursor, yPosCursor
 	
 	MouseMove, 863, 823, 0
