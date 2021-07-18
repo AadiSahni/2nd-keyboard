@@ -214,7 +214,9 @@ deselectAllExplorer()
 	
 	; PgUp ctrl space does the same thing and it's more reliable
 	SendInput, {PgUp}
+	sleep 10
 	SendInput, ^{Space}
+	sleep 50
 }
 
 copyPathExplorer() 
