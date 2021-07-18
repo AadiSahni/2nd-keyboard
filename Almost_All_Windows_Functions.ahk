@@ -352,6 +352,6 @@ newItemEndY = 109
 	Send, {Ctrl up}
 	Send, {w}
 	Send, {t}
-	Send, ^{a}
+	Send, ^a
 }
 #IfWinActive
