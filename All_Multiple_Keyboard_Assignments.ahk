@@ -200,10 +200,7 @@ CapsLock & Space::Enter
 ;;------END OF ALT KEYS----------
 
 ;;-----BEGIN KEYS PAIRED WITH WINDOWS--------
-#WheelUp::Volume_Up
-#WheelDown::Volume_Down
-#MButton::Media_Play_Pause
-#Space::Media_Play_Pause
+
 
 #c::#+v
 
@@ -225,6 +222,10 @@ return
 
 
 ; OKAY I NEED A LOT OF MEDIA PLAYBACK KEYS
+#WheelUp::Volume_Up
+#WheelDown::Volume_Down
+#MButton::Media_Play_Pause
+#Space::Media_Play_Pause
 
 #PgUp::Volume_Up
 #PgDn::Volume_Down
