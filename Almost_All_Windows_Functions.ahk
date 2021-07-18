@@ -206,6 +206,7 @@ deselectAllExplorer()
 	click left
 	MouseMove, xPosCursor, yPosCursor
 	BlockInput, off
+	BlockInput, MouseMoveOff
 }
 
 copyPathExplorer() 
