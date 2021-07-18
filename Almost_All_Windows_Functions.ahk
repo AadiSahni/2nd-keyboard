@@ -215,7 +215,7 @@ deselectAllExplorer()
 	; PgUp ctrl space does the same thing and it's more reliable
 	SendInput, {PgUp}
 	sleep 1000
-	Send, ^{Space}
+	Send, {Ctrl down}{Space}{Ctrl up}
 	sleep 50
 }
 
