@@ -352,6 +352,7 @@ newItemEndY = 109
 	Send, {Ctrl up}
 	Send, {w}
 	Send, {t}
+	sleep 10
 	Send, {Backspace}
 }
 #IfWinActive
