@@ -349,6 +349,7 @@ newItemEndY = 109
 	; msgbox, deselected
 	Send, {AppsKey}
 	sleep 50
-	Send, ^w
+	Send, {w}
+	Send, {t}
 }
 #IfWinActive
