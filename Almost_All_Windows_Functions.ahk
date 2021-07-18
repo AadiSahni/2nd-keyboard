@@ -353,10 +353,10 @@ newItemEndY = 109
 	Send, w
 	; msgbox, w
 	sleep 15
-	Send, {t}
+	Send, t
 	; msgbox, t
 	sleep 15
-	Send, ^{a}
+	Send, ^a
 	; msgbox, ctrl a
 	Send, {Backspace}
 	; msgbox, backspace
