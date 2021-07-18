@@ -196,21 +196,25 @@ superKey()
 
 deselectAllExplorer()
 {
-	CoordMode Pixel ;, screen
-	CoordMode Mouse, screen
-	BlockInput, on
-	BlockInput, MouseMove
-	MouseGetPos, xPosCursor, yPosCursor
+	; CoordMode Pixel ;, screen
+	; CoordMode Mouse, screen
+	; BlockInput, on
+	; BlockInput, MouseMove
+	; MouseGetPos, xPosCursor, yPosCursor
 	
-	MouseMove, 863, 823, 0
-	; msgbox, moved to blank space
-	sleep 5
-	click left
-	; msgbox, click
-	MouseMove, xPosCursor, yPosCursor, 0
-	; msgbox, back to orignal place
-	BlockInput, off
-	BlockInput, MouseMoveOff
+	; MouseMove, 863, 823, 0
+	; ; msgbox, moved to blank space
+	; sleep 5
+	; click left
+	; ; msgbox, click
+	; MouseMove, xPosCursor, yPosCursor, 0
+	; ; msgbox, back to orignal place
+	; BlockInput, off
+	; BlockInput, MouseMoveOff
+	
+	; PgUp ctrl space does the same thing and it's more reliable
+	SendInput, {PgUp}
+	SendInput, ^{Space}
 }
 
 copyPathExplorer() 
