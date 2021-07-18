@@ -343,16 +343,16 @@ newItemEndY = 109
 	; ; BlockInput, MouseMoveOff
 	
 	deselectAllExplorer()
-	msgbox, deselected
+	; msgbox, deselected
 	Send, {AppsKey}
-	msgbox, appskey
+	; msgbox, appskey
 	Send, {w}
-	msgbox, w
+	; msgbox, w
 	Send, {t}
-	msgbox, t
+	; msgbox, t
 	Send, ^{a}
-	msgbox, ctrl a
+	; msgbox, ctrl a
 	Send, {Backspace}
-	msgbox, backspace
+	; msgbox, backspace
 }
 #IfWinActive
