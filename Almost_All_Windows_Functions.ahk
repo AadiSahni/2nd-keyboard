@@ -282,9 +282,12 @@ copyPathEndY = 131
 }
 
 
+
+
 ; newItemExplorer clicks the new item menu so you can select a format
 ; for me weird usages, I just have it set to select a text file and the ctrl a so I can type the file exntension my self
 ; for this to work you must always have the ribbon menu pinned, although use the next line to use this without pinnin the ribbon
+; none of this is needed anymore, you can have it unpinned because i'm using context menu and deselect all to do this
 newItemExplorer()
 {
 CoordMode Pixel ;, screen
@@ -298,40 +301,47 @@ newItemEndY = 109
 
 ; msgbox, ctrl n pressed
 
-BlockInput, on
-BlockInput, MouseMove
-MouseGetPos, xPosCursor, yPosCursor
+; ; BlockInput, on
+; ; BlockInput, MouseMove
+; ; MouseGetPos, xPosCursor, yPosCursor
 
-ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemEndX, newItemEndY, %A_WorkingDir%\NEW_ITEM_Home.png
-; msgbox, image search done
+; ; ImageSearch, FoundX, FoundY, newItemX, newItemY, newItemEndX, newItemEndY, %A_WorkingDir%\NEW_ITEM_Home.png
+; ; ; msgbox, image search done
 
-if ErrorLevel = 0
-	{
-	; msgbox, mission succesful, we found the image
-	MouseMove, FoundX, FoundY, 0
-	click left
-	MouseMove, xPosCursor, yPosCursor
-	Sleep 5
-	SendInput, {up}
-	Sleep 5
-	SendInput, {up}
-	Sleep 5
-	SendInput, {up}
-	Sleep 5
-	SendInput, {Enter}
-	Sleep 1100
-	Send, ^a
-	}
-if ErrorLevel = 1
-	{
-	; msgbox, mission failed, we'll get em next time
-	}
-if ErrorLevel = 2
-	{
-	; msgbox, mission paused bro, i dunno what happened
-	}
+; ; if ErrorLevel = 0
+	; ; {
+	; ; ; msgbox, mission succesful, we found the image
+	; ; MouseMove, FoundX, FoundY, 0
+	; ; click left
+	; ; MouseMove, xPosCursor, yPosCursor
+	; ; Sleep 5
+	; ; SendInput, {up}
+	; ; Sleep 5
+	; ; SendInput, {up}
+	; ; Sleep 5
+	; ; SendInput, {up}
+	; ; Sleep 5
+	; ; SendInput, {Enter}
+	; ; Sleep 1100
+	; ; Send, ^a
+	; ; }
+; ; if ErrorLevel = 1
+	; ; {
+	; ; ; msgbox, mission failed, we'll get em next time
+	; ; }
+; ; if ErrorLevel = 2
+	; ; {
+	; ; ; msgbox, mission paused bro, i dunno what happened
+	; ; }
 	
-	BlockInput, off
-	BlockInput, MouseMoveOff
+	; ; BlockInput, off
+	; ; BlockInput, MouseMoveOff
+	
+	deselectAllExplorer()
+	Send, AppsKey
+	Send, {w}
+	Send, {t}
+	Send, ^{a}
+	Send, {Backspace}
 }
 #IfWinActive
