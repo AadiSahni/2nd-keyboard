@@ -354,8 +354,8 @@ newItemEndY = 109
 	Send, {AppsKey}
 	sleep 50
 	Send, {Ctrl up}
-	Send, {w}
-	Send, {t}
+	Send, w
+	Send, t
 	sleep 10
 	Send, {Ctrl up}
 }
