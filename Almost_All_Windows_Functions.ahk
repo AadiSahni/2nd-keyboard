@@ -293,6 +293,8 @@ copyPathEndY = 131
 ; newItemExplorer clicks the new item menu so you can select a format
 ; for me weird usages, I just have it set to select a text file and the ctrl a so I can type the file exntension my self
 ; for this to work you must always have the ribbon menu pinned, although use the next line to use this without pinnin the ribbon
+
+; IMPORTANT ++++++++++++++++++++++++++
 ; none of this is needed anymore, you can have it unpinned because i'm using context menu and deselect all to do this
 newItemExplorer()
 {
@@ -347,10 +349,13 @@ newItemEndY = 109
 	; msgbox, deselected
 	Send, {AppsKey}
 	; msgbox, appskey
+	sleep 15
 	Send, {w}
 	; msgbox, w
+	sleep 15
 	Send, {t}
 	; msgbox, t
+	sleep 15
 	Send, ^{a}
 	; msgbox, ctrl a
 	Send, {Backspace}
