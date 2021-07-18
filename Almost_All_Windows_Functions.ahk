@@ -348,6 +348,8 @@ newItemEndY = 109
 	deselectAllExplorer()
 	; msgbox, deselected
 	Send, {AppsKey}
+	sleep 10
+	send ctrl down
 	sleep 50
 	Send, w
 }
