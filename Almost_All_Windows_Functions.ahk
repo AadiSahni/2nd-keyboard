@@ -348,10 +348,7 @@ newItemEndY = 109
 	deselectAllExplorer()
 	; msgbox, deselected
 	Send, {AppsKey}
-	sleep 10
-	send ctrl down
-	send ctrl up
 	sleep 50
-	Send, w
+	Send, ^w
 }
 #IfWinActive
