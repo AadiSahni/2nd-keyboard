@@ -207,7 +207,7 @@ deselectAllExplorer()
 	sleep 5
 	click left
 	; msgbox, click
-	MouseMove, xPosCursor, yPosCursor
+	MouseMove, xPosCursor, yPosCursor, 0
 	; msgbox, back to orignal place
 	BlockInput, off
 	BlockInput, MouseMoveOff
