@@ -204,6 +204,7 @@ deselectAllExplorer()
 	
 	MouseMove, 863, 823, 0
 	; msgbox, moved to blank space
+	sleep 5
 	click left
 	; msgbox, click
 	MouseMove, xPosCursor, yPosCursor
