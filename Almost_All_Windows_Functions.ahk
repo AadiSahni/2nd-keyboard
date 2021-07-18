@@ -355,7 +355,7 @@ newItemEndY = 109
 	sleep 10
 	Send, {Ctrl up}
 	sleep 500
-	SendInput, ^a
+	SendInput, ^{a}
 	sleep 50
 	SendInput, ^+{Backspace}
 }
