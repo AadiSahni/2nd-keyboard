@@ -356,6 +356,7 @@ newItemEndY = 109
 	Send, {Ctrl up}
 	sleep 500
 	SendInput, ^a
+	sleep 50
 	SendInput, ^+{Backspace}
 }
 #IfWinActive
