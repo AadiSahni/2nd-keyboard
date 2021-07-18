@@ -344,7 +344,7 @@ newItemEndY = 109
 	
 	deselectAllExplorer()
 	msgbox, deselected
-	Send, AppsKey
+	Send, {AppsKey}
 	msgbox, appskey
 	Send, {w}
 	msgbox, w
