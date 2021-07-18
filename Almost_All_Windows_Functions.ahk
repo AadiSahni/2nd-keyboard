@@ -349,7 +349,7 @@ newItemEndY = 109
 	; msgbox, deselected
 	Send, {AppsKey}
 	; msgbox, appskey
-	sleep 15
+	sleep 50
 	Send, {w}
 	; msgbox, w
 	sleep 15
