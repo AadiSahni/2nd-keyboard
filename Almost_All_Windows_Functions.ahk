@@ -181,7 +181,7 @@ superKey()
 	
 	Tooltip, Superkey. Waiting for input!
 	if GetKeyState("a")
-		tooltip, this is for eternity and you pressed A
+		msgbox, you pressed A and tis is superkey
 	
 	}
 
