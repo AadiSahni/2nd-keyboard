@@ -146,8 +146,8 @@ CapsLock & 2::switchToBrave() ; I switched to brave, it's faster, I would like t
 CapsLock & 3::switchToPremiere()
 CapsLock & 4::switchToWhatsApp()
 CapsLock & 5::switchToDiscord()
-CapsLock & 6::#9
-CapsLock & 7::#0
+CapsLock & 6::return
+CapsLock & 7::return
 CapsLock & 8::return
 CapsLock & 9::return
 CapsLock & 0::return
