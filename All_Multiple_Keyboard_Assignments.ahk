@@ -142,7 +142,7 @@ CapsLock::f20 ; alt + capslock toggles capslock, it's weird becuase ctrl does no
 ; Number Keys
 CapsLock & 1::switchToExplorer()
 ; CapsLock & 2::switchToChrome()
-CapsLock & 2::switchToBrave() ; I switched to brave, it's faster
+CapsLock & 2::switchToBrave() ; I switched to brave, it's faster, I would like to have firefox with chrome extensions and chrome settings/flags
 CapsLock & 3::switchToPremiere()
 CapsLock & 4::switchToWhatsApp()
 CapsLock & 5::switchToDiscord()
