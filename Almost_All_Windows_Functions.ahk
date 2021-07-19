@@ -180,8 +180,8 @@ superKey()
 	; gui in ahk is way too shitty and complicated. some other day, for now, tooltip
 	
 	Tooltip, Superkey. Waiting for input!
-	SuperKeyInput:= GetKeyState(A)
-	if SuperKeyInput == 1
+	GetKeyState(A)
+	if ErrorLevel = 1
 		{	
 		tooltip, this is for eternity and you pressed A
 		
