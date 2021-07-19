@@ -179,7 +179,7 @@ superKey()
 	
 	; gui in ahk is way too shitty and complicated. some other day, for now, tooltip
 	
-	Tooltip, Superkey, waiting for input
+	Tooltip, Superkey. Waiting for input!
 	SuperKeyInput:= GetKeyState(A)
 	if SuperKeyInput = 1
 		{	
