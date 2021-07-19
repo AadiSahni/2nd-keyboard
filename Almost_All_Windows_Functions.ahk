@@ -181,7 +181,7 @@ superKey()
 	
 	Tooltip, Superkey. Waiting for input!
 	SuperKeyInput:= GetKeyState(A)
-	if SuperKeyInput = 1
+	if SuperKeyInput == 1
 		{	
 		tooltip, this is for eternity and you pressed A
 		
