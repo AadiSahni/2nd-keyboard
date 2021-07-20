@@ -356,6 +356,7 @@ newItemEndY = 109
 	Send, {Ctrl up}
 }
 
+
 InstantExplorer(f_path,pleasePrepend := 0)
 {
 ;this has been heavily modified from https://autohotkey.com/docs/scripts/FavoriteFolders.htm
