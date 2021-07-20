@@ -141,6 +141,7 @@ CapsLock::f20 ; alt + capslock toggles capslock, it's weird becuase ctrl does no
 ; future me here, I forgot to tell you check the actual admin checkbox in the general tab(run with highest privelegaseses. )
  
 ; Number Keys
+CapsLock & `::back()
 CapsLock & 1::switchToExplorer()
 ; CapsLock & 2::switchToChrome()
 CapsLock & 2::switchToBrave() ; I switched to brave, it's faster, I would like to have firefox with chrome extensions and chrome settings/flags
@@ -196,7 +197,8 @@ CapsLock & Space::Enter
 ;;-----BEGIN KEYS PAIRED WITH ALT--------
 
 
-!b::back()
+
+
 
 
 ;;------END OF ALT KEYS----------
