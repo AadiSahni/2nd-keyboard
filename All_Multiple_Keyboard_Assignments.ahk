@@ -161,7 +161,8 @@ CapsLock & w::Up
 CapsLock & e::End
 CapsLock & r::winRestoreMaximize()
 CapsLock & t::instantExplorer("E:\1. Aadi Sahni\")
-CapsLock & y::instantExplorer("Downloads")
+; CapsLock & y::instantExplorer("C:\Users\Sahni\Downloads") ; this is without the onedrive if you don't have onedrive
+CapsLock & y::instantExplorer("C:\Users\Sahni\OneDrive\Downloads")
 CapsLock & u::Home
 CapsLock & i::Up
 CapsLock & o::End
