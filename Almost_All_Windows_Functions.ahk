@@ -96,7 +96,7 @@ sendinput, {SC0EA} ;scan code of an unassigned key. used for debugging.
 switchToDiscord()
 {
 IfWinNotExist, ahk_exe Discord.exe ; ;
-	Run, "C:\Users\Sahni\AppData\Local\Discord\Update.exe" --processStart Discord.exe ; this is the exact path with command line parameters(the processStart part) i got from the discord exe
+	Run, "C:\Users\Sahni\AppData\Local\Discord\Update.exe" --processStart Discord.exe ; this is the exact path with command line parameters(the processStart part) i got from the discord shortcut in my taskbar
 	; not sure if just using discord.exe would be the same
 
 if WinActive("ahk_exe Discord.exe")
