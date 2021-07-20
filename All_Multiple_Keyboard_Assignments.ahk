@@ -138,6 +138,7 @@ CapsLock::f20 ; alt + capslock toggles capslock, it's weird becuase ctrl does no
 ; i guess i'm going to have to create a task schedule for this script for capslock state to be always off while having the rest of my capslock code still work 
 ; done, you'll have to create a task schedule as well if you want to use capslock or numlock always in one state to make them modifiers
 ; set trigger to log on of a specific user and make it your user and make action a program and make it launch the script
+; future me here, I forgot to tell you check the actual admin checkbox in the general tab(run with highest privelegaseses. )
  
 ; Number Keys
 CapsLock & 1::switchToExplorer()
