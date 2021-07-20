@@ -358,6 +358,40 @@ newItemEndY = 109
 
 
 
+InstantExplorer(f_path,pleasePrepend := 0)
+{
+;this has been heavily modified from https://autohotkey.com/docs/scripts/FavoriteFolders.htm
+
+;I feel ambivilant about this line. It'll be more stable, but it'll be a bit sloooowerrrr!
+keywait, %A_priorhotkey% ;should there be a timeout clause? this still works even when launched with no hotkey, hmm.
+
+sendinput, {blind}{SC0E8} ;scan code of an unassigned key. This is needed to prevent the item from merely FLASHING on the task bar, rather than opening the folder. Don't ask me why, but this works. Also, this is helpful for debugging.
+
+;msgbox, hello
+
+if pleasePrepend = 1 ;this is for the changeable per-project folder shortcuts
+	{
+	FileRead, SavedExplorerAddress, C:\AHK\2nd-keyboard\Taran's_Windows_Mods\SavedExplorerAddress.txt
+	;msgbox, current f_path is %f_path%
+	if f_path =
+		{
+		; if f_path is BLANK, then we don't want to add a \ onto the end just by itself, as that will be done later!
+		;msgbox, I did not add a blank f_path.
+		f_path = %SavedExplorerAddress%
+		}
+	else
+		f_path = %SavedExplorerAddress%\%f_path% ;there is no need to use . to concatenate
+		
+	;msgbox, new f_path is %f_path%
+	;SUPER IMPORTANT NOTE - you must have explorer show the entire path in the title bar, or this doesn't work. I do need a better way to get that information. Something DLL based or whatever.
+	}
+;NOTE TO FUTURE TARAN: for Keyshower, put code here to find the first \ and remove the string before it. otherwise you can't see the FULL final folder name because it gets cropped off
+;Keyshower(f_path,"InstExplor")
+if IsFunc("Keyshower") {
+	Func := Func("Keyshower")
+	RetVal := Func.Call(f_path,"InstExplor") 
+}
+
 ;;;NO LONGER IMPORTANT: YOU NEED TO GO INTO WINDOWS' FOLDER OPTIONS > VIEW > AND CHECK "DISPLAY THE FULL PATH IN THE TITLE BAR" OR THIS WON'T WORK.
 ;;;UPDATE: THE INSTRUCTION ABOVE ARE OBSOLETE NOW, I'VE FIGURED OUT A BETTER WAY TO DO GET THAT INFO! (It uses the windows API stuff that i have access to through AHK)
 
@@ -657,4 +691,10 @@ tooltip,
 }
 ;end of instantexplorer()
 
-#IfWinActive
+
+
+
+
+
+
+#IfWinActive ; just to make sure i didn't forget to reset anything so my hotkeys in assingments.ahk still work
