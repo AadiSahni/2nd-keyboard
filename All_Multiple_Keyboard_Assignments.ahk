@@ -160,7 +160,7 @@ CapsLock & q::Home
 CapsLock & w::Up
 CapsLock & e::End
 CapsLock & r::winRestoreMaximize()
-CapsLock & t::return
+CapsLock & t::instantExplorer("E:\1. Aadi Sahni\")
 CapsLock & y::return
 CapsLock & u::Home
 CapsLock & i::Up
