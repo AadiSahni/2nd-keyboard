@@ -161,7 +161,7 @@ CapsLock & w::Up
 CapsLock & e::End
 CapsLock & r::winRestoreMaximize()
 CapsLock & t::instantExplorer("E:\1. Aadi Sahni\")
-CapsLock & y::return
+CapsLock & y::instantExplorer("Downloads")
 CapsLock & u::Home
 CapsLock & i::Up
 CapsLock & o::End
