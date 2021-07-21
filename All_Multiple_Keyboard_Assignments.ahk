@@ -48,8 +48,8 @@ return
 +^LButton::
 ^+Enter::
 ^+o::
-Click left
-sleep 1000
+click left
+sleep 10
 Send, {AppsKey}
 sleep 50
 Send, {h}{c}
