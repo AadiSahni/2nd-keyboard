@@ -45,8 +45,8 @@ return
 return
 
 ; Open With
-CapsLock & LButton::
-CapsLock & Enter::
++^LButton::
+^+Enter::
 ^+o::
 Click left
 Send, {AppsKey}
