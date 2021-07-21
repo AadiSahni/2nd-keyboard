@@ -48,7 +48,7 @@ return
 +^LButton::
 ^+Enter::
 ^+o::
-click left
+SendInput, LButton
 sleep 10
 Send, {AppsKey}
 sleep 50
