@@ -49,6 +49,7 @@ return
 ^+Enter::
 ^+o::
 Click left
+sleep 1000
 Send, {AppsKey}
 sleep 50
 Send, {h}{c}
