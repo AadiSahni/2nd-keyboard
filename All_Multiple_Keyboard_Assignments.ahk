@@ -45,11 +45,10 @@ return
 return
 
 ; Open With
-+^LButton::
-^+Enter::
+CapsLock & LButton::
+CapsLock & Enter::
 ^+o::
-SendInput, LButton
-sleep 10
+Click left
 Send, {AppsKey}
 sleep 50
 Send, {h}{c}
