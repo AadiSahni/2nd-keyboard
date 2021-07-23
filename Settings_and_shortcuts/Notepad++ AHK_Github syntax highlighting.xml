@@ -1,5 +1,5 @@
 <NotepadPlus>
-    <UserLang name="AutoHotkey_Aadi" ext="ahk ahkl ahkh ia" udlVersion="2.1">
+    <UserLang name="AutoHotkey_Aadi" ext="ahahk" udlVersion="2.1">
         <Settings>
             <Global caseIgnored="yes" allowFoldOfComments="yes" foldCompact="no" forcePureLC="0" decimalSeparator="0" />
             <Prefix Keywords1="yes" Keywords2="no" Keywords3="no" Keywords4="yes" Keywords5="no" Keywords6="yes" Keywords7="no" Keywords8="no" />
