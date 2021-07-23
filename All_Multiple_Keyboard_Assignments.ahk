@@ -88,7 +88,7 @@ return
 	Send {e}
 	return
 
-
+#IfWinActive
 ; ++++++++++++++++++++++++++End Explorer Assignments++++++++++++++++++++++++++++++++++++++++++
 
 
