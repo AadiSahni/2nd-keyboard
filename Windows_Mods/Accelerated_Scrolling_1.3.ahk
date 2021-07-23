@@ -20,12 +20,12 @@ tooltips := 0
 ; The length of a scrolling session.
 ; Keep scrolling within this time to accumulate boost.
 ; Default: 500. Recommended between 400 and 1000.
-timeout := 700
+timeout := 600
 
 ; If you scroll a long distance in one session, apply additional boost factor.
 ; The higher the value, the longer it takes to activate, and the slower it accumulates.
 ; Set to zero to disable completely. Default: 30.
-boost := 30
+boost := 60
 
 ; Spamming applications with hundreds of individual scroll events can slow them down.
 ; This sets the maximum number of scrolls sent per click, i.e. max velocity. Default: 60.
@@ -38,6 +38,8 @@ vmax := 1
 ; Key bindings
 WheelUp::    Goto Scroll
 WheelDown::  Goto Scroll
+#WheelUp::   Suspend
+#WheelDown:: Goto Quit
 
 
 
@@ -67,7 +69,7 @@ Scroll:
 		v := (v > 1) ? ((v > limit) ? limit : Floor(v)) : 1
 
 		if (v > 1 && tooltips)
-			QuickToolTip("x"v, timeout)
+			QuickToolTip("×"v, timeout)
 		
 		
 
@@ -83,6 +85,11 @@ Scroll:
 	}
 	return
 
+Quit:
+	QuickToolTip("Exiting Accelerated Scrolling...", 1000)
+	Sleep 1000
+	ExitApp
+
 QuickToolTip(text, delay)
 {
 	ToolTip, %text%
@@ -94,13 +101,3 @@ QuickToolTip(text, delay)
 	ToolTip
 	return
 }
-
-
-;script reloader, but it only worKs on this one :(
-#ifwinactive ahk_class Notepad++
-^r::
-send ^s
-sleep 10
-Soundbeep, 1000, 500
-Reload
-Return
