@@ -23,7 +23,7 @@ switchToExplorer(){
 sleep 11 ;this is to avoid the stuck modifiers bug
 IfWinNotExist, ahk_class CabinetWClass
 	Run, explorer.exe
-GroupAdd, taranexplorers, ahk_class CabinetWClass
+GroupAdd, aadiexplorers, ahk_class CabinetWClass
 if WinActive("ahk_exe explorer.exe")
 	Send, ^{Tab}
 else
