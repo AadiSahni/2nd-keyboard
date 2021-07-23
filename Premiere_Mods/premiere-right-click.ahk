@@ -113,3 +113,14 @@ if GetKeyState("MButton", "P") = 1
 }
 theEnd2:
 Return
+
+
+;script reloader, but it only worKs on this one :(
+#IfWinActive ahk_class Notepad++
+^r::
+send ^s
+sleep 10
+Soundbeep, 1000, 500
+Reload
+Return
+#IfWinActive
