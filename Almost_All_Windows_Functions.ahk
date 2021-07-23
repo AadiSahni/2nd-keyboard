@@ -361,6 +361,9 @@ newItemEndY = 109
 
 InstantExplorer(f_path,pleasePrepend := 0)
 {
+; This heavily modified script is from TaranVH
+; The original is linked below
+
 ;this has been heavily modified from https://autohotkey.com/docs/scripts/FavoriteFolders.htm
 
 ;I feel ambivilant about this line. It'll be more stable, but it'll be a bit sloooowerrrr!
