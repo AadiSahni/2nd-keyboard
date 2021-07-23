@@ -25,13 +25,13 @@ return
 F1::return ; f1 is help, you don't need help do you.
 ; actually if you know ahk, you need help
 ; f2 is rename, very useful
-F3::^w ; f3 by default is the search box, which is meh, I don't use windows search enough for it to have a place on my function keys, i'd just use ctrl f
-F4::^n ; f4 is a weird address bar highlight, which you can do by alt d(or f6 is you followed my assignment) and then arrow down
-;F6 to address bar
-F6::!d
+F3::^w ; close active explorer(only works if you use groupy to add tabs) f3 by default is the search box, which is meh, I don't use windows search enough for it to have a place on my function keys, i'd just use ctrl f
+F4::^n ; new window. f4 is a weird address bar highlight, which you can do by alt d(or f6 is you followed my assignment) and then arrow down
+; never mind, you can't bring it up by pressing down
+F6::!d ; brings up address bar. by default it does something that i don't know, check it out maybe
+
+
 ;tilde to go up in directory mod
-
-
 `::
 Sendinput, {alt Down}
 sleep 5
@@ -39,6 +39,7 @@ sendinput, {up} ; this is the up arrow key ; ALT+UP will go down(or "up?") one f
 sleep 5
 Sendinput, {alt Up} ;this is just the virtual ALT keystroke going up.
 return
+
 
 ; copy to path hotkey
 ^+c::copyPathExplorer() 
@@ -60,8 +61,9 @@ return
 #IfWinActive
 
 #IfWinActive ahk_class #32770
-/::!n ; alt n is the shortcut to bring focus to the  file name input box
-#IfWinActive`1
+/::!n ; alt n is the shortcut to bring focus to the file name input box
+; although i'm not sure i'd use it a lot, there are no problems with typing /, since for paths \ is used, and / can't be used in file names
+#IfWinActive
 
 #if MouseIsOver("ahk_exe GroupyCtrl.exe")
 	MButton::MButton
