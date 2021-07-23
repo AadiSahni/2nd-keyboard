@@ -99,6 +99,7 @@ if GetKeyState("MButton", "P") = 1
 		loop
 			{
 			Send {MButton} ; this isn't good, it adds a lot of delay and laggynes
+			; actually, scratch that, it doesn't lag the entire script
 			Send \ ;in premiere, this must be set to "move playhead to cursor."
 			;Tooltip, button 5 playhead mod!
 			sleep 1 ;this loop will repeat every 16 milliseconds.
