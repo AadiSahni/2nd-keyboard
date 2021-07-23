@@ -22,10 +22,11 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 Send ^+{Left}{Backspace}
 return
 
-
-
-F3::^w
-F4::^n
+F1::return ; f1 is help, you don't need help do you.
+; actually if you know ahk, you need help
+; f2 is rename, very useful
+F3::^w ; f3 by default is the search box, which is meh, I don't use windows search enough for it to have a place on my function keys, i'd just use ctrl f
+F4::^n ; f4 is a weird address bar highlight, which you can do by alt d(or f6 is you followed my assignment) and then arrow down
 ;F6 to address bar
 F6::!d
 ;tilde to go up in directory mod
