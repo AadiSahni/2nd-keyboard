@@ -457,20 +457,20 @@ if f_class in #32770,ExploreWClass,CabinetWClass  ; if the window class is a sav
 
 
 	;edit2
-/*
-if f_AlwaysShowMenu = n  ; The menu should be shown only selectively.
-{
-	if f_class in #32770,ExploreWClass,CabinetWClass  ; Dialog or Explorer.
-	{
-		if f_Edit1Pos =  ; The control doesn't exist, so don't display the menu
-			return
-	}
-	else if f_class <> ConsoleWindowClass
-		return ; Since it's some other window type, don't display menu.
-}
+	
+; if f_AlwaysShowMenu = n  ; The menu should be shown only selectively.
+; {
+	; if f_class in #32770,ExploreWClass,CabinetWClass  ; Dialog or Explorer.
+	; {
+		; if f_Edit1Pos =  ; The control doesn't exist, so don't display the menu
+			; return
+	; }
+	; else if f_class <> ConsoleWindowClass
+		; return ; Since it's some other window type, don't display menu.
+; }
 ; Otherwise, the menu should be presented for this type of window:
-;Menu, Favorites, show
-*/
+; Menu, Favorites, show
+
 
 ;msgbox, A_ThisMenuItemPos %A_ThisMenuItemPos%
 ;msgbox, A_ThisMenuItem %A_ThisMenuItem%
