@@ -378,7 +378,7 @@ sendinput, {blind}{SC0E8} ;scan code of an unassigned key. This is needed to pre
 
 if pleasePrepend = 1 ;this is for the changeable per-project folder shortcuts
 	{
-	FileRead, SavedExplorerAddress, C:\AHK\2nd-keyboard\Taran's_Windows_Mods\SavedExplorerAddress.txt
+	FileRead, SavedExplorerAddress, C:\AHK\2nd-keyboard\Windows_Mods\SavedExplorerAddress.txt
 	;msgbox, current f_path is %f_path%
 	if f_path =
 		{
