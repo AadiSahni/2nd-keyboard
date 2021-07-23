@@ -92,13 +92,7 @@ return
 ; ++++++++++++++++++++++++++End Explorer Assignments++++++++++++++++++++++++++++++++++++++++++
 
 
-;+++++++++ SHORTCUTS THAT WORK IN ALL PROGRAMS +++++++++
-; UNIVERSALKEY
-
-ScrollLock::+f19 ; shift f19 is mute in discord because using alt makes the modifiers stuck 
-; i use f19 as a shortcut for different things in various apps
-; ctrl f19 is used for wox, the brilliant search app
-; shift f19 is used for discord as stated above
+; ++++++++++++++SHORTCUTS FOR NAVIGATION, EXCEPT THE ONES THAT AREN'T HERE++++++++++++++
 
 ;chrome tabs and any chromium apps
 GroupAdd, browserGroup, ahk_class Chrome_WidgetWin_1
@@ -141,6 +135,16 @@ send ^t ;this is to regain what I lost when I used F2 and F3 for tab navigation.
 return
 #IfWinActive
 
+
+
+
+;+++++++++ SHORTCUTS THAT WORK IN ALL PROGRAMS +++++++++
+; UNIVERSALKEY
+
+ScrollLock::+f19 ; shift f19 is mute in discord because using alt makes the modifiers stuck 
+; i use f19 as a shortcut for different things in various apps
+; ctrl f19 is used for wox, the brilliant search app
+; shift f19 is used for discord as stated above
 ;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
 
 SetCapsLockState, AlwaysOff
