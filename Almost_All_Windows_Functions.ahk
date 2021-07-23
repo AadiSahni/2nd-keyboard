@@ -18,6 +18,7 @@ MouseIsOver(WinTitle) {
 
 
 ; INSTANT APPLICATION SWITCHER+++++++++++++++++++++++++
+; pretty simple actually, just a little bit of basic ahk knowledge
 
 switchToExplorer(){
 sleep 11 ;this is to avoid the stuck modifiers bug
