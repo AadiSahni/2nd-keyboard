@@ -56,6 +56,7 @@ Send, {AppsKey}
 sleep 50
 Send, {h}{c}
 return
+#IfWinActive
 
 #IfWinActive ahk_class #32770
 /::!n ; alt n is the shortcut to bring focus to the  file name input box
