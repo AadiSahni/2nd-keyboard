@@ -145,6 +145,7 @@ CapsLock & `::back()
 CapsLock & 1::switchToExplorer()
 ; CapsLock & 2::switchToChrome()
 CapsLock & 2::switchToBrave() ; I switched to brave, it's faster, I would like to have firefox with chrome extensions and chrome settings/flags
+; Firefox is soooooo fast though, why can't I just have it
 CapsLock & 3::switchToPremiere()
 CapsLock & 4::switchToWhatsApp()
 CapsLock & 5::switchToDiscord()
