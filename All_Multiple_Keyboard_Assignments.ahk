@@ -95,7 +95,7 @@ return
 ;+++++++++ SHORTCUTS THAT WORK IN ALL PROGRAMS +++++++++
 ; UNIVERSALKEY
 
-ScrollLock::^f19 ; ctrl f19 is mute in discord because using alt makes the modifiers stuck 
+ScrollLock::+f19 ; shift f19 is mute in discord because using alt makes the modifiers stuck 
 ; i use f19 as a shortcut for different things in various apps
 ; shift f19 is used for wox, the brilliant search app
 ; ctrl f19 is used for discord as stated above
