@@ -29,7 +29,7 @@ boost := 30
 
 ; Spamming applications with hundreds of individual scroll events can slow them down.
 ; This sets the maximum number of scrolls sent per click, i.e. max velocity. Default: 60.
-limit := 1
+limit := 60
 
 ; Runtime variables. Do not modify.
 distance := 0
