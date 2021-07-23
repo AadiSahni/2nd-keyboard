@@ -15,7 +15,7 @@ SendMode Input
 
 
 ; Show scroll velocity as a tooltip while scrolling. 1 or 0.
-tooltips := 0
+tooltips := 1
 
 ; The length of a scrolling session.
 ; Keep scrolling within this time to accumulate boost.
