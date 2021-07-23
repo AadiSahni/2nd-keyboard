@@ -25,7 +25,7 @@ IfWinNotExist, ahk_class CabinetWClass
 	Run, explorer.exe
 GroupAdd, taranexplorers, ahk_class CabinetWClass
 if WinActive("ahk_exe explorer.exe")
-	GroupActivate, taranexplorers, r
+	Send, ^{Tab}
 else
 	WinActivate ahk_class CabinetWClass ;you have to use WinActivatebottom if you didn't create a window group.
 }
