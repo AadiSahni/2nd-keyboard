@@ -20,7 +20,7 @@ tooltips := 0
 ; The length of a scrolling session.
 ; Keep scrolling within this time to accumulate boost.
 ; Default: 500. Recommended between 400 and 1000.
-timeout := 600
+timeout := 700
 
 ; If you scroll a long distance in one session, apply additional boost factor.
 ; The higher the value, the longer it takes to activate, and the slower it accumulates.
@@ -38,10 +38,6 @@ vmax := 1
 ; Key bindings
 WheelUp::    Goto Scroll
 WheelDown::  Goto Scroll
-#WheelUp::   Suspend
-#WheelDown:: Goto Quit
-
-
 
 Scroll:
 	t := A_TimeSincePriorHotkey
