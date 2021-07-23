@@ -175,13 +175,12 @@ CapsLock & d::Right
 CapsLock & f::^f19
 CapsLock & g::instantExplorer("E:\Apps")
 CapsLock & h::instantExplorer("C:\Program Files")
-CapsLock & !h::instantExplorer("C:\Program Files (x86)")
 CapsLock & j::Left
 CapsLock & k::Down
 CapsLock & l::Right
 
 ; Bottom Row
-CapsLock & z::return
+CapsLock & z::instantExplorer("C:\Program Files (x86)")
 CapsLock & x::WinMinimize, A
 CapsLock & c::WinClose, A
 CapsLock & v::superKey()
