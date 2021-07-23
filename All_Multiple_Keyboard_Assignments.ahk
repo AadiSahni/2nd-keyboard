@@ -23,6 +23,8 @@ Send ^+{Left}{Backspace}
 return
 
 
+
+F3::^w
 ;F6
 F6::!d
 ;tilde to go up in directory mod
