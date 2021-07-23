@@ -93,13 +93,22 @@ return
 
 
 ; ++++++++++++++SHORTCUTS FOR NAVIGATION, EXCEPT THE ONES THAT AREN'T HERE++++++++++++++
+; ++++++++++++++SHORTCUTS FOR NAVIGATION, EXCEPT THE ONES THAT AREN'T HERE++++++++++++++
+; ++++++++++++++SHORTCUTS FOR NAVIGATION, EXCEPT THE ONES THAT AREN'T HERE++++++++++++++
 
 ;chrome tabs and any chromium apps
+
+
 GroupAdd, browserGroup, ahk_class Chrome_WidgetWin_1
 GroupAdd, browserGroup, ahk_class MozillaWindowClass
+
+
 ; #IfWinActive ahk_class Chrome_WidgetWin_1  ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
+
+
 #IfWinActive ahk_group browserGroup ; this is just so I can add multiple browsers to the same set of assignments, very handy, i recommend to just do the same thing above but add a new ahk class for any other browser
 !h::!home
+
 F1::
 send ^+{tab} ;control shift tab, which goes to the previous tab
 return
@@ -114,7 +123,8 @@ return
 
 F4::
 send ^t ;control t, which opens a new tab
-	return
+return
+
 #IfWinActive
 
 #IfWinActive ahk_exe notepad++.exe
