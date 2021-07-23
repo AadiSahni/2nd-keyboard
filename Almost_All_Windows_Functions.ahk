@@ -98,6 +98,7 @@ switchToDiscord()
 IfWinNotExist, ahk_exe Discord.exe ; ;
 	Run, "C:\Users\Sahni\AppData\Local\Discord\Update.exe" --processStart Discord.exe ; this is the exact path with command line parameters(the processStart part) i got from the discord shortcut on my taskbar
 	; not sure if just using discord.exe would be the same
+	; also, some programs that aren't in program files won't be accesible by just the exe without a file path. 
 
 if WinActive("ahk_exe Discord.exe")
 	WinMinimize
