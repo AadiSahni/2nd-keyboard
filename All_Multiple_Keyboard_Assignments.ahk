@@ -60,7 +60,7 @@ return
 
 #IfWinActive ahk_class #32770
 /::!n ; alt n is the shortcut to bring focus to the  file name input box
-#IfWinActive
+#IfWinActive`1
 
 #if MouseIsOver("ahk_exe GroupyCtrl.exe")
 	MButton::MButton
