@@ -6,6 +6,9 @@ SetWorkingDir %A_ScriptDir%\support_files  ; Ensures a consistent starting direc
 GroupAdd, ExplorerGroup, ahk_class #32770 ;This is for all the Explorer-based "save" and "load" boxes, from any program!
 GroupAdd, ExplorerGroup, ahk_class CabinetWClass ;Regular Explorer window 
 
+GroupAdd, browserGroup, ahk_class Chrome_WidgetWin_1
+GroupAdd, browserGroup, ahk_class MozillaWindowClass
+
 
 
 ; MouseIsOver
