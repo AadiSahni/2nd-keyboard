@@ -173,7 +173,7 @@ CapsLock & a::Left
 CapsLock & s::Down
 CapsLock & d::Right
 CapsLock & f::^f19
-CapsLock & g::return
+CapsLock & g::instantExplorer("E:\Apps")
 CapsLock & h::return
 CapsLock & j::Left
 CapsLock & k::Down
