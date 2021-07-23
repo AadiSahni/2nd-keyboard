@@ -90,12 +90,15 @@ Return
 ;SCRIPT HAS NOT YET BEEN TESTED BY ME.
 
 ;;;;;Mbutton::\ ;<----this would be the STUPID way of doing this. BAD BAD BAD! do not want!
+
+; now this isn't ideal because if a text box is selected, it doesn't bring focus to the timeline. We simply fix this by adding a send mbutton
 #ifwinactive ahk_exe adobe premiere pro.exe
 MButton::
 if GetKeyState("MButton", "P") = 1
 		{
 		loop
 			{
+			Send MButton
 			Send \ ;in premiere, this must be set to "move playhead to cursor."
 			;Tooltip, button 5 playhead mod!
 			sleep 16 ;this loop will repeat every 16 milliseconds.
