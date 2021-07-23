@@ -174,7 +174,8 @@ CapsLock & s::Down
 CapsLock & d::Right
 CapsLock & f::^f19
 CapsLock & g::instantExplorer("E:\Apps")
-CapsLock & h::return
+CapsLock & h::instantExplorer("C:\Program Files")
+CapsLock & !h::instantExplorer("C:\Program Files (x86)")
 CapsLock & j::Left
 CapsLock & k::Down
 CapsLock & l::Right
