@@ -65,7 +65,7 @@ Scroll:
 		v := (v > 1) ? ((v > limit) ? limit : Floor(v)) : 1
 
 		if (v > 1 && tooltips)
-			QuickToolTip("×"v, timeout)
+			QuickToolTip(" × "v, timeout)
 		
 		
 
