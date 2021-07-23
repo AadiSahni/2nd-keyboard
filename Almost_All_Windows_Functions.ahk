@@ -33,7 +33,7 @@ else
 switchToChrome()
 {
 IfWinNotExist, ahk_exe chrome.exe
-	Run, C:\Program Files\Google\Chrome\Application\chrome.exe
+	Run, chrome.exe
 
 if WinActive("ahk_exe chrome.exe")
 	WinActivateBottom ahk_exe chrome.exe
@@ -48,7 +48,7 @@ sendinput, {SC0EA} ;scan code of an unassigned key. used for debugging.
 switchToBrave()
 {
 IfWinNotExist, ahk_exe brave.exe
-	Run, C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe
+	Run, brave.exe
 
 if WinActive("ahk_exe brave.exe")
 	WinActivateBottom ahk_exe brave.exe
