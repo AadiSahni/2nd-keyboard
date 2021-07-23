@@ -25,7 +25,8 @@ return
 
 
 F3::^w
-;F6
+F4::^n
+;F6 to address bar
 F6::!d
 ;tilde to go up in directory mod
 
