@@ -97,7 +97,10 @@ ScrollLock::^f19 ; ctrl f19 is mute in discord because using alt makes the modif
 ; ctrl f19 is used for discord as stated above
 
 ;chrome tabs and any chromium apps
-#IfWinActive ahk_class Chrome_WidgetWin_1  ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
+GroupAdd, ahk_group browserGrp, ahk_class Chrome_WidgetWin_1
+GroupAdd, ahk_group browserGrp, ahk_class MozillaWindowClass
+; #IfWinActive ahk_class Chrome_WidgetWin_1  ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
+#IfWinActive ahk_group browserGrp ; this is just so I can add multiple browsers to the same set of assignments, very handy, i recommend to just do the same thing above but add a new ahk class for any other browser
 !h::!home
 F1::
 send ^+{tab} ;control shift tab, which goes to the previous tab
