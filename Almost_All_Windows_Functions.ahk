@@ -80,7 +80,7 @@ else
 switchToWhatsApp()
 {
 IfWinNotExist, ahk_exe WhatsApp.exe
-	Run, C:\Users\Sahni\AppData\Local\WhatsApp\WhatsApp.exe
+	Run, WhatsApp.exe
 
 if WinActive("ahk_exe WhatsApp.exe")
 	WinMinimize
