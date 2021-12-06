@@ -32,7 +32,7 @@ boost := 0
 limit := 60
 
 ; Runtime variables. Do not modify.
-distance := 100
+distance := 0
 vmax := 1
 
 ; Key bindings
