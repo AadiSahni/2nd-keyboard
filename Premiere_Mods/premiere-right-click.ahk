@@ -2,6 +2,7 @@
 #InstallMouseHook
 #InstallKeybdHook
 
+
 CoordMode, Mouse, screen
 CoordMode, Pixel, screen
 
@@ -11,12 +12,53 @@ Menu, Tray, Icon, imageres.dll, 90
 ;VIDEO EXPLANATION:  https://youtu.be/O6ERELse_QY?t=23m40s
 
 
-; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ; NOTE THAT YOU MUST ASSIGN \ (backslash) TO "Move playhead to cursor" IN PREMIERE'S KEYBOARD SHORTCUTS PANEL!
 ; YOU SHOULD ALSO ASSIGN CTRL ALT D to "DESELECT ALL" 
-; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
+
+; ; Aadi's descent into madness part 1
+; ; 12:31 am 26 October 2021
+; so this script is not working at all.
+
+#ifwinactive
+#ifwinactive
+; resetting 
+
+; CapsLock & LButton::
+; tooltip, so this script does work
+; click left
+; sleep 2000
+; tooltip, 
+; return
+
+; #InstallMouseHook
+; #InstallKeybdHook
+; disabling kb and mouse hooks didn't work
+
+; the script is running, the icon is appearing from the 9th line, but the script still doesn't work
+; what is happening, this troubleshooting left click thing on lines 30 to 35 work in explorer, and ahk's help app, but doesn't in notepad++ or premiere
+; works in brave
+; doesn't work in notepad++
+; works in autohotkey help
+; DOESN'T WORK IN PREMIERE
+; WORKS IN START11
+; DOESN'T WORK IN WINDOWS START MENU
+; WORKS IN DISCORD
+; WORKS IN WHATSAPP
+; WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+
+; guess what, the main script(all_multiple_assignments.ahk) works for premiere and notepad++
+; oh kill me
+; 
+
+
+
+
+
+;---------------------------------------------------------------------------------------
 ;NOTE: I use the right mouse button for this because my current mouse does not have macro keys on it. I could use the middle mouse button, but it requires too much pressure to push down so often, and you have to be careful not to accidentally scroll it.
 ;But if you want to use a button other than the right mouse button, the script becomes a lot simpler. Scroll down to the bottom for that script.
 
@@ -90,38 +132,24 @@ Return
 ;SCRIPT HAS NOT YET BEEN TESTED BY ME.
 
 ;;;;;Mbutton::\ ;<----this would be the STUPID way of doing this. BAD BAD BAD! do not want!
+; #ifwinactive ahk_exe adobe premiere pro.exe
+; Xbutton2::
+; if GetKeyState("Xbutton2", "P") = 1
+		; {
+		; loop
+			; {
+			; Send \ ;in premiere, this must be set to "move playhead to cursor."
+			; ;Tooltip, button 5 playhead mod!
+			; sleep 16 ;this loop will repeat every 16 milliseconds.
+			; if GetKeyState("Xbutton2", "P") = 0
+				; {
+				; ;msgbox,,,time to break,1
+				; tooltip,
+				; goto theEnd2
+				; break
+				; }
+			; }
+; }
+; theEnd2:
+; Return
 
-; now this isn't ideal because if a text box is selected, it doesn't bring focus to the timeline. We simply fix this by adding a send mbutton
-#ifwinactive ahk_exe adobe premiere pro.exe
-MButton::
-if GetKeyState("MButton", "P") = 1
-		{
-		loop
-			{
-			Send {MButton} ; this isn't good, it adds a lot of delay and laggynes
-			; actually, scratch that, it doesn't lag the entire script
-			Send \ ;in premiere, this must be set to "move playhead to cursor."
-			;Tooltip, button 5 playhead mod!
-			sleep 1 ;this loop will repeat every 16 milliseconds.
-			if GetKeyState("MButton", "P") = 0
-				{
-				;msgbox,,,time to break,1
-				tooltip,
-				goto theEnd2
-				break
-				}
-			}
-}
-theEnd2:
-Return
-
-
-;script reloader, but it only worKs on this one :(
-#IfWinActive ahk_class Notepad++
-^r::
-send ^s
-sleep 10
-Soundbeep, 1000, 500
-Reload
-Return
-#IfWinActive
