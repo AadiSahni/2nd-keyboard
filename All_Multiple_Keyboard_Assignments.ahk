@@ -13,8 +13,18 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 ;;; Searching Terms
 ; UNIVERSALKEYS
 ; PremiereKeys
+; NavigationKeys
 
 ; +++++++++++++++++++++Begin Explorer Assignments++++++++++++++++++++++++++
+
+#IfWinActive ahk_exe peazip.exe
+`::
+Sendinput, {alt Down}
+sleep 5
+sendinput, {up} ; this is the up arrow key ; ALT+UP will go down(or "up?") one folder level in explorer
+sleep 5
+Sendinput, {alt Up} ;this is just the virtual ALT keystroke going up.
+return
 
 #IfWinActive ahk_group ExplorerGroup ; File Explorer
 ;Ctrl backspace
@@ -22,9 +32,13 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 Send ^+{Left}{Backspace}
 return
 
+
+^+z::^y ; explorer doesn't use ctrl shift z for redo, it uses ctrl y. hello 2007 when ctrl y was used for redo. 
+; seriously, ctrl y for redo, M$, did you forget to change that when your were working hard(more like hardly working) sitting on your diamond chairs. 
+
 F1::return ; f1 is help, you don't need help do you.
 ; actually if you know ahk, you need help
-; f2 is rename, very useful
+; f2 is rename, very usefulr
 F3::^w ; close active explorer(only works if you use groupy to add tabs) f3 by default is the search box, which is meh, I don't use windows search enough for it to have a place on my function keys, i'd just use ctrl f
 F4::^n ; new window. f4 is a weird address bar highlight, which you can do by alt d(or f6 is you followed my assignment) and then arrow down
 ; never mind, you can't bring it up by pressing down
@@ -93,8 +107,39 @@ return
 
 
 ; ++++++++++++++SHORTCUTS FOR NAVIGATION, EXCEPT THE ONES THAT AREN'T HERE++++++++++++++
-; ++++++++++++++SHORTCUTS FOR NAVIGATION, EXCEPT THE ONES THAT AREN'T HERE++++++++++++++
-; ++++++++++++++SHORTCUTS FOR NAVIGATION, EXCEPT THE ONES THAT AREN'T HERE++++++++++++++
+; NavigationKeys
+; for searching quickly, ignore
+
+; FOR THE LAST TIME, LAPTOP KEYBOARDS SHOULD BE TKL, NOT WEIRD FULL SIZED
+; Anyways this maps right alt + ctrl to appskey
+; lemme know if you have a way of making fn + alt, appskey
+;
+RAlt & RCtrl::AppsKey
+
+#IfWinActive ahk_exe vim.exe
+WheelUp::^y
+WheelDown::^e
+#IfWinActive
+
+#IfWinActive ahk_class DV2ControlHost
+^+Enter::
+Send {appskey}
+send {down}
+send {down}
+send {enter}
+return
+
+^+LButton::
+click right
+send {down}
+send {down}
+send {enter}
+return
+#IfWinActive 
+
+
+
+; ++++++++++++++END OF NAVGATION SHORTCUTS++++++++++++++
 
 ;chrome tabs and any chromium apps
 
@@ -103,11 +148,14 @@ GroupAdd, browserGroup, ahk_class Chrome_WidgetWin_1
 GroupAdd, browserGroup, ahk_class MozillaWindowClass
 
 
+
 ; #IfWinActive ahk_class Chrome_WidgetWin_1  ; Since most chromium based apps (browsers and electron apps) use Chrome_WidgetWin_1 for their class(atleast the ones that I've checked), using that allows me to IfWinActive on many places at once
 
 
 #IfWinActive ahk_group browserGroup ; this is just so I can add multiple browsers to the same set of assignments, very handy, i recommend to just do the same thing above but add a new ahk class for any other browser
 !h::!home
+
+
 
 F1::
 send ^+{tab} ;control shift tab, which goes to the previous tab
@@ -149,7 +197,7 @@ return
 
 
 ;+++++++++ SHORTCUTS THAT WORK IN ALL PROGRAMS +++++++++
-; UNIVERSALKEY
+; UNIVERSALKEYS
 
 ScrollLock::+f19 ; shift f19 is mute in discord because using alt makes the modifiers stuck 
 ; i use f19 as a shortcut for different things in various apps
@@ -162,7 +210,7 @@ CapsLock::f20 ; alt + capslock toggles capslock, it's weird becuase ctrl does no
 ; i guess i'm going to have to create a task schedule for this script for capslock state to be always off while having the rest of my capslock code still work 
 ; done, you'll have to create a task schedule as well if you want to use capslock or numlock always in one state to make them modifiers
 ; set trigger to log on of a specific user and make it your user and make action a program and make it launch the script
-; future me here, I forgot to tell you check the actual admin checkbox in the general tab(run with highest privelegaseses. )
+; future me here, I forgot to tell you check the actual admin checkbox in the general tab(run with highest privelglasses. )
  
 ; Number Keys
 CapsLock & `::back()
@@ -170,11 +218,12 @@ CapsLock & 1::switchToExplorer()
 ; CapsLock & 2::switchToChrome()
 CapsLock & 2::switchToBrave() ; I switched to brave, it's faster, I would like to have firefox with chrome extensions and chrome settings/flags
 ; Firefox is soooooo fast though, why can't I just have it
+; 
 CapsLock & 3::switchToPremiere()
 CapsLock & 4::switchToWhatsApp()
 CapsLock & 5::switchToDiscord()
-CapsLock & 6::return
-CapsLock & 7::return
+CapsLock & 6::switchToWord()
+CapsLock & 7::switchToNotepadplusplus()
 CapsLock & 8::return
 CapsLock & 9::return
 CapsLock & 0::return
@@ -185,9 +234,9 @@ CapsLock & q::Home
 CapsLock & w::Up
 CapsLock & e::End
 CapsLock & r::winRestoreMaximize()
-CapsLock & t::instantExplorer("E:\AadiSahni\")
-; CapsLock & y::instantExplorer("C:\Users\Sahni\Downloads") ; this is without the onedrive if you don't have onedrive
+CapsLock & t::instantExplorer("C:\Users\sahni\AadiSahni")
 CapsLock & y::instantExplorer("C:\Users\Sahni\OneDrive\Downloads")
+; CapsLock & y::instantExplorer("C:\Users\Sahni\Downloads") ; this is without the onedrive if you don't have onedrive
 CapsLock & u::Home
 CapsLock & i::Up
 CapsLock & o::End
@@ -198,7 +247,7 @@ CapsLock & a::Left
 CapsLock & s::Down
 CapsLock & d::Right
 CapsLock & f::^f19
-CapsLock & g::instantExplorer("E:\Apps")
+CapsLock & g::instantExplorer("C:\Users\Sahni")
 CapsLock & h::instantExplorer("C:\Program Files")
 CapsLock & j::Left
 CapsLock & k::Down
@@ -208,10 +257,17 @@ CapsLock & l::Right
 CapsLock & z::instantExplorer("C:\Program Files (x86)")
 CapsLock & x::WinMinimize, A
 CapsLock & c::WinClose, A
-CapsLock & v::superKey()
+
+#if GetKeyState("CapsLock", "P")
+!C::
+WinKill, A
+return
+#if
+
+CapsLock & v::instantExplorer("C:\AHK\2nd-keyboard")
 CapsLock & b::Delete
-CapsLock & n::return
-CapsLock & m::return
+CapsLock & n::switchToSteam()
+CapsLock & m::+F19
 
 ; Extra keys
 CapsLock & Space::Enter
@@ -232,7 +288,7 @@ CapsLock & Space::Enter
 ;;-----BEGIN KEYS PAIRED WITH WINDOWS--------
 
 
-#c::#+v
+#n::#+v
 
 #x::
 send #+v
@@ -251,10 +307,10 @@ Send {enter}
 return
 
 
+
 ; OKAY I NEED A LOT OF MEDIA PLAYBACK KEYS
 #WheelUp::Volume_Up
 #WheelDown::Volume_Down
-#MButton::Media_Play_Pause
 #Space::Media_Play_Pause
 
 #PgUp::Volume_Up
@@ -329,7 +385,7 @@ send, v ;This is my Premiere shortcut for the SELECTION tool. again, you can use
 return
 
 
-;; instant cut at cursor(UNLOCKEDLAYER/TRACK BELOW CURSOR ONLY) (UPON KEY RELEASE) -- super useful! even respects snapping!
+;; instant cut at cursor(UNLOCKED LAYER/TRACK BELOW CURSOR ONLY) (UPON KEY RELEASE) -- super useful! even respects snapping!
 ;this is NOT suposed to stop the video playing when you use it, but now it does for some reason....
 F4::
 send, b ;This is my Premiere shortcut for the RAZOR tool. You can use another shortcut if you like, but you have to use that shortcut here.
@@ -381,7 +437,7 @@ return
 ;;;;;;----------------------------------------;;;;;;;;;;;;;
 
 
-;============== CURRENT TOOL REMEMBERER ================
+; CURRENT TOOL REMEMBERER ==
 
 ;IMPORTANT - these are MY keyboard assignments for tools
 ;Your own assignments will probably be different!
@@ -406,4 +462,46 @@ sleep 10
 Soundbeep, 1000, 500
 Reload
 Return
+#IfWinActive 
+
+
+#IfWinActive 
+
+
+; Note to self, move this to a different file
+;;+++++++++++++++++++Game Assignments++++++++++++++++++++++
+#IfWinActive ahk_exe AC3SP.exe
+; Terribly failed, Assassin's Creed 3 does not accept any input from any thing except actually pressing the keys, i think.
+; Besides, any ac game before ac4 black flags (except liberation, don't know about that) autokills this script. I don't know why.
+; Actually, scratch that, it kills all ahk scripts, all though the script is still running, it just doesn't work. 
+; I assume it's an anti cheat mechanism, still don't like it.
+Numpad1::end
+Numpad2::down
+Numpad3::pgdn
+Numpad4::left
+Numpad5::click right
+Numpad6::right
+Numpad7::home
+Numpad8::up
+Numpad9::pgup
+NumpadDot::del
+Numpad0::click left
 #IfWinActive
+
+
+#IfWinActive ahk_exe AC4BFSP.exe
+; Assassin's Creed 4 Black Flags' exe does not quit properly when using alt f4, win close, or the quit button in the app. This makes it so I can't launch the game, here's the fix then
+CapsLock & C::
+process, close, AC4BFSP.exe
+; WinExit AC4BF.exe ; this is another way
+
+
+
+#IfWinActive ahk_exe GeforceNOW.exe
+SetKeyDelay, 0
+^v::
+sendraw %clipboard%
+#IfWinActive
+
+
+#IfWinActive 

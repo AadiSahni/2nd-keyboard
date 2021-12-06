@@ -52,8 +52,7 @@ sendinput, {SC0EA} ;scan code of an unassigned key. used for debugging.
 switchToBrave()
 {
 IfWinNotExist, ahk_exe brave.exe
-	Run, brave.exe
-
+	Run, C:\Users\sahni\AppData\Local\BraveSoftware\Brave-Browser\Application\brave.exe
 if WinActive("ahk_exe brave.exe")
 	WinActivateBottom ahk_exe brave.exe
 else
@@ -68,7 +67,7 @@ switchToPremiere(){
 IfWinNotExist, ahk_class Premiere Pro
 	{
 	Run, Adobe Premiere Pro.exe
-	tooltip, Premiere isn't running!!!!
+	tooltip, Launching Premiere
 	sleep 3000
 	tooltip
 	return
@@ -84,7 +83,7 @@ else
 switchToWhatsApp()
 {
 IfWinNotExist, ahk_exe WhatsApp.exe
-	Run, C:\Users\Sahni\AppData\Local\WhatsApp\WhatsApp.exe
+	Run, "C:\Users\sahni\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\WhatsApp.exe.lnk"
 
 if WinActive("ahk_exe WhatsApp.exe")
 	WinMinimize
@@ -109,6 +108,59 @@ if WinActive("ahk_exe Discord.exe")
 	WinMinimize
 else
 	WinActivate ahk_exe Discord.exe
+}
+
+switchToWord()
+{
+sleep 11 ;this is to try to avoid the stuck modifiers bug
+;tooltip, why
+Process, Exist, WINWORD.EXE
+;msgbox errorLevel `n%errorLevel%
+	If errorLevel = 0
+		Run, WINWORD.EXE
+	else
+	{
+	IfWinExist, Microsoft Office Word, OK ;checks to see if the annoying "do you want to continue searching from the beginning of the document" dialouge box is present.
+		sendinput, {escape}
+	else if WinActive("ahk_class OpusApp")
+		sendinput, {F3} ;set to "go to next comment" in Word.
+	else
+		WinActivate ahk_class OpusApp
+	}
+
+;maybe need to unstick modifiers
+sleep 2
+sendinput {Rctrl up}{Lctrl up}
+;idk if it helps or not.
+sendinput, {SC0EA} ;scan code of an unassigned key. used for debugging.
+}
+
+
+switchToNotepadplusplus()
+{
+IfWinNotExist, ahk_exe Notepad++.exe
+	Run, Notepad++.exe
+	
+If WinActive("ahk_exe Notepad++.exe")
+	Send ^{Tab}
+else
+	WinActivate ahk_exe Notepad++.exe
+}
+
+
+switchToSteam()
+{
+IfWinNotExist, ahk_exe steam.exe
+	Run, "C:\Program Files (x86)\Steam\steam.exe"
+
+if WinActive("ahk_exe steam.exe")
+	WinMinimize
+else
+	WinActivate ahk_exe steam.exe
+
+sendinput {Rctrl up}{Lctrl up}
+;idk if it helps or not.
+sendinput, {SC0EA} ;scan code of an unassigned key. used for debugging.
 }
 
 
@@ -703,8 +755,5 @@ tooltip,
 
 
 
-
-
-
-
-#IfWinActive ; just to make sure i didn't forget to reset anything so my hotkeys in assingments.ahk still work
+#IfWinActive ; just to make sure i didn't forget to reset anything so my hotkeys in All_Multiple_Keyboard_Assignments.ahk still work.
+; I would very much like to format all my code, but it's too much work. If you write it yourself, use newer syntaxing and use better formatting
