@@ -98,7 +98,7 @@ return
 	; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
 	click left
 	Send {AppsKey}
-	sleep 0 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects something that starts with e, increase the sleep
+	sleep 10 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects something that starts with e, increase the sleep
 	Send {e}
 	return
 
