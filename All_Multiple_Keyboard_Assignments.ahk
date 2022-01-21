@@ -218,6 +218,7 @@ CapsLock & `::back()
 CapsLock & 1::switchToExplorer()
 ; CapsLock & 2::switchToChrome()
 CapsLock & 2::switchToBrave() ; I switched to brave, it's faster, I would like to have firefox with chrome extensions and chrome settings/flags
+; New found news, brave does not work with Accelerated Scrolling and KDE Mover Sizer, might finally move to firefox then. 
 ; Firefox is soooooo fast though, why can't I just have it
 ; 
 CapsLock & 3::switchToPremiere()
