@@ -20,8 +20,9 @@ REM AutoCopy
 		copy stylers.xml "C:\AHK\2nd-keyboard\INFO_and_PROFILES"
 		cd "C:\AHK\2nd-keyboard\INFO_and_PROFILES" 
 		rename stylers.xml Notepad++_Styles.xml
+		del stylers.xml
 	REM AutoExecute.bat
-		cd %userprofile%\OneDrive\Documents\"
+		cd %userprofile%\OneDrive\Documents\
 		copy AutoExecute.bat "C:\AHK\2nd-keyboard\INFO_and_PROFILES"
 		
 		
