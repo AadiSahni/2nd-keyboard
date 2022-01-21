@@ -2,6 +2,16 @@
 
 Menu, Tray, Icon, imageres.dll, 262
 
+
+; ++++++++++++
+; to edit any setting without using the context menu on the tray icon, use the ini in the same directory. 
+; this has more fuctinality then the stock KDE Mover Sizer(the one this is based on, script is in the I_do_not_use folder) however might have the problem of not working sometimes. 
+; This happens with Accelerated scrolling as well for me, even though the script is not modified so this might be an issue just on my computer.
+; Changing anything here can break the script, I don't know how this works since I didn't write it so I can't explain anything. 
+; Just edit the ini file, much more friendly to edit as well. 
+
+
+
 ;
 ;	http://corz.org/windows/software/accessories/KDE-resizing-moving-for-Windows.php
 

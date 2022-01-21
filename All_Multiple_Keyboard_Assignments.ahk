@@ -211,6 +211,7 @@ CapsLock::f20 ; alt + capslock toggles capslock, it's weird becuase ctrl does no
 ; done, you'll have to create a task schedule as well if you want to use capslock or numlock always in one state to make them modifiers
 ; set trigger to log on of a specific user and make it your user and make action a program and make it launch the script
 ; future me here, I forgot to tell you check the actual admin checkbox in the general tab(run with highest privelglasses. )
+; i guess privelglasses is amazing english
  
 ; Number Keys
 CapsLock & `::back()
@@ -234,9 +235,10 @@ CapsLock & q::Home
 CapsLock & w::Up
 CapsLock & e::End
 CapsLock & r::winRestoreMaximize()
-CapsLock & t::instantExplorer("C:\Users\sahni\AadiSahni")
+CapsLock & t::instantExplorer("C:\Users\sahni\AadiSahni") ; Projects folder
 CapsLock & y::instantExplorer("C:\Users\Sahni\OneDrive\Downloads")
 ; CapsLock & y::instantExplorer("C:\Users\Sahni\Downloads") ; this is without the onedrive if you don't have onedrive
+; also, i dont need to use onedrive to back up my files since google has a pretty good app for drive for this stuff but it's mapped to a different drive.
 CapsLock & u::Home
 CapsLock & i::Up
 CapsLock & o::End
@@ -256,18 +258,24 @@ CapsLock & l::Right
 ; Bottom Row
 CapsLock & z::instantExplorer("C:\Program Files (x86)")
 CapsLock & x::WinMinimize, A
-CapsLock & c::WinClose, A
+	#if GetKeyState("CapsLock", "P")
+	!x::+F19
+	return
+	#if
 
-#if GetKeyState("CapsLock", "P")
-!C::
-WinKill, A
-return
-#if
+CapsLock & c::WinClose, A
+	; Force kill active app
+	#if GetKeyState("CapsLock", "P")
+	!c::
+	; WinKill, A
+	msgbox, kill
+	return
+	#if
 
 CapsLock & v::instantExplorer("C:\AHK\2nd-keyboard")
 CapsLock & b::Delete
 CapsLock & n::switchToSteam()
-CapsLock & m::+F19
+CapsLock & m::+F19 ; discord mute
 
 ; Extra keys
 CapsLock & Space::Enter
@@ -352,6 +360,7 @@ GroupAdd, NumpadGroup, ahk_exe Photoshop.exe
 #IfWinActive ahk_group NumpadGroup
 ; Numpad9::NumpadIns
 ; I'll figure this out later
+; doesn't work^
 #IfWinActive
 
 

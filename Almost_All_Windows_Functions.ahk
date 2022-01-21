@@ -83,7 +83,7 @@ else
 switchToWhatsApp()
 {
 IfWinNotExist, ahk_exe WhatsApp.exe
-	Run, "C:\Users\sahni\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\WhatsApp.exe.lnk"
+	Run, "C:\Users\sahni\AppData\Local\WhatsApp\WhatsApp.exe"
 
 if WinActive("ahk_exe WhatsApp.exe")
 	WinMinimize
@@ -582,6 +582,8 @@ if f_class = #32770    ; It's a dialog.
 	if WinActive("ahk_exe Adobe Premiere Pro.exe")
 		{
 		tooltip, you are inside of premiere
+		sleep 1000
+		tooltip,
 		
 		if (f_title = "Export Settings") or if (f_title = "Link Media")
 			{
