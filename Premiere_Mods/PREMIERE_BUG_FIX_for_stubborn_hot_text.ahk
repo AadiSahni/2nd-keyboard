@@ -1,5 +1,7 @@
 ;;NOTE
 ;I no longer use this script, since I figured out that all it's doing is changing a windows mouse setting that you can already access manually.
+; so this script depends on what mouse i'm using, since some mice don't have software to change dpi, you have to rely on windows to change the pointer speed.
+; btw, use raw mouse input in games to not have this affect your in game sensitivity
 
 ;see  how_I_fix_stubborn_hot_text_permanently.png  for the fix that i use now (as of ~ April 2019 and onward)
 
