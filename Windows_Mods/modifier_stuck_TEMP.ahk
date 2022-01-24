@@ -8,6 +8,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 send {alt up}
 send {ctrl up}
 send {shift up}
-
+send {LWin up}
 return
 exit
