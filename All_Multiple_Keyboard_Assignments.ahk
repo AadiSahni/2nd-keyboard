@@ -21,7 +21,7 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 `::
 Sendinput, {alt Down}
 sleep 5
-sendinput, {up} ; this is the up arrow key ; ALT+UP will go down(or "up?") one folder level in explorer
+sendinput, {up} ; this is the up arrow key ; ALT+UP will go up one folder level in explorer
 sleep 5
 Sendinput, {alt Up} ;this is just the virtual ALT keystroke going up.
 return
@@ -38,7 +38,7 @@ return
 
 F1::return ; f1 is help, you don't need help do you.
 ; actually if you know ahk, you need help
-; f2 is rename, very usefulr
+; f2 is rename, very useful
 F3::^w ; close active explorer(only works if you use groupy to add tabs) f3 by default is the search box, which is meh, I don't use windows search enough for it to have a place on my function keys, i'd just use ctrl f
 F4::^n ; new window. f4 is a weird address bar highlight, which you can do by alt d(or f6 is you followed my assignment) and then arrow down
 ; never mind, you can't bring it up by pressing down
@@ -306,6 +306,7 @@ return
 
 #z::
 Send #b
+sleep 10
 Send {left}
 sleep 10
 Send {left}
@@ -330,24 +331,67 @@ return
 #w::Volume_Up
 #s::Volume_Down
 
+#f5::Media_Play_Pause
 #f6::Volume_Mute
 #f7::Volume_Down
 #f8::Volume_Up
-#f5::Media_Play_Pause
 
 ;;------END OF ALT KEYS----------
 
 #IfWinActive
 
+
+
+
+
+
+
+
+
+;;;;;;;;; ---------------------SECONDARY KEYBOARD-------------------- ;;;;;;;;;
+; here lies the ahk part of what you will need for a second keyboard, and by that I mean a second keyboard that functions different, so one that doesn't type like the first one. 
+; for this to work you must wrap all the keys in F24, a function key that exists virtually, but not physically on keyboards, which is fantastic for ahk.
+; for iCUE that is a Corsair keyboard, you need to import a custom profile that sets all keys to macro that sends F24 and then the key that you pressed, so like F24 down, a down, a up, F24 up. 
+; for qmk you do the same thing except it's way more complicated than import a profile, there's a tutorial on it https://www.youtube.com/watch?v=GZEoss4XIgc
+#If GetKeyState("F24", "P")
+
+q::
+w::
+e::
+r::
+t::
+y::
+u::
+i::
+o::
+p::tooltip, [F24] %A_ThisHotkey%
+; you replace this with anything you want, for each key, again, refer to the tutorial
+; continue on and add any and all keyboard shortcuts you want to map for the second keyboard
+
+
+
+
+#if
+
+
+
+
+
+
+
+
+
+
 ;;;;--------------------- ALL KEYS IN PREMIERE ------------------------------------------
 #IfWinActive ahk_exe Adobe Premiere Pro.exe
 
-^+n::
-send, ^f
-send, {enter}
-return
-; I honestly have no idea what the above code does and why it's there but i'm keeping it in for now
-; I'll comment it out after some testing
+; ^+n::
+; send, ^f
+; send, {enter}
+; return
+; ; I honestly have no idea what the above code does and why it's there but i'm keeping it in for now
+; ; I'll comment it out after some testing
+; ; after some testing, I am even more confused. ctrl shift n is mapped to nothing in premiere, neither in my custom keyboard shortcuts, neither in the default one, and what's more confusing is that ctrl f is scale to frame size. I hate scale to frame size, why would I have it mapped to a macro
 
 #IfWinActive
 
