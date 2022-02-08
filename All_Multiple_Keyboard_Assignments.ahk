@@ -34,13 +34,14 @@ return
 
 
 ^+z::^y ; explorer doesn't use ctrl shift z for redo, it uses ctrl y. hello 2007 when ctrl y was used for redo. 
-; seriously, ctrl y for redo, M$, did you forget to change that when your were working hard(more like hardly working) sitting on your diamond chairs. 
+; seriously, ctrl y for redo, M$, did you forget to change that when your were working hard(hardly working) sitting on your diamond chairs. 
+; M$ is not even the problem, I mean they are a problem, but if not for Azure, windows would be better
 
 F1::return ; f1 is help, you don't need help do you.
 ; actually if you know ahk, you need help
 ; f2 is rename, very useful
 F3::^w ; close active explorer(only works if you use groupy to add tabs) f3 by default is the search box, which is meh, I don't use windows search enough for it to have a place on my function keys, i'd just use ctrl f
-F4::^n ; new window. f4 is a weird address bar highlight, which you can do by alt d(or f6 is you followed my assignment) and then arrow down
+F4::^n ; new window. f4 is a weird address bar highlight, which you can do by alt d(or f6 if you followed the next assignment) and then arrow down
 ; never mind, you can't bring it up by pressing down
 F6::!d ; brings up address bar. by default it does something that i don't know, check it out maybe
 
@@ -64,13 +65,20 @@ return
 return
 
 ; Open With
-CapsLock & LButton::
 CapsLock & Enter::
+Send, {AppsKey}
+sleep 50
+Send, {h}{c}
+send, {Tab} ; highlights the panel so you can use arrow keys to select instead of the mouse
+return
+
+CapsLock & LButton::
 ^+o::
 Click left
 Send, {AppsKey}
 sleep 50
 Send, {h}{c}
+send, {Tab} ; highlights the panel so you can use arrow keys to select instead of the mouse
 return
 #IfWinActive
 
@@ -80,7 +88,7 @@ return
 #IfWinActive
 
 #if MouseIsOver("ahk_exe GroupyCtrl.exe")
-	MButton::MButton
+	MButton::MButton ; Overriding the open in new window command for Stardock Groupy
 	return
 	
 	
@@ -98,7 +106,7 @@ return
 	; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
 	click left
 	Send {AppsKey}
-	sleep 10 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects something that starts with e, increase the sleep
+	sleep 10 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects a file or folder that starts with e, increase the sleep
 	Send {e}
 	return
 
