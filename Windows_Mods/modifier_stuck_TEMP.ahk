@@ -9,5 +9,6 @@ send {alt up}
 send {ctrl up}
 send {shift up}
 send {LWin up}
+send (capslock up)
 return
 exit
