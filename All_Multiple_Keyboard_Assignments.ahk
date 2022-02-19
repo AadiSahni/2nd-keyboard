@@ -305,8 +305,6 @@ CapsLock & Space::Enter
 ;;-----BEGIN KEYS PAIRED WITH WINDOWS--------
 
 
-#n::#+v
-
 #x::
 send #+v
 send +{Delete}
