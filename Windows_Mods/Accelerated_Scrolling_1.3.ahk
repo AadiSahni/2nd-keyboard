@@ -4,7 +4,7 @@
 ;His .exe was sketchy so here is just the bare .ahk code.
 
 #NoEnv
-;#NoTrayIcon
+Menu, Tray, Icon, %A_ScriptDir%\..\Icons\Mouse.ico ; this will change the icon to, well, a mouse
 #SingleInstance
 #MaxHotkeysPerInterval 120
 

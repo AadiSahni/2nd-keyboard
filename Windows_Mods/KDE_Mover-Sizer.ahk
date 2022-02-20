@@ -1,6 +1,7 @@
 #SingleInstance Force
 
-Menu, Tray, Icon, imageres.dll, 262
+; Menu, Tray, Icon, imageres.dll, 262
+Menu, Tray, Icon, %A_ScriptDir%\..\Icons\KDEwinsizerWindowIcon.ico
 
 
 ; ++++++++++++
@@ -18,7 +19,7 @@ Menu, Tray, Icon, imageres.dll, 262
 ;	Which is essentially..
 
 ;	Easy Window Dragging -- KDE style (Works for anything above XP, just in case you're still using Windows ME or 98) -- by Jonny
-;	..with nobs on. See http://www.autohotkey.com and their forum.
+;	..with nobs on. See http://autohotkey.com and their forum.
 ;
 ;	This script makes it much easier to move or resize a window: 1) Hold down
 ;	the ALT key and LEFT-click anywhere inside a window to drag it to a new
