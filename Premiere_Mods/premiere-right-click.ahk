@@ -27,12 +27,12 @@ Menu, Tray, Icon, imageres.dll, 90
 #ifwinactive
 ; resetting 
 
-CapsLock & LButton::
-tooltip, so this script does work
-click left
-sleep 2000
-tooltip, 
-return
+; CapsLock & LButton::
+; tooltip, so this script does work
+; click left
+; sleep 2000
+; tooltip, 
+; return
 
 #InstallMouseHook
 #InstallKeybdHook
