@@ -1,7 +1,7 @@
 #SingleInstance force ;only one instance of this script may run at a time!
 #MaxHotkeysPerInterval 2000
 ; Menu, Tray, Icon, shell32.dll, 303 ; this changes the tray icon to a little check mark!
-Menu, Tray, Icon, %A_ScriptDir%\..\Icons ; this changes the tray icon to a custom check mark!
+Menu, Tray, Icon, %A_ScriptDir%\..\Icons\Checkmark.ico ; this changes the tray icon to a custom check mark!
 
 ;you know that extremely annoying dialouge box that says,
 ; "This action will delete existing keyframes. Do you want to continue?"
