@@ -27,25 +27,27 @@ Menu, Tray, Icon, imageres.dll, 90
 #ifwinactive
 ; resetting 
 
-; CapsLock & LButton::
-; tooltip, so this script does work
-; click left
-; sleep 2000
-; tooltip, 
-; return
+CapsLock & LButton::
+tooltip, so this script does work
+click left
+sleep 2000
+tooltip, 
+return
 
-; #InstallMouseHook
-; #InstallKeybdHook
+#InstallMouseHook
+#InstallKeybdHook
 ; disabling kb and mouse hooks didn't work
 
 ; the script is running, the icon is appearing from the 9th line, but the script still doesn't work
 ; what is happening, this troubleshooting left click thing on lines 30 to 35 work in explorer, and ahk's help app, but doesn't in notepad++ or premiere
 ; works in brave
 ; doesn't work in notepad++
+; update works in notepad++
 ; works in autohotkey help
 ; DOESN'T WORK IN PREMIERE
 ; WORKS IN START11
 ; DOESN'T WORK IN WINDOWS START MENU
+; update works in windows 11 start menu, don't know about windows 11 menu, probably does and it was a conflict
 ; WORKS IN DISCORD
 ; WORKS IN WHATSAPP
 ; WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
@@ -66,6 +68,7 @@ Menu, Tray, Icon, imageres.dll, 90
 ;Explanation: https://twitter.com/boxrNathan/status/927371468371103745
 ;That is color 0x212121, and last I checked, it shows up in many other places in premiere, not just that part of the timeline.
 ;The easy solution is to just fill up your timeline with tracks; have no blank space.
+;You can also expand the size of a single track by using Alt Scroll Wheel
 
 ;---------------------------------------------------------------------------------------
 
