@@ -32,6 +32,12 @@ return
 Send ^+{Left}{Backspace}
 return
 
+#IfWinActive ahk_class Shell_LightDismissOverlay ; Windows Clipboard
+
+Delete::{Tab}{Enter}{Right}
+
+#IfWinActive
+
 
 ^+z::^y ; explorer doesn't use ctrl shift z for redo, it uses ctrl y. hello 2007 when ctrl y was used for redo. 
 ; seriously, ctrl y for redo, M$, did you forget to change that when your were working hard(hardly working) sitting on your diamond chairs. 
