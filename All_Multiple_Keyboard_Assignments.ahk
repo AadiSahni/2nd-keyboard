@@ -34,7 +34,11 @@ return
 
 #IfWinActive ahk_class Shell_LightDismissOverlay ; Windows Clipboard
 
-Delete::{Tab}{Enter}{Right}
+; Del::
+; {Tab}
+; {Enter}
+; {Right}
+; return
 
 #IfWinActive
 
