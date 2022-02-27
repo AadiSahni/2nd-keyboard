@@ -26,12 +26,6 @@ sleep 5
 Sendinput, {alt Up} ;this is just the virtual ALT keystroke going up.
 return
 
-#IfWinActive ahk_group ExplorerGroup ; File Explorer
-;Ctrl backspace
-^Backspace::
-Send ^+{Left}{Backspace}
-return
-
 #IfWinActive ahk_class Shell_LightDismissOverlay ; Windows Clipboard
 
 ; Del::
@@ -41,6 +35,12 @@ return
 ; return
 
 #IfWinActive
+
+#IfWinActive ahk_group ExplorerGroup ; File Explorer
+;Ctrl backspace
+^Backspace::
+Send ^+{Left}{Backspace}
+return
 
 
 ^+z::^y ; explorer doesn't use ctrl shift z for redo, it uses ctrl y. hello 2007 when ctrl y was used for redo. 
