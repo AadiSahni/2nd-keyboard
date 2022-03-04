@@ -52,7 +52,7 @@ sendinput, {SC0EA} ;scan code of an unassigned key. used for debugging.
 switchToBrave()
 {
 IfWinNotExist, ahk_exe brave.exe
-	Run, C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe
+	Run, C:\Users\sahni\AppData\Local\BraveSoftware\Brave-Browser\Application\brave.exe
 if WinActive("ahk_exe brave.exe")
 	WinActivateBottom ahk_exe brave.exe
 else
