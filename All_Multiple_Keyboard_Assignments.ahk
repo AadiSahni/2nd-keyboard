@@ -48,19 +48,19 @@ return
 ; M$ is not even the problem, I mean they are a problem, but if not for Azure, windows would be better
 
 F1::return ; f1 is help, you don't need help do you.
-; actually if you know ahk, you need help
 ; f2 is rename, very useful
 F3::^w ; close active explorer(only works if you use groupy to add tabs) f3 by default is the search box, which is meh, I don't use windows search enough for it to have a place on my function keys, i'd just use ctrl f
 F4::^n ; new window. f4 is a weird address bar highlight, which you can do by alt d(or f6 if you followed the next assignment) and then arrow down
 ; never mind, you can't bring it up by pressing down
-F6::!d ; brings up address bar. by default it does something that i don't know, check it out maybe
+F6::!d ; brings up address bar. by default it does something that i dovn't know, check it out maybe
+; From the Internet: F6 lets you cycle between the panes of the File Explorer.
 
 
 ;tilde to go up in directory mod
 `::
 Sendinput, {alt Down}
 sleep 5
-sendinput, {up} ; this is the up arrow key ; ALT+UP will go down(or "up?") one folder level in explorer
+sendinput, {up} ; this is the up arrow key ; ALT+UP will up one folder level in explorer
 sleep 5
 Sendinput, {alt Up} ;this is just the virtual ALT keystroke going up.
 return
@@ -95,6 +95,7 @@ return
 #IfWinActive ahk_class #32770
 /::!n ; alt n is the shortcut to bring focus to the file name input box
 ; although i'm not sure i'd use it a lot, there are no problems with typing /, since for paths \ is used, and / can't be used in file names
+; that sentence doesn't make sense for future me
 #IfWinActive
 
 #if MouseIsOver("ahk_exe GroupyCtrl.exe")
@@ -124,7 +125,7 @@ return
 ; ++++++++++++++++++++++++++End Explorer Assignments++++++++++++++++++++++++++++++++++++++++++
 
 
-; ++++++++++++++SHORTCUTS FOR NAVIGATION, EXCEPT THE ONES THAT AREN'T HERE++++++++++++++
+; +++++++SHORTCUTS FOR NAVIGATION, EXCEPT THE ONES THAT AREN'T HERE AND EXCEPT THE ONES THAT AREN'T NAVIGATION+++++
 ; NavigationKeys
 ; for searching quickly, ignore
 
