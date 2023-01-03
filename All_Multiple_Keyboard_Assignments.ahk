@@ -50,7 +50,7 @@ return
 F1::return ; f1 is help, you don't need help do you.
 ; f2 is rename, very useful
 F3::^w ; close active explorer(only works if you use groupy to add tabs) f3 by default is the search box, which is meh, I don't use windows search enough for it to have a place on my function keys, i'd just use ctrl f
-F4::^n ; new window. f4 is a weird address bar highlight, which you can do by alt d(or f6 if you followed the next assignment) and then arrow down
+F4::^t ; new window. f4 is a weird address bar highlight, which you can do by alt d(or f6 if you followed the next assignment) and then arrow down
 ; never mind, you can't bring it up by pressing down
 F6::!d ; brings up address bar. by default it does something that i dovn't know, check it out maybe
 ; From the Internet: F6 lets you cycle between the panes of the File Explorer.
@@ -70,7 +70,7 @@ return
 ^+c::copyPathExplorer() 
 
 ; new item hotkey
-^t::^n
+^+n::^n
 ^n::newItemExplorer()
 return
 
