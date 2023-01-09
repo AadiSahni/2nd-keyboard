@@ -203,7 +203,7 @@ return
 
 
 
-Lalt & Ralt::suspend ;hit both ALT keys simultaneously to toggle the functonality of this script. The tray icon will also change visually, so you will always know. You might want to delete this line if it's messing you up!
+; Lalt & Ralt::suspend ;hit both ALT keys simultaneously to toggle the functonality of this script. The tray icon will also change visually, so you will always know. You might want to delete this line if it's messing you up!
 
 
 
