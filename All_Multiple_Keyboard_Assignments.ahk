@@ -66,6 +66,7 @@ Sendinput, {alt Up} ;this is just the virtual ALT keystroke going up.
 return
 
 
+
 ; copy to path hotkey
 ^+c::copyPathExplorer() 
 
@@ -91,6 +92,19 @@ Send, {h}{c}
 send, {Tab} ; highlights the panel so you can use arrow keys to select instead of the mouse
 return
 #IfWinActive
+
+
+
+
+
+
+; ; middleclick to close tab(22h2)
+; #IfWinActive CabinetWClass, DesktopWindowXamlSource
+; MButton::^w
+; return
+
+
+
 
 #IfWinActive ahk_class #32770
 /::!n ; alt n is the shortcut to bring focus to the file name input box
