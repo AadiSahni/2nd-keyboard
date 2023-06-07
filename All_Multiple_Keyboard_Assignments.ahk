@@ -249,11 +249,8 @@ CapsLock::f20 ; alt + capslock toggles capslock, it's weird becuase ctrl does no
 ; Number Keys
 CapsLock & `::back()
 CapsLock & 1::switchToExplorer()
-; CapsLock & 2::switchToChrome()
-CapsLock & 2::switchToBrave() ; I switched to brave, it's faster, I would like to have firefox with chrome extensions and chrome settings/flags
-; New found news, brave does not work with Accelerated Scrolling and KDE Mover Sizer, might finally move to firefox then. 
-; Firefox is soooooo fast though, why can't I just have it
-; 
+; CapsLock & 2::switchToChrome() ; Chrome is garbage
+CapsLock & 2::switchToFirefox()
 CapsLock & 3::switchToPremiere()
 CapsLock & 4::switchToWhatsApp()
 CapsLock & 5::switchToDiscord()

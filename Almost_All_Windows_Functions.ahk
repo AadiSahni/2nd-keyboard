@@ -63,6 +63,61 @@ sendinput {Rctrl up}{Lctrl up}
 sendinput, {SC0EA} ;scan code of an unassigned key. used for debugging.
 }
 
+switchToFirefox(){
+;sleep 12 ;;I need this because I put a 10ms delay before the key UP events in iCue. I had to do THAT because otherwise it would go too fast for AHK to even notice. Without this delay, those up events will happen while the function is running, which can lead to modifier keys that are virtually stuck DOWN, which is super bad and annoying.
+; i don't remember why I removed this delay. but i also removed the 5ms of delay in icue, sooooo this might not be necceessary anymore?
+
+
+sendinput, {blind}{SC0EB} ;scan code of an unassigned key. Do I NEED this?
+;hmmm, this can force a sending of RCTRL UP because this thing itself does NOT have any modifier keys assigned to it. which means if we use BLIND instead, then that should not happen, right? hmmm.
+;And then it sends rCTRL DOWN just after, because it's trying not to mess stuff up, oh i see what's going on there, okay....
+
+;sleep 100
+
+IfWinNotExist, ahk_class MozillaWindowClass
+	Run, firefox.exe
+if WinActive("ahk_exe firefox.exe")
+	{
+	WinGetClass, class, A
+	if (class = "Mozillawindowclass1")
+		msgbox, this is a notification
+	}
+if WinActive("ahk_exe firefox.exe")
+	{
+	Sendinput, {blind}^{tab} ;this one seems to be best. If Rctrl is still being held down by iCue, then AHK doesn't bother sending its own CTRL event, nor does it try to undo the effects of an existing modifier key by sending it up and then down again real quickly... all possible because of {blind} !
+	;Sendinput, {blind}<^{tab} ; this does not work, it just sends (SHIFT ,) instead.
+	;Sendinput, {blind}{rctrl down}{tab}{rctrl up} ;this WILL work to use rCONTROL even if Lcontrol is already being held down. Interesting, but not neccessary in this script.
+	}
+else
+	{
+	;WinRestore ahk_exe firefox.exe
+	;WinActivate ahk_exe firefox.exe ;was winactivatebottom before...
+	;WinActivatebottom ahk_class MozillaWindowClass ;was winactivatebottom before...
+	WinActivate ahk_class MozillaWindowClass ;was winactivatebottom before...
+	;sometimes winactivate is not enough. the window is brought to the foreground, but not put into FOCUS.
+	;the below code should fix that.
+	WinGet, hWnd, ID, ahk_class MozillaWindowClass
+	DllCall("SetForegroundWindow", UInt, hWnd) 
+	}
+sleep 2
+
+;now to unstick any potentially stuck modifier keys
+; KeyList := "Shift|Rctrl|alt"
+; Loop, Parse, KeyList, |
+	; {
+	; If GetKeystate(A_Loopfield, "P")
+		; Send % "{" A_Loopfield " Up}"
+	; }
+
+; send, {Rctrl up} ;This SHOULD work, but i think it doesn't because the RCTRL event is still coming from the keyboard itself. I need to make something that will send RCTRL up and double click that shit and then see if it makes any difference at all next time. hmm.
+; ;okay, I've created RCTRL UP.AHK to test this. Just doble clicking on it will send a RCTRL UP event. This is important because it's not being done through the keyboard. Will try that next time this shizz happens.
+; send, {Lctrl up}
+
+}
+
+
+
+
 switchToPremiere(){
 IfWinNotExist, ahk_class Premiere Pro
 	{
