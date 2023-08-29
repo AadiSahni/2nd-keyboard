@@ -345,6 +345,10 @@ Send {enter}
 return
 
 
+; Always on Top for active window
+; Stop apps from stealing focus
+#^t::  Winset, Alwaysontop, , A
+
 
 ; OKAY I NEED A LOT OF MEDIA PLAYBACK KEYS
 #WheelUp::Volume_Up
