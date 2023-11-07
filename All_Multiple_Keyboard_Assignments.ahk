@@ -97,15 +97,6 @@ return
 
 
 
-
-; ; middleclick to close tab(22h2)
-; #IfWinActive CabinetWClass, DesktopWindowXamlSource
-; MButton::^w
-; return
-
-
-
-
 #IfWinActive ahk_class #32770
 /::!n ; alt n is the shortcut to bring focus to the file name input box
 ; although i'm not sure i'd use it a lot, there are no problems with typing /, since for paths \ is used, and / can't be used in file names
@@ -117,23 +108,23 @@ return
 	return
 	
 	
-#if MouseIsOver("ahk_class CabinetWClass") ; checking to see if explorer is active rather than whether my mouse is over it can cause problems for A. closing tabs by middle clicking in groupy B. middle clicking to open another instance in taskbar
-	Mbutton:: ;open in new window
-	; Send {LButton}
-	; Sleep 10
-	; Send {LControl down}
-	; Sleep 10
-	; Send {Enter}
-	; Sleep 10
-	; Send {LControl up}
-	; Sleep 10
+; #if MouseIsOver("ahk_class CabinetWClass") ; checking to see if explorer is active rather than whether my mouse is over it can cause problems for A. closing tabs by middle clicking in groupy B. middle clicking to open another instance in taskbar
+	; Mbutton:: ;open in new window
+	; ; Send {LButton}
+	; ; Sleep 10
+	; ; Send {LControl down}
+	; ; Sleep 10
+	; ; Send {Enter}
+	; ; Sleep 10
+	; ; Send {LControl up}
+	; ; Sleep 10
+	; ; return
+	; ; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
+	; click left
+	; Send {AppsKey}
+	; sleep 10 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects a file or folder that starts with e, increase the sleep
+	; Send {e}
 	; return
-	; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
-	click left
-	Send {AppsKey}
-	sleep 10 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects a file or folder that starts with e, increase the sleep
-	Send {e}
-	return
 
 #IfWinActive
 ; ++++++++++++++++++++++++++End Explorer Assignments++++++++++++++++++++++++++++++++++++++++++
@@ -167,9 +158,23 @@ click right
 send {down}
 send {down}
 send {enter}
-return
+return 
 #IfWinActive 
 
+; Browser_Home::
+; sendinput {F13 down}
+; sendinput = 
+; sendinput {F13 up}
+
+; return 
+
+
+; Launch_Mail::
+; sendinput {f13 down}
+; sendinput -
+; sendinput {f13 up}
+
+; return
 
 
 ; ++++++++++++++END OF NAVGATION SHORTCUTS++++++++++++++
@@ -177,7 +182,7 @@ return
 ;chrome tabs and any chromium apps
 
 
-GroupAdd, browserGroup, ahk_class Chrome_WidgetWin_1
+GroupAdd, browserGrop, ahk_class Chrome_WidgetWin_1
 GroupAdd, browserGroup, ahk_class MozillaWindowClass
 
 
