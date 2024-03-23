@@ -25,7 +25,7 @@ timeout := 600
 ; If you scroll a long distance in one session, apply additional boost factor.
 ; The higher the value, the longer it takes to activate, and the slower it accumulates.
 ; Set to zero to disable completely. Default: 30.
-boost := 60
+boost := 30
 
 ; Spamming applications with hundreds of individual scroll events can slow them down.
 ; This sets the maximum number of scrolls sent per click, i.e. max velocity. Default: 60.
