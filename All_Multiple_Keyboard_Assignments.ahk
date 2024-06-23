@@ -108,23 +108,23 @@ return
 	return
 	
 	
-; #if MouseIsOver("ahk_class CabinetWClass") ; checking to see if explorer is active rather than whether my mouse is over it can cause problems for A. closing tabs by middle clicking in groupy B. middle clicking to open another instance in taskbar
-	; Mbutton:: ;open in new window
-	; ; Send {LButton}
-	; ; Sleep 10
-	; ; Send {LControl down}
-	; ; Sleep 10
-	; ; Send {Enter}
-	; ; Sleep 10
-	; ; Send {LControl up}
-	; ; Sleep 10
-	; ; return
-	; ; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
-	; click left
-	; Send {AppsKey}
-	; sleep 10 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects a file or folder that starts with e, increase the sleep
-	; Send {e}
+#if MouseIsOver("ahk_class CabinetWClass") ; checking to see if explorer is active rather than whether my mouse is over it can cause problems for A. closing tabs by middle clicking in groupy B. middle clicking to open another instance in taskbar
+	Mbutton:: ;open in new tab(windows 11 ftw)
+	; Send {LButton}
+	; Sleep 10
+	; Send {LControl down}
+	; Sleep 10
+	; Send {Enter}
+	; Sleep 10
+	; Send {LControl up}
+	; Sleep 10
 	; return
+	; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
+	click right
+	sleep 10 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects a file or folder that starts with e, increase the sleep
+	Send {b}
+	Send {enter}
+	return
 
 #IfWinActive
 ; ++++++++++++++++++++++++++End Explorer Assignments++++++++++++++++++++++++++++++++++++++++++
@@ -136,7 +136,7 @@ return
 
 ; FOR THE LAST TIME, LAPTOP KEYBOARDS SHOULD BE TKL, NOT WEIRD FULL SIZED
 ; Anyways this maps right alt + ctrl to appskey
-; lemme know if you have a way of making fn + alt, appskey
+; there should be a way of making fn + alt, appskey
 ;
 RAlt & RCtrl::AppsKey
 
