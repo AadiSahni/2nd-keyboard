@@ -273,8 +273,7 @@ CapsLock & e::End
 CapsLock & r::winRestoreMaximize()
 CapsLock & t::instantExplorer("C:\Users\sahni\AadiSahni") ; Projects folder
 CapsLock & y::instantExplorer("C:\Users\Sahni\OneDrive\Downloads")
-; CapsLock & y::instantExplorer("C:\Users\Sahni\Downloads") ; this is without the onedrive if you don't have onedrive
-; also, i dont need to use onedrive to back up my files since google has a pretty good app for drive for this stuff but it's mapped to a different drive.
+; CapsLock & y::instantExplorer("C:\Users\Sahni\Downloads") ; without onedrive
 CapsLock & u::Home
 CapsLock & i::Up
 CapsLock & o::End
@@ -293,7 +292,7 @@ CapsLock & l::Right
 
 ; Bottom Row
 CapsLock & z::instantExplorer("C:\Program Files (x86)")
-CapsLock & x::WinMinimize, A
+CapsLock & x::WinMinimize, A ; WinMinimize
 	#if GetKeyState("CapsLock", "P")
 	!x::+F19
 	return
