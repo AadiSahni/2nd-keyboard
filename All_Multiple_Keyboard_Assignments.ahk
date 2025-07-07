@@ -11,11 +11,13 @@ Menu, Tray, Icon, shell32.dll, 283 ;tray icon is now a little keyboard, or piece
 ; This line is here to remove syntax highlighting glitch
 
 ;;; Searching Terms
+; ExplorerKeys
 ; UNIVERSALKEYS
 ; PremiereKeys
 ; NavigationKeys
 
 ; +++++++++++++++++++++Begin Explorer Assignments++++++++++++++++++++++++++
+; ExplorerKeys
 
 #IfWinActive ahk_exe peazip.exe
 `::
@@ -33,6 +35,7 @@ return
 ; {Enter}
 ; {Right}
 ; return
+; why the fuck does this exist, future me
 
 #IfWinActive
 
@@ -44,8 +47,6 @@ return
 
 
 ^+z::^y ; explorer doesn't use ctrl shift z for redo, it uses ctrl y. hello 2007 when ctrl y was used for redo. 
-; seriously, ctrl y for redo, M$, did you forget to change that when your were working hard(hardly working) sitting on your diamond chairs. 
-; M$ is not even the problem, I mean they are a problem, but if not for Azure, windows would be better
 
 F1::return ; f1 is help, you don't need help do you.
 ; f2 is rename, very useful
@@ -78,7 +79,7 @@ return
 ; Open With
 CapsLock & Enter::
 Send, {AppsKey}
-sleep 50
+WinWait, ahk_class #32768 ; wait for context menu to appear
 Send, {h}{c}
 send, {Tab} ; highlights the panel so you can use arrow keys to select instead of the mouse
 return
@@ -87,7 +88,7 @@ CapsLock & LButton::
 ^+o::
 Click left
 Send, {AppsKey}
-sleep 50
+WinWait, ahk_class #32768 ; wait for context menu to appear
 Send, {h}{c}
 send, {Tab} ; highlights the panel so you can use arrow keys to select instead of the mouse
 return
@@ -101,9 +102,10 @@ return
 /::!n ; alt n is the shortcut to bring focus to the file name input box
 ; although i'm not sure i'd use it a lot, there are no problems with typing /, since for paths \ is used, and / can't be used in file names
 ; that sentence doesn't make sense for future me
+; what the fuck does this even do ~ future future me
 #IfWinActive
 
-#if MouseIsOver("ahk_exe GroupyCtrl.exe")
+#if MouseIsOver("ahk_exe GroupyCtrl.exe") ; no use for any of this, windows 11 has tabbed explorer in built
 	MButton::MButton ; Overriding the open in new window command for Stardock Groupy
 	return
 	
@@ -121,7 +123,9 @@ return
 	; return
 	; the above piece of hotkeys are not necessary since it is unreilable as hell, just use context menu
 	click right
-	sleep 10 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects a file or folder that starts with e, increase the sleep
+	; sleep 10 ; context menu takes a little longer to appear than once thought. If pressing middle mouse button(scroll click) makes the windows sound or selects a file or folder that starts with e, increase the sleep
+	; no point, too unreliable, just use winwait
+	WinWait, ahk_class #32768 ; wait for context menu to appear, much better way
 	Send {b}
 	Send {enter}
 	return
@@ -237,10 +241,12 @@ return
 ;+++++++++ SHORTCUTS THAT WORK IN ALL PROGRAMS +++++++++
 ; UNIVERSALKEYS
 
-ScrollLock::+f19 ; shift f19 is mute in discord because using alt makes the modifiers stuck 
+ScrollLock::#+a ; shift f19 is mute in discord because using alt makes the modifiers stuck 
+; F19 assignments
 ; i use f19 as a shortcut for different things in various apps
 ; ctrl f19 is used for wox, the brilliant search app
 ; shift f19 is used for discord as stated above
+; alt f19 multipurpose key on my mouse for games
 ;;-----BEGIN KEYS PAIRED WITH CAPS LOCK--------
 
 SetCapsLockState, AlwaysOff
@@ -248,7 +254,7 @@ CapsLock::f20 ; alt + capslock toggles capslock, it's weird becuase ctrl does no
 ; i guess i'm going to have to create a task schedule for this script for capslock state to be always off while having the rest of my capslock code still work 
 ; done, you'll have to create a task schedule as well if you want to use capslock or numlock always in one state to make them modifiers
 ; set trigger to log on of a specific user and make it your user and make action a program and make it launch the script
-; future me here, I forgot to tell you check the actual admin checkbox in the general tab(run with highest privelglasses. )
+; future me here, I forgot to mention check the actual admin checkbox in the general tab(run with highest privelglasses. )
 ; privelglasses, weed is a hell of a drug
  
 ; Number Keys
@@ -259,8 +265,8 @@ CapsLock & 2::switchToFirefox()
 CapsLock & 3::switchToPremiere()
 CapsLock & 4::switchToWhatsApp()
 CapsLock & 5::switchToDiscord()
-CapsLock & 6::switchToWord()
-CapsLock & 7::switchToNotepadplusplus()
+CapsLock & 6::return
+CapsLock & 7::return
 CapsLock & 8::return
 CapsLock & 9::return
 CapsLock & 0::return
@@ -310,7 +316,7 @@ CapsLock & c::WinClose, A
 CapsLock & v::instantExplorer("C:\AHK\2nd-keyboard")
 CapsLock & b::Delete
 CapsLock & n::switchToSteam()
-CapsLock & m::+F19 ; discord mute
+CapsLock & m::#+a ; discord mute
 
 ; Extra keys
 CapsLock & Space::Enter
@@ -327,6 +333,7 @@ CapsLock & Space::Enter
 
 
 ;;------END OF ALT KEYS----------
+
 
 ;;-----BEGIN KEYS PAIRED WITH WINDOWS--------
 
@@ -351,7 +358,8 @@ return
 
 ; Always on Top for active window
 ; Stop apps from stealing focus
-#^t::  Winset, Alwaysontop, , A
+; #^t::  Winset, Alwaysontop, , A
+; not needed anymore, powertoys has it and shows a nice border so I know it is always on top
 
 
 ; OKAY I NEED A LOT OF MEDIA PLAYBACK KEYS
@@ -372,7 +380,7 @@ return
 #f7::Volume_Down
 #f8::Volume_Up
 
-;;------END OF ALT KEYS----------
+;;------END OF WIN KEYS----------
 
 #IfWinActive
 
@@ -560,30 +568,31 @@ Return
 
 ; Note to self, move this to a different file
 ;;+++++++++++++++++++Game Assignments++++++++++++++++++++++
-#IfWinActive ahk_exe AC3SP.exe
-; Terribly failed, Assassin's Creed 3 does not accept any input from any thing except actually pressing the keys, i think.
-; Besides, any ac game before ac4 black flags (except liberation, don't know about that) autokills this script. I don't know why.
-; Actually, scratch that, it kills all ahk scripts, all though the script is still running, it just doesn't work. 
-; I assume it's an anti cheat mechanism, still don't like it.
-Numpad1::end
-Numpad2::down
-Numpad3::pgdn
-Numpad4::left
-Numpad5::click right
-Numpad6::right
-Numpad7::home
-Numpad8::up
-Numpad9::pgup
-NumpadDot::del
-Numpad0::click left
-#IfWinActive
+; #IfWinActive ahk_exe AC3SP.exe
+; ; Terribly failed, Assassin's Creed 3 does not accept any input from any thing except actually pressing the keys, i think.
+; ; Besides, any ac game before ac4 black flags (except liberation, don't know about that) autokills this script. I don't know why.
+; ; Actually, scratch that, it kills all ahk scripts, all though the script is still running, it just doesn't work. 
+; ; I assume it's an anti cheat mechanism, still don't like it.
+; Numpad1::end
+; Numpad2::down
+; Numpad3::pgdn
+; Numpad4::left
+; Numpad5::click right
+; Numpad6::right
+; Numpad7::home
+; Numpad8::up
+; Numpad9::pgup
+; NumpadDot::del
+; Numpad0::click left
+; #IfWinActive
 
 
-#IfWinActive ahk_exe AC4BFSP.exe
-; Assassin's Creed 4 Black Flags' exe does not quit properly when using alt f4, win close, or the quit button in the app. This makes it so I can't launch the game, here's the fix then
-CapsLock & C::
-process, close, AC4BFSP.exe
-; WinExit AC4BF.exe ; this is another way
+; #IfWinActive ahk_exe AC4BFSP.exe
+; ; Assassin's Creed 4 Black Flags' exe does not quit properly when using alt f4, win close, or the quit button in the app. This makes it so I can't launch the game, here's the fix then
+; CapsLock & C::
+; process, close, AC4BFSP.exe
+; ; WinExit AC4BF.exe ; this is another way
+; no point, played those games once and moved on, and don't have a numpad now anyways
 
 
 

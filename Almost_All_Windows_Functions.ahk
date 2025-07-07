@@ -78,9 +78,9 @@ IfWinNotExist, ahk_class MozillaWindowClass
 	Run, firefox.exe
 if WinActive("ahk_exe firefox.exe")
 	{
-	WinGetClass, class, A
-	if (class = "Mozillawindowclass1")
-		msgbox, this is a notification
+	; WinGetClass, class, A
+	; if (class = "MozillaWindowClass")
+		; msgbox, this is a notification
 	}
 if WinActive("ahk_exe firefox.exe")
 	{
@@ -138,9 +138,9 @@ else
 switchToWhatsApp()
 {
 IfWinNotExist, ahk_exe WhatsApp.exe
-	Run, "C:\Users\sahni\AppData\Local\WhatsApp\WhatsApp.exe"
+	Run, "C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2434.5.0_x64__cv1g1gvanyjgm\WhatsApp.exe" 
 
-if WinActive("ahk_exe WhatsApp.exe")
+if WinActive("ahk_pid 29448")
 	WinMinimize
 else
 	WinActivate ahk_exe WhatsApp.exe
@@ -335,7 +335,7 @@ deselectAllExplorer()
 	
 	; PgUp ctrl space does the same thing and it's more reliable
 	SendInput, {PgUp}
-	sleep 1000
+	sleep 100
 	Send, {Ctrl down}{Space}{Ctrl up}
 	sleep 50
 }
@@ -425,12 +425,12 @@ copyPathEndY = 131
 ; none of this is needed anymore, you can have it unpinned because i'm using context menu and deselect all to do this
 newItemExplorer()
 {
-CoordMode Pixel ;, screen
-CoordMode Mouse, screen
-newItemX = 501
-newItemY = 89 ; these are the coordinates of where the new item button is roughly on my screen
-newItemEndX = 582
-newItemEndY = 109
+; CoordMode Pixel ;, screen
+; CoordMode Mouse, screen
+; newItemX = 501
+; newItemY = 89 ; these are the coordinates of where the new item button is roughly on my screen
+; newItemEndX = 582
+; newItemEndY = 109
 
 ; send, !h 
 
@@ -472,14 +472,21 @@ newItemEndY = 109
 	; ; BlockInput, off
 	; ; BlockInput, MouseMoveOff
 	
+; shit shit shit shit, better to use keys even though the amount of w key presses can change if another program needs a context menu shortcut that also uses w. 
+	
 	deselectAllExplorer()
 	; msgbox, deselected
 	Send, {AppsKey}
-	sleep 50
+	WinWait, ahk_class #32768 ; wait for context menu to appear
 	Send, {Ctrl up}
 	Send, w
+	Send, w
+	Send, w
+	Send, {Right}
 	Send, t
 	sleep 10
+	Send, ^a
+	Send, {Backspace}
 	Send, {Ctrl up}
 }
 

@@ -7,9 +7,9 @@ AppsKey::
 Numpad5::
 NumpadClear:: ; Just so that when numpad is off, it still works
 ; Laptop keyboards don't have an appskey because laptop makers refuse to use a proper tkl layout and instead cram 104 minus certain keys into a size that is more fit for tkl, so arrow keys take the place of right windows and appskey. Would rather have tkl
-sendinput {shift down}
+sendinput {alt down}
 sendinput {f19}
-sendinput {shift up}
+sendinput {alt up}
 
 sleep 100
-ExitApp
+CapsLock & `::ExitApp
